@@ -19,5 +19,5 @@ Need To Improve:
 
 Demo:
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="9JNQBX1"><a href="https://imgur.com/9JNQBX1">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+[Imgur](https://imgur.com/9JNQBX1)
 
