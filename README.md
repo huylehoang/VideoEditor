@@ -19,7 +19,5 @@ Need To Improve:
 
 Demo:
 
-<video autoplay loop muted="true" poster="https://i.imgur.com/9JNQBX1.jpg">
-    <source src="https://i.imgur.com/iHzu04n.mp4" type="video/mp4">
-</video>
+[Imgur](https://imgur.com/9JNQBX1)
 
