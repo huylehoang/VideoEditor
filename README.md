@@ -16,3 +16,7 @@ Technicals:
 
 Need To Improve:
 - Implement custom filter (currently using built-in filters from Apple Core Image Filter Reference)
+
+Demo:
+
+https://imgur.com/9JNQBX1
