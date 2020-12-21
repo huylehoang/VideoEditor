@@ -22,11 +22,57 @@
 		84499F912587228400041921 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84499F8F2587228400041921 /* LaunchScreen.storyboard */; };
 		84499F9D2587231800041921 /* VideoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84499F9C2587231800041921 /* VideoEditorViewController.swift */; };
 		845A9909258B33BA005B81D0 /* ThumbnailSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A9908258B33BA005B81D0 /* ThumbnailSlider.swift */; };
+		84994D3D259054200020A3E7 /* HDRZebraFilter.ci.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84994D3C259054200020A3E7 /* HDRZebraFilter.ci.metal */; };
+		84994D41259055890020A3E7 /* HDRZebraFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84994D40259055890020A3E7 /* HDRZebraFilter.swift */; };
+		84994D45259057A20020A3E7 /* ThresholdFilter.ci.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84994D44259057A20020A3E7 /* ThresholdFilter.ci.metal */; };
+		84994D482590589B0020A3E7 /* ThresholdFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84994D472590589B0020A3E7 /* ThresholdFilter.swift */; };
+		84994D4C25905D550020A3E7 /* sample-mp4-file.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84994D4B25905D540020A3E7 /* sample-mp4-file.mp4 */; };
+		84994D4F25905EB00020A3E7 /* BaseKernelFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84994D4E25905EB00020A3E7 /* BaseKernelFilter.swift */; };
 		84BE888E25889EDE00F05BBE /* FilterSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE888D25889EDE00F05BBE /* FilterSlider.swift */; };
 		84BE88912588ABAC00F05BBE /* ThumbnailTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE88902588ABAC00F05BBE /* ThumbnailTrack.swift */; };
 		84FE8AB5258A03C800E7D1C9 /* PlaybackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE8AB4258A03C800E7D1C9 /* PlaybackController.swift */; };
 		84FE8AB8258A0AF300E7D1C9 /* PlayerSeeker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE8AB7258A0AF300E7D1C9 /* PlayerSeeker.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		84994D37259051CA0020A3E7 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*ci.metal";
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/$(INPUT_FILE_BASE).air",
+			);
+			script = "xcrun metal -c $MTL_HEADER_SEARCH_PATHS -fcikernel \"${INPUT_FILE_PATH}\" -o \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+		};
+		84994D382590520F0020A3E7 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.ci.air";
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+				"$(METAL_LIBRARY_OUTPUT_DIR)/$(INPUT_FILE_BASE).metallib",
+			);
+			script = "xcrun metallib -cikernel \"${INPUT_FILE_PATH}\" -o \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+		};
+		84994D392590520F0020A3E7 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = pattern.proxy;
+			inputFiles = (
+			);
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# Type a script or drag a script file from your workspace to insert its path.\n";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
 		101770C42589485100848937 /* VideoCompositor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCompositor.swift; sourceTree = "<group>"; };
@@ -46,6 +92,12 @@
 		84499F922587228400041921 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84499F9C2587231800041921 /* VideoEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEditorViewController.swift; sourceTree = "<group>"; };
 		845A9908258B33BA005B81D0 /* ThumbnailSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailSlider.swift; sourceTree = "<group>"; };
+		84994D3C259054200020A3E7 /* HDRZebraFilter.ci.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = HDRZebraFilter.ci.metal; sourceTree = "<group>"; };
+		84994D40259055890020A3E7 /* HDRZebraFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HDRZebraFilter.swift; sourceTree = "<group>"; };
+		84994D44259057A20020A3E7 /* ThresholdFilter.ci.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ThresholdFilter.ci.metal; sourceTree = "<group>"; };
+		84994D472590589B0020A3E7 /* ThresholdFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThresholdFilter.swift; sourceTree = "<group>"; };
+		84994D4B25905D540020A3E7 /* sample-mp4-file.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sample-mp4-file.mp4"; sourceTree = "<group>"; };
+		84994D4E25905EB00020A3E7 /* BaseKernelFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseKernelFilter.swift; sourceTree = "<group>"; };
 		84BE888D25889EDE00F05BBE /* FilterSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSlider.swift; sourceTree = "<group>"; };
 		84BE88902588ABAC00F05BBE /* ThumbnailTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailTrack.swift; sourceTree = "<group>"; };
 		84FE8AB4258A03C800E7D1C9 /* PlaybackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackController.swift; sourceTree = "<group>"; };
@@ -82,6 +134,7 @@
 		84499F832587228100041921 /* TestVideo */ = {
 			isa = PBXGroup;
 			children = (
+				84994D4B25905D540020A3E7 /* sample-mp4-file.mp4 */,
 				84499F842587228100041921 /* AppDelegate.swift */,
 				84499F862587228100041921 /* SceneDelegate.swift */,
 				84499F8D2587228400041921 /* Assets.xcassets */,
@@ -102,8 +155,37 @@
 				84FE8AB7258A0AF300E7D1C9 /* PlayerSeeker.swift */,
 				842313CC2589CD23008B3860 /* Extensions.swift */,
 				1070D70C258E8E7B00CCE304 /* Utilites.swift */,
+				84994D3A259052A00020A3E7 /* CustomFilters */,
 			);
 			path = TestVideo;
+			sourceTree = "<group>";
+		};
+		84994D3A259052A00020A3E7 /* CustomFilters */ = {
+			isa = PBXGroup;
+			children = (
+				84994D4E25905EB00020A3E7 /* BaseKernelFilter.swift */,
+				84994D43259057240020A3E7 /* ThresholdFilter */,
+				84994D3B259053D10020A3E7 /* HDRZebraFilter */,
+			);
+			path = CustomFilters;
+			sourceTree = "<group>";
+		};
+		84994D3B259053D10020A3E7 /* HDRZebraFilter */ = {
+			isa = PBXGroup;
+			children = (
+				84994D3C259054200020A3E7 /* HDRZebraFilter.ci.metal */,
+				84994D40259055890020A3E7 /* HDRZebraFilter.swift */,
+			);
+			path = HDRZebraFilter;
+			sourceTree = "<group>";
+		};
+		84994D43259057240020A3E7 /* ThresholdFilter */ = {
+			isa = PBXGroup;
+			children = (
+				84994D44259057A20020A3E7 /* ThresholdFilter.ci.metal */,
+				84994D472590589B0020A3E7 /* ThresholdFilter.swift */,
+			);
+			path = ThresholdFilter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +200,9 @@
 				84499F7F2587228100041921 /* Resources */,
 			);
 			buildRules = (
+				84994D382590520F0020A3E7 /* PBXBuildRule */,
+				84994D392590520F0020A3E7 /* PBXBuildRule */,
+				84994D37259051CA0020A3E7 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -164,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84499F912587228400041921 /* LaunchScreen.storyboard in Resources */,
+				84994D4C25905D550020A3E7 /* sample-mp4-file.mp4 in Resources */,
 				84499F8E2587228400041921 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -175,11 +261,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84994D482590589B0020A3E7 /* ThresholdFilter.swift in Sources */,
 				101770C52589485100848937 /* VideoCompositor.swift in Sources */,
 				842313BE2589BFB3008B3860 /* CustomSlider.swift in Sources */,
+				84994D3D259054200020A3E7 /* HDRZebraFilter.ci.metal in Sources */,
 				84499F852587228100041921 /* AppDelegate.swift in Sources */,
 				845A9909258B33BA005B81D0 /* ThumbnailSlider.swift in Sources */,
 				84499F9D2587231800041921 /* VideoEditorViewController.swift in Sources */,
+				84994D45259057A20020A3E7 /* ThresholdFilter.ci.metal in Sources */,
 				842313C12589C1A7008B3860 /* PlayerToolbar.swift in Sources */,
 				84BE88912588ABAC00F05BBE /* ThumbnailTrack.swift in Sources */,
 				84FE8AB5258A03C800E7D1C9 /* PlaybackController.swift in Sources */,
@@ -191,7 +280,9 @@
 				1062D234258E534500CCF343 /* FilterOptionsView.swift in Sources */,
 				101770CA25894FC400848937 /* VideoExporter.swift in Sources */,
 				842313CD2589CD23008B3860 /* Extensions.swift in Sources */,
+				84994D4F25905EB00020A3E7 /* BaseKernelFilter.swift in Sources */,
 				84BE888E25889EDE00F05BBE /* FilterSlider.swift in Sources */,
+				84994D41259055890020A3E7 /* HDRZebraFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +429,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MTL_COMPILER_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huylh.Testpermission.TestVideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -358,6 +450,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MTL_COMPILER_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huylh.Testpermission.TestVideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
