@@ -1,19 +1,19 @@
 import UIKit
 
-protocol BaseKernelFilter: CIFilter {
+protocol KernelBaseFilter: CIFilter {
   var inputImage: CIImage { get }
 
   func applyFilterWithArguments(_ arguments: Any...) -> CIImage?
 }
 
-extension BaseKernelFilter {
+extension KernelBaseFilter {
   func applyFilterWithArguments(_ arguments: Any...) -> CIImage? {
     return Self.kernel.apply(extent: inputImage.extent, arguments: arguments)
   }
 }
 
 // MARK: Private Static
-private extension BaseKernelFilter {
+private extension KernelBaseFilter {
   private static var kernel: CIColorKernel {
     return { () -> CIColorKernel in
       guard

@@ -1,12 +1,12 @@
 import UIKit
 
 extension CIImage {
-  func applyHDRZebraFilter(time: Float) -> CIImage {
-    return HDRZebraFilter(inputImage: self, inputTime: time).outputImage ?? self
+  func applyKernelHDRZebraFilter(time: Float) -> CIImage {
+    return KernelHDRZebraFilter(inputImage: self, inputTime: time).outputImage ?? self
   }
 }
 
-private class HDRZebraFilter: CIFilter, BaseKernelFilter {
+private class KernelHDRZebraFilter: CIFilter, KernelBaseFilter {
   let inputImage: CIImage
   let inputTime: Float
 
