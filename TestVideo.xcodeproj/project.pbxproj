@@ -179,30 +179,30 @@
 			path = CustomFilters;
 			sourceTree = "<group>";
 		};
-		84994D3B259053D10020A3E7 /* HDRZebraFilter */ = {
+		84994D3B259053D10020A3E7 /* KernelHDRZebraFilter */ = {
 			isa = PBXGroup;
 			children = (
 				84994D3C259054200020A3E7 /* KernelHDRZebraFilter.ci.metal */,
 				84994D40259055890020A3E7 /* KernelHDRZebraFilter.swift */,
 			);
-			path = HDRZebraFilter;
+			path = KernelHDRZebraFilter;
 			sourceTree = "<group>";
 		};
-		84994D43259057240020A3E7 /* ThresholdFilter */ = {
+		84994D43259057240020A3E7 /* KernelThresholdFilter */ = {
 			isa = PBXGroup;
 			children = (
 				84994D44259057A20020A3E7 /* KernelThresholdFilter.ci.metal */,
 				84994D472590589B0020A3E7 /* KernelThresholdFilter.swift */,
 			);
-			path = ThresholdFilter;
+			path = KernelThresholdFilter;
 			sourceTree = "<group>";
 		};
 		849B63ED2590B0E000CFB6A9 /* KernelFilters */ = {
 			isa = PBXGroup;
 			children = (
 				84994D4E25905EB00020A3E7 /* KernelBaseFilter.swift */,
-				84994D43259057240020A3E7 /* ThresholdFilter */,
-				84994D3B259053D10020A3E7 /* HDRZebraFilter */,
+				84994D43259057240020A3E7 /* KernelThresholdFilter */,
+				84994D3B259053D10020A3E7 /* KernelHDRZebraFilter */,
 			);
 			path = KernelFilters;
 			sourceTree = "<group>";

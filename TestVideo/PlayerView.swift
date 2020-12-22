@@ -36,9 +36,10 @@ class PlayerView: UIView {
   func addSticker(_ sticker: UIImage? = nil) {
     let videoRect = playerLayer.videoRect
     // Random sticker position in video frame
-    let randomX = CGFloat.random(in: (videoRect.minX * 1/5)...(videoRect.maxX * 4/5))
-    let randomY = CGFloat.random(in: (videoRect.minY * 1/5)...(videoRect.maxY * 4/5))
-    let imageView = UIImageView(frame: CGRect(x: randomX, y: randomY, width: 100, height: 100))
+    let size: CGFloat = 100
+    let randomX = CGFloat.random(in: (videoRect.maxX * 1/5)...(videoRect.maxX * 4/5))
+    let randomY = CGFloat.random(in: (videoRect.maxY * 1/5)...(videoRect.maxY * 4/5))
+    let imageView = UIImageView(frame: CGRect(x: randomX, y: randomY, width: size, height: size))
     if let image = sticker {
       imageView.image = image
     } else {

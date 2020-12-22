@@ -1,7 +1,7 @@
 import UIKit
 
 extension CIImage {
-  func applyKernelThresholdFilter(_ threshold: Float) -> CIImage {
+  func applyKernelThresholdFilter(threshold: Float) -> CIImage {
     return KernelThresholdFilter(inputImage: self, inputThreshold: threshold).outputImage ?? self
   }
 }
@@ -21,6 +21,6 @@ private class KernelThresholdFilter: CIFilter, KernelBaseFilter {
   }
 
   override var outputImage: CIImage? {
-    return applyFilterWithArguments(inputImage, inputThreshold)
+    return applyKernelFilterWithArguments(inputImage, inputThreshold)
   }
 }

@@ -21,6 +21,6 @@ private class KernelHDRZebraFilter: CIFilter, KernelBaseFilter {
   }
 
   override var outputImage: CIImage? {
-    return applyFilterWithArguments(inputImage, inputTime)
+    return applyKernelFilterWithArguments(inputImage, inputTime)
   }
 }

@@ -3,11 +3,11 @@ import UIKit
 protocol KernelBaseFilter: CIFilter {
   var inputImage: CIImage { get }
 
-  func applyFilterWithArguments(_ arguments: Any...) -> CIImage?
+  func applyKernelFilterWithArguments(_ arguments: Any...) -> CIImage?
 }
 
 extension KernelBaseFilter {
-  func applyFilterWithArguments(_ arguments: Any...) -> CIImage? {
+  func applyKernelFilterWithArguments(_ arguments: Any...) -> CIImage? {
     return Self.kernel.apply(extent: inputImage.extent, arguments: arguments)
   }
 }
@@ -23,8 +23,8 @@ private extension KernelBaseFilter {
         fatalError("Unable to load metallib")
       }
 
-      guard let kernel = try? CIColorKernel(functionName: typeName, fromMetalLibraryData: data) else {
-        fatalError("Unable to create CIColorKernel for \(typeName)")
+      guard let kernel = try? CIColorKernel(functionName: functionName, fromMetalLibraryData: data) else {
+        fatalError("Unable to create CIColorKernel for \(functionName)")
       }
 
       return kernel
@@ -38,6 +38,14 @@ private extension KernelBaseFilter {
   private static var typeName: String {
     return String(describing: self)
   }
+
+  private static var functionName: String {
+    return typeName.lowercasedFirstLetter()
+  }
 }
 
-
+private extension String {
+  func lowercasedFirstLetter() -> String {
+    return prefix(1).lowercased() + dropFirst()
+  }
+}

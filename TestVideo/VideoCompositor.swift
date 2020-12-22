@@ -91,10 +91,9 @@ private extension VideoCompositor {
         .scaledBy(
           x: source.extent.size.width / stickers.extent.size.width,
           y: source.extent.size.height / stickers.extent.size.height)
-        .translatedBy(x: -2, y: 0)
-      return stickers
-        .transformed(by: transform)
-        .applyingFilter("CISourceOverCompositing", parameters: [kCIInputBackgroundImageKey: currentOutput])
+      return CIBlendKernel.sourceOver.apply(
+        foreground: stickers.transformed(by: transform),
+        background: currentOutput)!
     }
   }
 }

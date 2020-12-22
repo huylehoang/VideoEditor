@@ -1,15 +1,13 @@
 import Metal
 import UIKit
 
-// TODO: Currently not use Metal Filter since it will block UI due to commandBuffer completionHandler,
-// finding solutions
+// TODO: Currently not use Metal Filter since it will freeze UI during filtering,
+// - finding solutions
 
 /// Reference BBMetalImage github: https://github.com/Silence-GitHub/BBMetalImage
 class MetalBaseFilter {
   private let computePipeline: MTLComputePipelineState
   private let threadgroupSize: MTLSize
-  private let lock: DispatchSemaphore
-  private var outputImage: CIImage?
 
   init(kernelFunctionName: String) {
     guard
@@ -21,25 +19,14 @@ class MetalBaseFilter {
     }
     self.computePipeline = computePipeline
     threadgroupSize = MTLSize(width: 16, height: 16, depth: 1)
-    lock = DispatchSemaphore(value: 1)
-  }
-
-  func filterImage(_ image: CIImage) -> CIImage? {
-    outputAvailableForImage(image)
-    return outputImage
   }
 
   func updateParameters(forComputeCommandEncoder encoder: MTLComputeCommandEncoder) {
       fatalError("\(#function) must be overridden by subclass")
   }
 
-  private func outputAvailableForImage(_ inputImage: CIImage) {
-    lock.wait()
-
-    guard let inputTexture = inputImage.metalTexture else {
-      lock.signal()
-      return
-    }
+  func filterImage(_ inputImage: CIImage) -> CIImage?  {
+    guard let inputTexture = inputImage.metalTexture else { return nil }
 
     let outputWidth = inputTexture.width
     let outputHeight = inputTexture.height
@@ -52,32 +39,16 @@ class MetalBaseFilter {
 
     guard
       let outputTextture = MetalDevice.sharedDevice.makeTexture(descriptor: descriptor),
-      let commanBuffer = MetalDevice.sharedCommandQueue.makeCommandBuffer()
+      let commanBuffer = MetalDevice.sharedCommandQueue.makeCommandBuffer(),
+      let encoder = commanBuffer.makeComputeCommandEncoder()
     else {
-      lock.signal()
-      return
-    }
-
-    commanBuffer.addCompletedHandler { [weak self] buffer in
-      switch buffer.status {
-      case .completed:
-        self?.outputImage = outputTextture.ciImage ?? inputImage
-      default:
-        self?.outputImage = inputImage
-      }
-
-      self?.lock.signal()
+      return nil
     }
 
     let threadgroupCount = MTLSize(
       width: (outputWidth + threadgroupSize.width - 1) / threadgroupSize.width,
       height: (outputHeight + threadgroupSize.height - 1) / threadgroupSize.height,
       depth: 1)
-
-    guard let encoder = commanBuffer.makeComputeCommandEncoder() else {
-      lock.signal()
-      return
-    }
 
     encoder.setComputePipelineState(computePipeline)
     encoder.setTexture(outputTextture, index: 0)
@@ -87,6 +58,7 @@ class MetalBaseFilter {
     encoder.endEncoding()
 
     commanBuffer.commit()
-    commanBuffer.waitUntilCompleted()
+
+    return outputTextture.ciImage
   }
 }
