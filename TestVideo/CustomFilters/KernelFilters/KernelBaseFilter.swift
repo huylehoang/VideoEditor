@@ -14,7 +14,7 @@ extension KernelBaseFilter {
 
 // MARK: Private Static
 private extension KernelBaseFilter {
-  private static var kernel: CIColorKernel {
+  static var kernel: CIColorKernel {
     return { () -> CIColorKernel in
       guard
         let url = Bundle(for: Self.self).url(forResource: typeName, withExtension: ciMetalExtension),
@@ -31,15 +31,15 @@ private extension KernelBaseFilter {
     }()
   }
 
-  private static var ciMetalExtension: String {
+  static var ciMetalExtension: String {
     return "ci.metallib"
   }
 
-  private static var typeName: String {
+  static var typeName: String {
     return String(describing: self)
   }
 
-  private static var functionName: String {
+  static var functionName: String {
     return typeName.lowercasedFirstLetter()
   }
 }
