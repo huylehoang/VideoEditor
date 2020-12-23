@@ -53,7 +53,7 @@ class VideoCompositor {
 }
 
 private extension VideoCompositor {
-  typealias StickerHandler = (_ currentOutput: CIImage, _ source: CIImage) -> CIImage
+  typealias StickerHandler = (_ currentOutput: CIImage) -> CIImage
 
   func requestFilters(
     request: AVAsynchronousCIImageFilteringRequest,
@@ -64,20 +64,20 @@ private extension VideoCompositor {
 
     // Blur (currently hardcode the filter duration)
     if blur != 0 && time >= 0 && time <= duration / 2 {
-      output = output.applyingGaussianBlur(sigma: blur)
+      output = output.applyingGaussianBlur(sigma: blur).cropped(to: request.sourceImage.extent)
     }
 
     // Brightness (currently hardcode the filter duration)
     if brightness != 0 && time > duration / 2 && time <= duration * 5/6 {
-      output = output.applyingFilter("CIColorControls", parameters: [kCIInputBrightnessKey: brightness])
+      output = output.applyMetalBrightnessFilter(brightness: 0.5)
     }
 
     // Saturation (currently hardcode the filter duration)
     if saturation != 0 && time >= duration * 2/3 && time <= duration * 5/6 {
-      output = output.applyingFilter("CIColorControls", parameters: [kCIInputSaturationKey: saturation])
+      output = output.applyMetalSaturationFilter(saturation: 0.5)
     }
 
-    if let stickersOutput = addStickersHandler?(output, request.sourceImage) {
+    if let stickersOutput = addStickersHandler?(output) {
       output = stickersOutput
     }
 
@@ -86,14 +86,8 @@ private extension VideoCompositor {
 
   func handleStickers(stickers: CIImage?) -> StickerHandler? {
     guard let stickers = stickers else { return nil }
-    return { currentOutput, source in
-      let transform = CGAffineTransform.identity
-        .scaledBy(
-          x: source.extent.size.width / stickers.extent.size.width,
-          y: source.extent.size.height / stickers.extent.size.height)
-      return CIBlendKernel.sourceOver.apply(
-        foreground: stickers.transformed(by: transform),
-        background: currentOutput)!
+    return { currentOutput in
+      return currentOutput.applyMetalSourceOverlayFilter(overlay: stickers)
     }
   }
 }

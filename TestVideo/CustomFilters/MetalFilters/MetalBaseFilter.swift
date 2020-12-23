@@ -1,9 +1,6 @@
 import Metal
 import UIKit
 
-// TODO: Currently not use Metal Filter since it will freeze UI during filtering,
-// - finding solutions
-
 /// Reference BBMetalImage github: https://github.com/Silence-GitHub/BBMetalImage
 class MetalBaseFilter {
   private let computePipeline: MTLComputePipelineState
@@ -25,7 +22,7 @@ class MetalBaseFilter {
       fatalError("\(#function) must be overridden by subclass")
   }
 
-  func filterImage(_ inputImage: CIImage) -> CIImage?  {
+  final func filterImage(_ inputImage: CIImage) -> CIImage?  {
     guard let inputTexture = inputImage.metalTexture else { return nil }
 
     let outputWidth = inputTexture.width
@@ -58,6 +55,7 @@ class MetalBaseFilter {
     encoder.endEncoding()
 
     commanBuffer.commit()
+    commanBuffer.waitUntilCompleted()
 
     return outputTextture.ciImage
   }
