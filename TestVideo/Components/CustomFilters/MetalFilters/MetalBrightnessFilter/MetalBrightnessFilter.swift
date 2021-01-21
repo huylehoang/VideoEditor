@@ -1,7 +1,7 @@
 import UIKit
 
 extension CIImage {
-  func applyMetalBrightnessFilter(brightness: Float) -> CIImage {
+  func applyingMetalBrightnessFilter(brightness: Float) -> CIImage {
     return MetalBrightnessFilter(brightness: brightness).filterImage(self) ?? self
   }
 }

@@ -1,7 +1,7 @@
 import UIKit
 import AVFoundation
 
-class PlayerView: UIView {
+final class PlayerView: UIView {
   private lazy var stickerContainers: UIView = {
     let view = UIView(frame: playerLayer.videoRect)
     view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -42,7 +42,9 @@ class PlayerView: UIView {
 
     let image = sticker ?? UIImage(named: "sticker-\(Int.random(in: 1...2))")!
     let imageSize = image.size
-    let scaleFactor = min(videoRect.height / image.size.height, image.size.height / videoRect.height)
+    let videoScaleFactor = min(videoRect.width, videoRect.height)
+    let imageScaleFactor = min(imageSize.width, imageSize.height)
+    let scaleFactor = min(videoScaleFactor / imageScaleFactor, imageScaleFactor / videoScaleFactor)
     let scaledImageSize = imageSize.applying(.init(scaleX: scaleFactor, y: scaleFactor))
 
     let imageView = UIImageView(frame: CGRect(origin: CGPoint(x: randomX, y: randomY), size: scaledImageSize))

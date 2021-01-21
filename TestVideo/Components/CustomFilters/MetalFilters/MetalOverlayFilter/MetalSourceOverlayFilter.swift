@@ -1,7 +1,7 @@
 import UIKit
 
 extension CIImage {
-  func applyMetalSourceOverlayFilter(overlay: CIImage) -> CIImage {
+  func applyingMetalSourceOverlayFilter(overlay: CIImage) -> CIImage {
     return MetalSourceOverlayFilter(inputOverlay: overlay).filterImage(self) ?? self
   }
 }

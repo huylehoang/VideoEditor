@@ -1,7 +1,7 @@
 import UIKit
 import AVFoundation
 
-class PlayerToolbar: UIView {
+final class PlayerToolbar: UIView {
   private let asset: AVAsset
 
   var sliderChanged: ((CMTime) -> Void)?
@@ -121,21 +121,5 @@ private extension PlayerToolbar {
 
   @objc func thumbnailSliderChanged(_ sender: ThumbnaiSlider) {
     sliderChanged?(sender.time)
-  }
-}
-
-private extension CMTime {
-  // Convert seconds to hours:minutes:seconds format
-  var hoursMinutesSecondsFormatted: String {
-    guard numericOrZero != .zero else { return "00:00" }
-    let secondsRounded = Int(numericOrZero.seconds.rounded())
-    let format = "%02i"
-    let hours = secondsRounded / 3600
-    let minutes = (secondsRounded % 3600) / 60
-    let seconds = (secondsRounded % 3600) % 60
-    let hoursString = hours > 0 ? "\(String(format: format, hours)):" : ""
-    let minutesString = "\(String(format: format, minutes)):"
-    let secondsString = String(format: format, seconds)
-    return hoursString + minutesString + secondsString
   }
 }

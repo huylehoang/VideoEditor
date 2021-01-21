@@ -12,6 +12,8 @@
 		1062D234258E534500CCF343 /* FilterOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1062D233258E534400CCF343 /* FilterOptionsView.swift */; };
 		1062D238258E8B5200CCF343 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1062D237258E8B5200CCF343 /* HomeViewController.swift */; };
 		1070D70D258E8E7B00CCE304 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070D70C258E8E7B00CCE304 /* Utilites.swift */; };
+		841DBDFC259592B8005A3171 /* FilterSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841DBDFB259592B8005A3171 /* FilterSlider.swift */; };
+		841DBDFF25959528005A3171 /* TimeAndPositionTrackable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841DBDFE25959528005A3171 /* TimeAndPositionTrackable.swift */; };
 		842313BE2589BFB3008B3860 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842313BD2589BFB3008B3860 /* CustomSlider.swift */; };
 		842313C12589C1A7008B3860 /* PlayerToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842313C02589C1A7008B3860 /* PlayerToolbar.swift */; };
 		842313CD2589CD23008B3860 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842313CC2589CD23008B3860 /* Extensions.swift */; };
@@ -21,7 +23,11 @@
 		84499F8E2587228400041921 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84499F8D2587228400041921 /* Assets.xcassets */; };
 		84499F912587228400041921 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84499F8F2587228400041921 /* LaunchScreen.storyboard */; };
 		84499F9D2587231800041921 /* VideoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84499F9C2587231800041921 /* VideoEditorViewController.swift */; };
+		84581270259477E2002223E7 /* FilterControlPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458126F259477E2002223E7 /* FilterControlPresentationController.swift */; };
 		845A9909258B33BA005B81D0 /* ThumbnailSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A9908258B33BA005B81D0 /* ThumbnailSlider.swift */; };
+		8464CFDC2594452000798523 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464CFDB2594452000798523 /* Filter.swift */; };
+		8464CFEC2594476400798523 /* FilterControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464CFEB2594476400798523 /* FilterControlViewController.swift */; };
+		8464CFF02594480800798523 /* TimeRangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464CFEF2594480800798523 /* TimeRangeSlider.swift */; };
 		847D0C1F25909F26000689D2 /* MetalDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D0C1E25909F26000689D2 /* MetalDevice.swift */; };
 		847D0C2325909FC6000689D2 /* Filter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D0C2225909FC6000689D2 /* Filter+Extensions.swift */; };
 		84994D3D259054200020A3E7 /* KernelHDRZebraFilter.ci.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84994D3C259054200020A3E7 /* KernelHDRZebraFilter.ci.metal */; };
@@ -37,7 +43,7 @@
 		849F583825930335004477AD /* MetalThresholdFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849F583725930335004477AD /* MetalThresholdFilter.swift */; };
 		849F583C25930622004477AD /* MetalSourceOverlayFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 849F583B25930622004477AD /* MetalSourceOverlayFilter.metal */; };
 		849F584025930653004477AD /* MetalSourceOverlayFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849F583F25930653004477AD /* MetalSourceOverlayFilter.swift */; };
-		84BE888E25889EDE00F05BBE /* FilterSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE888D25889EDE00F05BBE /* FilterSlider.swift */; };
+		84BE888E25889EDE00F05BBE /* FilterOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE888D25889EDE00F05BBE /* FilterOption.swift */; };
 		84BE88912588ABAC00F05BBE /* ThumbnailTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE88902588ABAC00F05BBE /* ThumbnailTrack.swift */; };
 		84D236122590B241009FA2C6 /* MetalBrightnessFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84D236112590B241009FA2C6 /* MetalBrightnessFilter.metal */; };
 		84D236152590B272009FA2C6 /* MetalBrightnessFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D236142590B272009FA2C6 /* MetalBrightnessFilter.swift */; };
@@ -91,6 +97,8 @@
 		1062D233258E534400CCF343 /* FilterOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOptionsView.swift; sourceTree = "<group>"; };
 		1062D237258E8B5200CCF343 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1070D70C258E8E7B00CCE304 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
+		841DBDFB259592B8005A3171 /* FilterSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSlider.swift; sourceTree = "<group>"; };
+		841DBDFE25959528005A3171 /* TimeAndPositionTrackable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAndPositionTrackable.swift; sourceTree = "<group>"; };
 		842313BD2589BFB3008B3860 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		842313C02589C1A7008B3860 /* PlayerToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerToolbar.swift; sourceTree = "<group>"; };
 		842313CC2589CD23008B3860 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -102,7 +110,11 @@
 		84499F902587228400041921 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84499F922587228400041921 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84499F9C2587231800041921 /* VideoEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEditorViewController.swift; sourceTree = "<group>"; };
+		8458126F259477E2002223E7 /* FilterControlPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterControlPresentationController.swift; sourceTree = "<group>"; };
 		845A9908258B33BA005B81D0 /* ThumbnailSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailSlider.swift; sourceTree = "<group>"; };
+		8464CFDB2594452000798523 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		8464CFEB2594476400798523 /* FilterControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterControlViewController.swift; sourceTree = "<group>"; };
+		8464CFEF2594480800798523 /* TimeRangeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRangeSlider.swift; sourceTree = "<group>"; };
 		847D0C1E25909F26000689D2 /* MetalDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalDevice.swift; sourceTree = "<group>"; };
 		847D0C2225909FC6000689D2 /* Filter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Filter+Extensions.swift"; sourceTree = "<group>"; };
 		84994D3C259054200020A3E7 /* KernelHDRZebraFilter.ci.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = KernelHDRZebraFilter.ci.metal; sourceTree = "<group>"; };
@@ -118,7 +130,7 @@
 		849F583725930335004477AD /* MetalThresholdFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalThresholdFilter.swift; sourceTree = "<group>"; };
 		849F583B25930622004477AD /* MetalSourceOverlayFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MetalSourceOverlayFilter.metal; sourceTree = "<group>"; };
 		849F583F25930653004477AD /* MetalSourceOverlayFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalSourceOverlayFilter.swift; sourceTree = "<group>"; };
-		84BE888D25889EDE00F05BBE /* FilterSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSlider.swift; sourceTree = "<group>"; };
+		84BE888D25889EDE00F05BBE /* FilterOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOption.swift; sourceTree = "<group>"; };
 		84BE88902588ABAC00F05BBE /* ThumbnailTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailTrack.swift; sourceTree = "<group>"; };
 		84D236112590B241009FA2C6 /* MetalBrightnessFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MetalBrightnessFilter.metal; sourceTree = "<group>"; };
 		84D236142590B272009FA2C6 /* MetalBrightnessFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalBrightnessFilter.swift; sourceTree = "<group>"; };
@@ -156,30 +168,131 @@
 		84499F832587228100041921 /* TestVideo */ = {
 			isa = PBXGroup;
 			children = (
+				8464CFE92594462900798523 /* Components */,
+				8464CFD82594446F00798523 /* Ultilities */,
+				8464CFE22594457900798523 /* Scenes */,
 				84994D4B25905D540020A3E7 /* sample-mp4-file.mp4 */,
 				84499F842587228100041921 /* AppDelegate.swift */,
 				84499F862587228100041921 /* SceneDelegate.swift */,
 				84499F8D2587228400041921 /* Assets.xcassets */,
 				84499F8F2587228400041921 /* LaunchScreen.storyboard */,
 				84499F922587228400041921 /* Info.plist */,
-				1062D237258E8B5200CCF343 /* HomeViewController.swift */,
-				84499F9C2587231800041921 /* VideoEditorViewController.swift */,
-				1062D233258E534400CCF343 /* FilterOptionsView.swift */,
-				101770C42589485100848937 /* VideoCompositor.swift */,
-				101770C925894FC400848937 /* VideoExporter.swift */,
-				843E10A525889D8500997900 /* PlayerView.swift */,
-				84BE888D25889EDE00F05BBE /* FilterSlider.swift */,
-				842313BD2589BFB3008B3860 /* CustomSlider.swift */,
-				84BE88902588ABAC00F05BBE /* ThumbnailTrack.swift */,
-				845A9908258B33BA005B81D0 /* ThumbnailSlider.swift */,
-				842313C02589C1A7008B3860 /* PlayerToolbar.swift */,
-				84FE8AB4258A03C800E7D1C9 /* PlaybackController.swift */,
-				84FE8AB7258A0AF300E7D1C9 /* PlayerSeeker.swift */,
-				842313CC2589CD23008B3860 /* Extensions.swift */,
-				1070D70C258E8E7B00CCE304 /* Utilites.swift */,
-				84994D3A259052A00020A3E7 /* CustomFilters */,
 			);
 			path = TestVideo;
+			sourceTree = "<group>";
+		};
+		8464CFD82594446F00798523 /* Ultilities */ = {
+			isa = PBXGroup;
+			children = (
+				842313CC2589CD23008B3860 /* Extensions.swift */,
+				1070D70C258E8E7B00CCE304 /* Utilites.swift */,
+			);
+			path = Ultilities;
+			sourceTree = "<group>";
+		};
+		8464CFDA2594450100798523 /* FilterKinds */ = {
+			isa = PBXGroup;
+			children = (
+				8464CFDB2594452000798523 /* Filter.swift */,
+			);
+			path = FilterKinds;
+			sourceTree = "<group>";
+		};
+		8464CFE22594457900798523 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				8464CFE32594458400798523 /* Home */,
+				8464CFE42594458B00798523 /* VideoEditor */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		8464CFE32594458400798523 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				1062D237258E8B5200CCF343 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		8464CFE42594458B00798523 /* VideoEditor */ = {
+			isa = PBXGroup;
+			children = (
+				8464CFE5259445AE00798523 /* Components */,
+				84499F9C2587231800041921 /* VideoEditorViewController.swift */,
+			);
+			path = VideoEditor;
+			sourceTree = "<group>";
+		};
+		8464CFE5259445AE00798523 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				101770C925894FC400848937 /* VideoExporter.swift */,
+				101770C42589485100848937 /* VideoCompositor.swift */,
+				8464CFE82594461500798523 /* Views */,
+				8464CFE7259445C800798523 /* PlayerController */,
+				8464CFEA2594475100798523 /* AddFilterViewController */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		8464CFE6259445BB00798523 /* Thumbnail */ = {
+			isa = PBXGroup;
+			children = (
+				84BE88902588ABAC00F05BBE /* ThumbnailTrack.swift */,
+				845A9908258B33BA005B81D0 /* ThumbnailSlider.swift */,
+			);
+			path = Thumbnail;
+			sourceTree = "<group>";
+		};
+		8464CFE7259445C800798523 /* PlayerController */ = {
+			isa = PBXGroup;
+			children = (
+				84FE8AB4258A03C800E7D1C9 /* PlaybackController.swift */,
+				84FE8AB7258A0AF300E7D1C9 /* PlayerSeeker.swift */,
+			);
+			path = PlayerController;
+			sourceTree = "<group>";
+		};
+		8464CFE82594461500798523 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84F2A0272599D6CD00465310 /* FilterOptions */,
+				8464CFE6259445BB00798523 /* Thumbnail */,
+				843E10A525889D8500997900 /* PlayerView.swift */,
+				842313C02589C1A7008B3860 /* PlayerToolbar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8464CFE92594462900798523 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8464CFDA2594450100798523 /* FilterKinds */,
+				84994D3A259052A00020A3E7 /* CustomFilters */,
+				842313BD2589BFB3008B3860 /* CustomSlider.swift */,
+				841DBDFE25959528005A3171 /* TimeAndPositionTrackable.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		8464CFEA2594475100798523 /* AddFilterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8464CFEE259447EB00798523 /* Components */,
+				8464CFEB2594476400798523 /* FilterControlViewController.swift */,
+				8458126F259477E2002223E7 /* FilterControlPresentationController.swift */,
+			);
+			path = AddFilterViewController;
+			sourceTree = "<group>";
+		};
+		8464CFEE259447EB00798523 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				8464CFEF2594480800798523 /* TimeRangeSlider.swift */,
+				841DBDFB259592B8005A3171 /* FilterSlider.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		84994D3A259052A00020A3E7 /* CustomFilters */ = {
@@ -269,6 +382,15 @@
 			path = MetalBrightnessFilter;
 			sourceTree = "<group>";
 		};
+		84F2A0272599D6CD00465310 /* FilterOptions */ = {
+			isa = PBXGroup;
+			children = (
+				1062D233258E534400CCF343 /* FilterOptionsView.swift */,
+				84BE888D25889EDE00F05BBE /* FilterOption.swift */,
+			);
+			path = FilterOptions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -348,10 +470,13 @@
 				84994D3D259054200020A3E7 /* KernelHDRZebraFilter.ci.metal in Sources */,
 				847D0C1F25909F26000689D2 /* MetalDevice.swift in Sources */,
 				84499F852587228100041921 /* AppDelegate.swift in Sources */,
+				841DBDFF25959528005A3171 /* TimeAndPositionTrackable.swift in Sources */,
+				8464CFF02594480800798523 /* TimeRangeSlider.swift in Sources */,
 				845A9909258B33BA005B81D0 /* ThumbnailSlider.swift in Sources */,
 				849F582C2592FEAE004477AD /* MetalSaturationFilter.metal in Sources */,
 				84499F9D2587231800041921 /* VideoEditorViewController.swift in Sources */,
 				84994D45259057A20020A3E7 /* KernelThresholdFilter.ci.metal in Sources */,
+				8464CFEC2594476400798523 /* FilterControlViewController.swift in Sources */,
 				842313C12589C1A7008B3860 /* PlayerToolbar.swift in Sources */,
 				84BE88912588ABAC00F05BBE /* ThumbnailTrack.swift in Sources */,
 				847D0C2325909FC6000689D2 /* Filter+Extensions.swift in Sources */,
@@ -362,18 +487,21 @@
 				1062D238258E8B5200CCF343 /* HomeViewController.swift in Sources */,
 				1070D70D258E8E7B00CCE304 /* Utilites.swift in Sources */,
 				84D236122590B241009FA2C6 /* MetalBrightnessFilter.metal in Sources */,
+				8464CFDC2594452000798523 /* Filter.swift in Sources */,
 				849F583C25930622004477AD /* MetalSourceOverlayFilter.metal in Sources */,
 				849B63EA2590A3A700CFB6A9 /* MetalBaseFilter.swift in Sources */,
 				1062D234258E534500CCF343 /* FilterOptionsView.swift in Sources */,
 				101770CA25894FC400848937 /* VideoExporter.swift in Sources */,
+				84581270259477E2002223E7 /* FilterControlPresentationController.swift in Sources */,
 				849F584025930653004477AD /* MetalSourceOverlayFilter.swift in Sources */,
 				842313CD2589CD23008B3860 /* Extensions.swift in Sources */,
 				84994D4F25905EB00020A3E7 /* KernelBaseFilter.swift in Sources */,
 				849F58302592FF49004477AD /* MetalSaturationFilter.swift in Sources */,
-				84BE888E25889EDE00F05BBE /* FilterSlider.swift in Sources */,
+				84BE888E25889EDE00F05BBE /* FilterOption.swift in Sources */,
 				849F583825930335004477AD /* MetalThresholdFilter.swift in Sources */,
 				849F5834259300FF004477AD /* MetalThresholdFilter.metal in Sources */,
 				84994D41259055890020A3E7 /* KernelHDRZebraFilter.swift in Sources */,
+				841DBDFC259592B8005A3171 /* FilterSlider.swift in Sources */,
 				84D236152590B272009FA2C6 /* MetalBrightnessFilter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

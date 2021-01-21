@@ -1,8 +1,8 @@
 import UIKit
 import AVFoundation
 
-class FilterOptionsView: UIView {
-  typealias ValueChanged = (Double) -> Void
+final class FilterOptionsView: UIView {
+  typealias FilterTapped = (Int) -> Void
   typealias Tapped = () -> Void
 
   private let duration: Double
@@ -17,33 +17,20 @@ class FilterOptionsView: UIView {
     return view
   }()
 
-  private lazy var blurSlider: FilterSlider = {
-    let endBlurSeconds = Int((duration/2).rounded())
-    let title = "BLUR (0s -> \(endBlurSeconds)s)"
-    let slider = FilterSlider(title: title)
-    slider.minimumValue = 0
-    slider.maximumValue = 25
-    return slider
+  private lazy var blurOption: FilterOption = {
+    return makeFilterOption(title: "APPLY BLUR", tag: Filter.Kind.blur().tag)
   }()
 
-  private lazy var brightnessSlider: FilterSlider = {
-    let startBrightnessSeconds = Int((duration/2).rounded())
-    let endBrightnessSeconds = Int((duration * 5/6).rounded())
-    let title = "BRIGHTNESS (\(startBrightnessSeconds)s -> \(endBrightnessSeconds)s)"
-    let slider = FilterSlider(title: title)
-    slider.minimumValue = 0
-    slider.maximumValue = 0.5
-    return slider
+  private lazy var brightnessOption: FilterOption = {
+    return makeFilterOption(title: "APPLY BRIGHTNESS", tag: Filter.Kind.brightness().tag)
   }()
 
-  private lazy var saturationSlider: FilterSlider = {
-    let startSaturationSeconds = Int((duration * 2/3).rounded())
-    let endSaturationSeconds = Int((duration * 5/6).rounded())
-    let title = "SATURATION (\(startSaturationSeconds)s -> \(endSaturationSeconds)s)"
-    let slider = FilterSlider(title: title)
-    slider.minimumValue = 0
-    slider.maximumValue = 0.5
-    return slider
+  private lazy var saturationOption: FilterOption = {
+    return makeFilterOption(title: "APPLY SATURATION", tag: Filter.Kind.saturation().tag)
+  }()
+
+  private lazy var thresholdOption: FilterOption = {
+    return makeFilterOption(title: "APPLY THRESHOLD", tag: Filter.Kind.threshold().tag)
   }()
 
   private lazy var addStickerButtonContainer: UIView = {
@@ -56,9 +43,7 @@ class FilterOptionsView: UIView {
     return view
   }()
 
-  var blurChanged: ValueChanged?
-  var brightnessChanged: ValueChanged?
-  var saturationChanged: ValueChanged?
+  var filterTapped: FilterTapped?
   var addStickerTapped: Tapped?
   var backTapped: Tapped?
   var saveTapped: Tapped?
@@ -75,10 +60,27 @@ class FilterOptionsView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
 
-  func setupObserveValueChanged() {
-    blurSlider.valueChanged = blurChanged
-    brightnessSlider.valueChanged = brightnessChanged
-    saturationSlider.valueChanged = saturationChanged
+  func filterTimeRangeUpdated(filter: Filter) {
+    let timeRange: String = {
+      if filter.isAvailable {
+        return "\(filter.timeRange.from.hoursMinutesSecondsFormatted) -> \(filter.timeRange.to.hoursMinutesSecondsFormatted)"
+      } else {
+        return ""
+      }
+    }()
+
+    switch filter.kind {
+    case .blur:
+      blurOption.setTimeRange(timeRange)
+    case .brightness:
+      brightnessOption.setTimeRange(timeRange)
+    case .saturation:
+      saturationOption.setTimeRange(timeRange)
+    case .threshold:
+      thresholdOption.setTimeRange(timeRange)
+    default:
+      break
+    }
   }
 }
 
@@ -103,19 +105,20 @@ private extension FilterOptionsView {
   }
 
   func setupFiltersView() {
-    vStackView.addArrangedSubview(blurSlider)
-    vStackView.addArrangedSubview(brightnessSlider)
-    vStackView.addArrangedSubview(saturationSlider)
+    vStackView.addArrangedSubview(blurOption)
+    vStackView.addArrangedSubview(brightnessOption)
+    vStackView.addArrangedSubview(saturationOption)
+    vStackView.addArrangedSubview(thresholdOption)
     vStackView.addArrangedSubview(addStickerButtonContainer)
     let button = makeButton(title: "ADD RANDOM STICKER (DOUTAP FOR REMOVING)", tag: 0)
     button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
     addStickerButtonContainer.addSubview(button)
-    let buttonConstraints = [
+    let addStickersButtonContainerConstraints = [
       button.topAnchor.constraint(equalTo: addStickerButtonContainer.topAnchor),
       button.bottomAnchor.constraint(equalTo: addStickerButtonContainer.bottomAnchor),
-      button.trailingAnchor.constraint(equalTo: addStickerButtonContainer.trailingAnchor),
+      button.leadingAnchor.constraint(equalTo: addStickerButtonContainer.leadingAnchor),
     ]
-    NSLayoutConstraint.activate(buttonConstraints)
+    NSLayoutConstraint.activate(addStickersButtonContainerConstraints)
   }
 
   func setupBackAndExportButton() {
@@ -170,7 +173,17 @@ private extension FilterOptionsView {
     NSLayoutConstraint.activate(constraints)
   }
 
-  func makeButton(title: String, tag: Int = 0) -> UIButton {
+  func makeFilterOption(title: String, tag: Int) -> FilterOption {
+    let view = FilterOption(title: title)
+    view.tag = tag
+    let tapGesture = UITapGestureRecognizer(target: self, action: #selector(filterTapped(_:)))
+    tapGesture.numberOfTapsRequired = 1
+    view.isUserInteractionEnabled = true
+    view.addGestureRecognizer(tapGesture)
+    return view
+  }
+
+  func makeButton(title: String, tag: Int) -> UIButton {
     let button = UIButton()
     button.translatesAutoresizingMaskIntoConstraints = false
     button.tag = tag
@@ -186,17 +199,21 @@ private extension FilterOptionsView {
     view.backgroundColor = .clear
     return view
   }
+}
+
+// MARK: IBAction
+private extension FilterOptionsView {
+  @objc func filterTapped(_ sender: UITapGestureRecognizer) {
+    guard let view = sender.view else { return }
+    filterTapped?(view.tag)
+  }
 
   @objc func buttonTapped(_ sender: UIButton) {
     switch sender.tag {
-    case 0:
-      addStickerTapped?()
-    case 1:
-      backTapped?()
-    case 2:
-      saveTapped?()
-    default:
-      break
+    case 0: addStickerTapped?()
+    case 1: backTapped?()
+    case 2: saveTapped?()
+    default: break
     }
   }
 
@@ -208,16 +225,18 @@ private extension FilterOptionsView {
 
   func toggle() {
     // alpha
-    blurSlider.alpha = isExpanding ? 0 : 1
-    brightnessSlider.alpha = isExpanding ? 0 : 1
-    saturationSlider.alpha = isExpanding ? 0 : 1
+    blurOption.alpha = isExpanding ? 0 : 1
+    brightnessOption.alpha = isExpanding ? 0 : 1
+    saturationOption.alpha = isExpanding ? 0 : 1
+    thresholdOption.alpha = isExpanding ? 0 : 1
     addStickerButtonContainer.alpha = isExpanding ? 0 : 1
     backAndExportButtonContainer.alpha = isExpanding ? 1 : 0
 
     // isHidden
-    blurSlider.isHidden = isExpanding
-    brightnessSlider.isHidden = isExpanding
-    saturationSlider.isHidden = isExpanding
+    blurOption.isHidden = isExpanding
+    brightnessOption.isHidden = isExpanding
+    saturationOption.isHidden = isExpanding
+    thresholdOption.isHidden = isExpanding
     addStickerButtonContainer.isHidden = isExpanding
     backAndExportButtonContainer.isHidden = !isExpanding
   }

@@ -24,6 +24,13 @@ final class VideoEditorViewController: UIViewController {
     return view
   }()
 
+  private lazy var filterOptions: FilterOptionsView = {
+    let view = FilterOptionsView(duration: asset.duration.seconds)
+    view.translatesAutoresizingMaskIntoConstraints = false
+    view.layer.cornerRadius = 12
+    return view
+  }()
+
   private lazy var playerToolbar: PlayerToolbar = {
     let view = PlayerToolbar(asset: asset)
     view.translatesAutoresizingMaskIntoConstraints = false
@@ -32,7 +39,7 @@ final class VideoEditorViewController: UIViewController {
 
   init(videoUrl: URL) {
     asset = AVAsset(url: videoUrl)
-    videoCompositor = VideoCompositor(duration: asset.duration.seconds)
+    videoCompositor = VideoCompositor()
     playbackController = PlaybackController(
       asset: asset,
       playerItem: videoCompositor.makePlayerItemWithComposition(for: asset))
@@ -82,43 +89,31 @@ private extension VideoEditorViewController {
   }
 
   func setupFilterOptionsView() {
-    let filterOptionsView = FilterOptionsView(duration: asset.duration.seconds)
-    filterOptionsView.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(filterOptionsView)
-    filterOptionsView.layer.cornerRadius = 12
-    let filterOptionViewContraints = [
-      filterOptionsView.topAnchor.constraint(equalTo: view.topAnchor, constant: -12),
-      filterOptionsView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-      filterOptionsView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+    view.addSubview(filterOptions)
+    let filterOptionContraints = [
+      filterOptions.topAnchor.constraint(equalTo: view.topAnchor, constant: -12),
+      filterOptions.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      filterOptions.trailingAnchor.constraint(equalTo: view.trailingAnchor),
     ]
-    NSLayoutConstraint.activate(filterOptionViewContraints)
+    NSLayoutConstraint.activate(filterOptionContraints)
 
-    filterOptionsView.blurChanged = { [weak self] value in
-      self?.videoCompositor.updateBlur(value)
+    filterOptions.filterTapped = { [weak self] tag in
+      guard let self = self, let filter = self.videoCompositor.getFilter(by: tag) else { return }
+      self.showFilterControl(filter: filter)
     }
 
-    filterOptionsView.brightnessChanged = { [weak self] value in
-      self?.videoCompositor.updateBrightness(value)
-    }
-
-    filterOptionsView.saturationChanged = { [weak self] value in
-      self?.videoCompositor.updateSaturation(value)
-    }
-
-    filterOptionsView.addStickerTapped = { [weak self] in
+    filterOptions.addStickerTapped = { [weak self] in
       self?.playerView.addSticker()
     }
 
-    filterOptionsView.backTapped = { [weak self] in
+    filterOptions.backTapped = { [weak self] in
       self?.dismiss(animated: true)
     }
 
-    filterOptionsView.saveTapped = { [weak self] in
+    filterOptions.saveTapped = { [weak self] in
       guard let self = self else { return }
       self.saveVideoToAlbum()
     }
-    
-    filterOptionsView.setupObserveValueChanged()
   }
 
   func setupPlayerToolbar() {
@@ -149,6 +144,17 @@ private extension VideoEditorViewController {
     playerToolbar.playTrigger = { [weak self] in
       self?.playbackController.playOrPause()
     }
+  }
+
+  func showFilterControl(filter: Filter) {
+    let filterControl = FilterControlViewController(duration: asset.duration, filter: filter)
+    filterControl.updated = { [weak self] filter in
+      self?.videoCompositor.update(filter: filter)
+      DispatchQueue.main.async {
+        self?.filterOptions.filterTimeRangeUpdated(filter: filter)
+      }
+    }
+    present(filterControl, animated: true)
   }
 
   func saveVideoToAlbum() {

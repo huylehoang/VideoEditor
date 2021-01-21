@@ -2,7 +2,7 @@ import UIKit
 import AVFoundation
 
 /// Referene FrameGrabber github: https://github.com/arthurhammer/FrameGrabber
-class ThumbnailTrack: UIView {
+final class ThumbnailTrack: UIView, TimeAndPositionTrackable {
   private lazy var thumbnailStack: UIStackView = {
     let view = UIStackView()
     view.translatesAutoresizingMaskIntoConstraints = false
@@ -77,7 +77,7 @@ private extension ThumbnailTrack {
 
   func generateImages() {
     imageGenerator.cancelAllCGImageGeneration()
-    let times = thumbnailOffsets.map(time(for:)).map(NSValue.init)
+    let times = thumbnailOffsets.map(trackTime(for:)).map(NSValue.init)
     var index = -1
     imageGenerator.maximumSize = thumbnailViewSize.applying(.init(scaleX: scaleFactor, y: scaleFactor))
     imageGenerator.generateCGImagesAsynchronously(forTimes: times) {
@@ -95,7 +95,7 @@ private extension ThumbnailTrack {
 
 // MARK: - Private Static
 private extension ThumbnailTrack {
-  static private let timeTolerance = CMTime(seconds: 0.5, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
+  static let timeTolerance = CMTime(seconds: 0.5, preferredTimescale: CMTimeScale(NSEC_PER_SEC))
 
   static func makeImageGenerator(for asset: AVAsset) -> AVAssetImageGenerator {
     let generator = AVAssetImageGenerator(asset: asset)
@@ -108,27 +108,20 @@ private extension ThumbnailTrack {
 
 // MARK: - Factory Methods
 private extension ThumbnailTrack {
-  private var thumbnailViews: [ThumbnailImageView] {
+  var thumbnailViews: [ThumbnailImageView] {
     return thumbnailStack.arrangedSubviews as? [ThumbnailImageView] ?? []
   }
 
-  private var thumbnailOffsets: [CGFloat] {
+  var thumbnailOffsets: [CGFloat] {
     return thumbnailViews.map { thumbnailStack.convert($0.frame.origin, to: self).x }
   }
 
-  private var thumbnailViewSize: CGSize {
+  var thumbnailViewSize: CGSize {
     return thumbnailViews.first?.bounds.size ?? .zero
   }
 
-  func time(for trackPosition: CGFloat) -> CMTime {
-    let trackFrame = thumbnailStack.bounds
-    let range = trackFrame.maxX - trackFrame.minX
-    guard range != 0 else { return .zero }
-
-    let progress = (trackPosition - trackFrame.minX) / range
-    let time = CMTimeMultiplyByFloat64(duration, multiplier: Float64(progress))
-
-    return time.numericOrZero.clamped(to: .zero, and: duration)
+  func trackTime(for position: CGFloat) -> CMTime {
+    return trackTime(for: position, withDuration: duration)
   }
 }
 

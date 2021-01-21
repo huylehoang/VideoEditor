@@ -21,6 +21,15 @@ class PlaybackController {
   init(asset: AVAsset, playerItem: AVPlayerItem) {
     self.asset = asset
     player = AVPlayer(playerItem: playerItem)
+    // TODO: Remove later. This is just for listening to music while coding
+    // None of our videos should interrupt system music playback.
+    player.isMuted = true
+    do {
+      try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: .mixWithOthers)
+      try AVAudioSession.sharedInstance().setActive(true)
+    } catch {
+      print(error)
+    }
     seeker = PlayerSeeker(player: player)
     addObserver()
   }

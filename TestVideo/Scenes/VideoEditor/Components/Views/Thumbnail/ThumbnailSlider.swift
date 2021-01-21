@@ -2,7 +2,7 @@ import UIKit
 import AVFoundation
 
 /// Referene FrameGrabber github: https://github.com/arthurhammer/FrameGrabber
-class ThumbnaiSlider: UIControl {
+final class ThumbnaiSlider: UIControl, TimeAndPositionTrackable {
   private let asset: AVAsset
 
   private lazy var handle: UIView = {
@@ -11,7 +11,7 @@ class ThumbnaiSlider: UIControl {
     view.isUserInteractionEnabled = false
     view.layer.cornerRadius = 4
     view.layer.cornerCurve = .continuous
-    view.backgroundColor = UIColor.white
+    view.backgroundColor = .white
     return view
   }()
 
@@ -41,8 +41,6 @@ class ThumbnaiSlider: UIControl {
   private let resetAnimationDuration: TimeInterval = 0.1
   private let animationDuration: TimeInterval = 0.05
 
-  private let accessibilityIncrementPercentage = 0.05
-
   init(asset: AVAsset) {
     self.asset = asset
     super.init(frame: .zero)
@@ -64,7 +62,7 @@ class ThumbnaiSlider: UIControl {
   override public func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
     super.continueTracking(touch, with: event)
     let position = touch.location(in: self).x
-    time = time(for: position)
+    time = trackTime(for: position, withDuration: duration)
     sendActions(for: .valueChanged)
     return true
   }
@@ -83,7 +81,7 @@ class ThumbnaiSlider: UIControl {
 }
 
 private extension ThumbnaiSlider {
-  private var duration: CMTime {
+  var duration: CMTime {
     return asset.duration
   }
 
@@ -110,30 +108,6 @@ private extension ThumbnaiSlider {
   }
 
   func updateHandlePosition() {
-    handleLeading?.constant = trackPosition(for: time) - handleWidth/2
-  }
-
-  func trackPosition(for time: CMTime) -> CGFloat {
-    let trackFrame = track.frame
-
-    guard duration.seconds != .zero else { return trackFrame.minX }
-
-    let progress = time.seconds / duration.seconds
-    let range = trackFrame.maxX - trackFrame.minX
-    let position = trackFrame.minX + CGFloat(progress) * range
-
-    return position.clamped(to: trackFrame.minX, and: trackFrame.maxX)
-  }
-
-  func time(for trackPosition: CGFloat) -> CMTime {
-    let trackFrame = track.frame
-    let range = trackFrame.maxX - trackFrame.minX
-
-    guard range != 0 else { return .zero }
-
-    let progress = (trackPosition - trackFrame.minX) / range
-    let time = CMTimeMultiplyByFloat64(duration, multiplier: Float64(progress))
-
-    return time.numericOrZero.clamped(to: .zero, and: duration)
+    handleLeading?.constant = trackPosition(for: time, withDuration: duration) - handleWidth/2
   }
 }

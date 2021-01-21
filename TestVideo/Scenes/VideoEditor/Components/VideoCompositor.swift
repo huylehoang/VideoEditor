@@ -2,26 +2,34 @@ import UIKit
 import AVFoundation
 
 class VideoCompositor {
-  private let duration: Double
+  private(set) var blur = Filter(kind: .blur())
+  private(set) var brightness = Filter(kind: .brightness())
+  private(set) var saturation = Filter(kind: .saturation())
+  private(set) var threshold = Filter(kind: .threshold())
 
-  private var blur = 0.0
-  private var brightness = 0.0
-  private var saturation = 0.0
-
-  init(duration: Double) {
-    self.duration = duration
+  func getFilter(by tag: Int) -> Filter? {
+    switch tag {
+    case Filter.Kind.blur().tag: return blur
+    case Filter.Kind.brightness().tag: return brightness
+    case Filter.Kind.saturation().tag: return saturation
+    case Filter.Kind.threshold().tag: return threshold
+    default: return nil
+    }
   }
 
-  func updateBlur(_ blur: Double) {
-    self.blur = blur
-  }
-
-  func updateBrightness(_ brightness: Double) {
-    self.brightness = brightness
-  }
-
-  func updateSaturation(_ saturation: Double) {
-    self.saturation = saturation
+  func update(filter: Filter) {
+    switch filter.kind {
+    case .blur:
+      blur = filter
+    case .brightness:
+      brightness = filter
+    case .saturation:
+      saturation = filter
+    case .threshold:
+      threshold = filter
+    default:
+      break
+    }
   }
 
   func makePlayerItemWithComposition(for asset: AVAsset) -> AVPlayerItem {
@@ -60,21 +68,22 @@ private extension VideoCompositor {
     addStickersHandler: (StickerHandler)? = nil
   ) {
     var output = request.sourceImage
-    let time = request.compositionTime.seconds
+    let time = request.compositionTime
 
-    // Blur (currently hardcode the filter duration)
-    if blur != 0 && time >= 0 && time <= duration / 2 {
-      output = output.applyingGaussianBlur(sigma: blur).cropped(to: request.sourceImage.extent)
+    if blur.isAvailable(in: time) {
+      output = blur.applyingFilter(for: output)
     }
 
-    // Brightness (currently hardcode the filter duration)
-    if brightness != 0 && time > duration / 2 && time <= duration * 5/6 {
-      output = output.applyMetalBrightnessFilter(brightness: 0.5)
+    if brightness.isAvailable(in: time) {
+      output = brightness.applyingFilter(for: output)
     }
 
-    // Saturation (currently hardcode the filter duration)
-    if saturation != 0 && time >= duration * 2/3 && time <= duration * 5/6 {
-      output = output.applyMetalSaturationFilter(saturation: 0.5)
+    if saturation.isAvailable(in: time) {
+      output = saturation.applyingFilter(for: output)
+    }
+
+    if threshold.isAvailable(in: time) {
+      output = threshold.applyingFilter(for: output)
     }
 
     if let stickersOutput = addStickersHandler?(output) {
@@ -87,7 +96,7 @@ private extension VideoCompositor {
   func handleStickers(stickers: CIImage?) -> StickerHandler? {
     guard let stickers = stickers else { return nil }
     return { currentOutput in
-      return currentOutput.applyMetalSourceOverlayFilter(overlay: stickers)
+      return Filter.Kind.overlay(overlayImage: stickers).applyingFilter(for: currentOutput)
     }
   }
 }

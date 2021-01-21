@@ -1,7 +1,7 @@
 import UIKit
 
 extension CIImage {
-  func applyMetalThresholdFilter(threshold: Float) -> CIImage {
+  func applyingMetalThresholdFilter(threshold: Float) -> CIImage {
     return MetalThresholdFilter(threshold: threshold).filterImage(self) ?? self
   }
 }

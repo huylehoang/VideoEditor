@@ -1,7 +1,7 @@
 import UIKit
 
 extension CIImage {
-  func applyMetalSaturationFilter(saturation: Float) -> CIImage {
+  func applyingMetalSaturationFilter(saturation: Float) -> CIImage {
     return MetalSaturationFilter(saturation: saturation).filterImage(self) ?? self
   }
 }
