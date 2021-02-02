@@ -3,7 +3,7 @@ import AVFoundation
 
 /// Referene FrameGrabber github: https://github.com/arthurhammer/FrameGrabber
 final class ThumbnaiSlider: UIControl, TimeAndPositionTrackable {
-  private let asset: AVAsset
+  private var asset: AVAsset
 
   private lazy var handle: UIView = {
     let view = UIView()
@@ -49,6 +49,11 @@ final class ThumbnaiSlider: UIControl, TimeAndPositionTrackable {
 
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
+  }
+
+  func replaceCurrentAsset(with asset: AVAsset) {
+    self.asset = asset
+    track.replaceCurrentAsset(with: asset)
   }
 
   // MARK: - Tracking Touches

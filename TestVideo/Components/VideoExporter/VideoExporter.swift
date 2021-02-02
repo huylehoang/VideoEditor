@@ -6,7 +6,7 @@ class VideoExporter {
 
   func exportAndSaveToAlbum(
     asset: AVAsset,
-    videoComposition: AVVideoComposition,
+    videoComposition: AVVideoComposition? = nil,
     completion: @escaping (String?) -> Void
   ) {
     exportingSession?.cancelExport()

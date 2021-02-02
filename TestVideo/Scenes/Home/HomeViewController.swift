@@ -14,26 +14,50 @@ final class HomeViewController: UIViewController {
 
 private extension HomeViewController {
   func setupView() {
-    let button = UIButton()
-    button.translatesAutoresizingMaskIntoConstraints = false
-    button.setTitle("UPLOAD", for: .normal)
-    button.setTitleColor(.link, for: .normal)
-    button.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
-    button.addTarget(self, action: #selector(buttonDidTap(_:)), for: .touchUpInside)
-    view.addSubview(button)
-    let buttonContraints = [
-      button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-      button.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+    let loadVideoButton = UIButton()
+    loadVideoButton.translatesAutoresizingMaskIntoConstraints = false
+    loadVideoButton.setTitle("LOAD VIDEO", for: .normal)
+    loadVideoButton.setTitleColor(.link, for: .normal)
+    loadVideoButton.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
+    loadVideoButton.addTarget(self, action: #selector(loadVideoButtonDidTap(_:)), for: .touchUpInside)
+    view.addSubview(loadVideoButton)
+
+    let mergeVideosButton = UIButton()
+    mergeVideosButton.translatesAutoresizingMaskIntoConstraints = false
+    mergeVideosButton.setTitle("MERGE VIDEOS", for: .normal)
+    mergeVideosButton.setTitleColor(.link, for: .normal)
+    mergeVideosButton.titleLabel?.font = .systemFont(ofSize: 16, weight: .medium)
+    mergeVideosButton.addTarget(self, action: #selector(mergeVideoButtonDidtap(_:)), for: .touchUpInside)
+    view.addSubview(mergeVideosButton)
+
+    let constraints = [
+      loadVideoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      loadVideoButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+      mergeVideosButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+      mergeVideosButton.topAnchor.constraint(equalTo: loadVideoButton.bottomAnchor, constant: 24),
     ]
-    NSLayoutConstraint.activate(buttonContraints)
+    NSLayoutConstraint.activate(constraints)
   }
 
-  @objc func buttonDidTap(_ sender: UIButton) {
+  @objc func loadVideoButtonDidTap(_ sender: UIButton) {
     let imagePickerController = UIImagePickerController()
     imagePickerController.delegate = self
     imagePickerController.sourceType = .savedPhotosAlbum
     imagePickerController.mediaTypes = ["public.movie"]
     present(imagePickerController, animated: true)
+  }
+
+  @objc func mergeVideoButtonDidtap(_ sender: UIButton) {
+    guard
+      let url1 = Bundle.main.url(forResource: "cut1.mp4", withExtension: nil),
+      let url2 = Bundle.main.url(forResource: "cut2.mp4", withExtension: nil),
+      let url3 = Bundle.main.url(forResource: "cut3.mp4", withExtension: nil),
+      let url4 = Bundle.main.url(forResource: "sample-mp4-file.mp4", withExtension: nil)
+    else { return }
+    let multipleVideoTransition = MultipleVideoTranstionsViewController(urls: [url1, url4, url2, url3])
+    multipleVideoTransition.modalPresentationStyle = .fullScreen
+    multipleVideoTransition.isModalInPresentation = true
+    navigationController?.pushViewController(multipleVideoTransition, animated: true)
   }
 }
 
@@ -46,6 +70,7 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
     guard let videoUrl = info[.mediaURL] as? URL else { return }
     let videoEditorViewController = VideoEditorViewController(videoUrl: videoUrl)
     videoEditorViewController.modalPresentationStyle = .fullScreen
-    present(videoEditorViewController, animated: true)
+    videoEditorViewController.isModalInPresentation = true
+    navigationController?.pushViewController(videoEditorViewController, animated: true)
   }
 }

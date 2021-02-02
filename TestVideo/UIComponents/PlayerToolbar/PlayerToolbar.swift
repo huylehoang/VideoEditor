@@ -2,7 +2,7 @@ import UIKit
 import AVFoundation
 
 final class PlayerToolbar: UIView {
-  private let asset: AVAsset
+  private var asset: AVAsset
 
   var sliderChanged: ((CMTime) -> Void)?
   var playTrigger: (() -> Void)?
@@ -40,6 +40,13 @@ final class PlayerToolbar: UIView {
 
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
+  }
+
+  func replaceCurrentAsset(with asset: AVAsset) {
+    self.asset = asset
+    thumbnailSlider.replaceCurrentAsset(with: asset)
+    timeStartLabel.text = CMTime.zero.hoursMinutesSecondsFormatted
+    timeEndLabel.text = asset.duration.hoursMinutesSecondsFormatted
   }
 
   func setTime(_ time: CMTime) {

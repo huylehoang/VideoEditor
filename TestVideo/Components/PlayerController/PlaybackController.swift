@@ -19,6 +19,15 @@ class PlaybackController {
 
   init(playerItem: AVPlayerItem) {
     player = AVPlayer(playerItem: playerItem)
+    // TODO: Remove later
+    // None of our videos should interrupt system music playback.
+    player.isMuted = true
+    do {
+      try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: .mixWithOthers)
+      try AVAudioSession.sharedInstance().setActive(true)
+    } catch {
+      print(error)
+    }
     seeker = PlayerSeeker(player: player)
     addObserver()
   }
@@ -28,6 +37,15 @@ class PlaybackController {
       player.removeTimeObserver(currentTimeObserver)
     }
     isPlayingObserver?.invalidate()
+  }
+
+  func replaceCurrentItem(with playerItem: AVPlayerItem) {
+    if let currentTimeObserver = currentTimeObserver {
+      player.removeTimeObserver(currentTimeObserver)
+    }
+    isPlayingObserver?.invalidate()
+    player.replaceCurrentItem(with: playerItem)
+    addObserver()
   }
 
   func playOrPause() {
@@ -40,7 +58,6 @@ class PlaybackController {
 
   func play() {
     guard !isPlaying else { return }
-
     seekToStartIfNecessary()
     player.play()
   }

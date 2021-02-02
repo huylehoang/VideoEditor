@@ -13,8 +13,8 @@ final class ThumbnailTrack: UIView, TimeAndPositionTrackable {
     return view
   }()
 
-  private let imageGenerator: AVAssetImageGenerator
-  private let duration: CMTime
+  private var imageGenerator: AVAssetImageGenerator
+  private var duration: CMTime
   private let scaleFactor: CGFloat = 2
 
   init(asset: AVAsset) {
@@ -31,6 +31,13 @@ final class ThumbnailTrack: UIView, TimeAndPositionTrackable {
   override func layoutSubviews() {
     super.layoutSubviews()
     startGenerateImages()
+  }
+
+  func replaceCurrentAsset(with asset: AVAsset) {
+    imageGenerator = Self.makeImageGenerator(for: asset)
+    duration = asset.duration.numericOrZero
+    thumbnailStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
+    setNeedsLayout()
   }
 }
 
@@ -70,7 +77,6 @@ private extension ThumbnailTrack {
       imageView.clipsToBounds = true
       thumbnailStack.addArrangedSubview(imageView)
     }
-
     thumbnailStack.setNeedsLayout()
     thumbnailStack.layoutIfNeeded()
   }
