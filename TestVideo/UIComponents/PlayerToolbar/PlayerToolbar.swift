@@ -84,7 +84,7 @@ private extension PlayerToolbar {
 
     vStackView.addArrangedSubview(thumbnailSlider)
     let thumbnailTrackConstraints = [
-      thumbnailSlider.heightAnchor.constraint(equalToConstant: 58),
+      thumbnailSlider.heightAnchor.constraint(equalToConstant: 48),
     ]
 
     let timeContainer = UIView()

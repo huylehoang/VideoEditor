@@ -109,6 +109,7 @@ private extension MultipleVideoTranstionsViewController {
         guard let self = self else { return }
         self.asset = result.composition
         let playerItem = AVPlayerItem(asset: self.asset)
+        playerItem.videoComposition = result.videoComposition
 
         self.playbackController.smoothlySeek(to: .zero)
         self.playbackController.replaceCurrentItem(with: playerItem)

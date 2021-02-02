@@ -4,11 +4,20 @@ import AVFoundation
 class VideoTransition {
   typealias Completion = (Result) -> Void
 
+  //// The duration of the transition.
+  private var transitionDuration: CMTime = CMTimeMakeWithSeconds(2.0, preferredTimescale: 1000)
+
   /// The movie clips.
   private var clips: [AVAsset] = []
 
   /// The available time ranges for the movie clips.
   private var clipTimeRanges: [CMTimeRange] = []
+
+  /// The time range in which the clips should pass through.
+  private var passThroughTimeRanges: [CMTimeRange] = []
+
+  /// The transition time range for the clips.
+  private var transitionTimeRanges: [CMTimeRange] = []
 
   func merge(_ assets: [AVAsset], completion: @escaping Completion) throws {
     guard assets.count >= 2 else {
@@ -17,6 +26,8 @@ class VideoTransition {
 
     clips.removeAll()
     clipTimeRanges.removeAll()
+    passThroughTimeRanges.removeAll()
+    transitionTimeRanges.removeAll()
 
     /*
      Load Asset with keys: ["tracks", "duration", "composable"]
@@ -28,6 +39,13 @@ class VideoTransition {
       }
       semaphore.wait()
     }
+
+    /*
+     Create time ranges
+     */
+    let timeRange = CMTimeRangeMake(start: CMTime.zero, duration: CMTime.zero)
+    passThroughTimeRanges = Array(repeating: timeRange, count: clips.count)
+    transitionTimeRanges = Array(repeating: timeRange, count: clips.count)
 
     let videoTracks = self.clips[0].tracks(withMediaType: .video)
     let videoSize = videoTracks[0].naturalSize
@@ -41,7 +59,7 @@ class VideoTransition {
      Set up the video composition to cycle between "pass through A", "transition from A to B", "pass through B".
      */
     let videoComposition = AVMutableVideoComposition()
-    //    videoComposition.customVideoCompositorClass = MTVideoCompositor.self
+    videoComposition.customVideoCompositorClass = VideoCompositing.self
     videoComposition.frameDuration = CMTimeMake(value: 1, timescale: 30) // 30 fps.
     videoComposition.renderSize = videoSize
 
@@ -87,30 +105,58 @@ private extension VideoTransition {
     _ composition: AVMutableComposition,
     videoComposition: AVMutableVideoComposition
   ) {
-    let compositionVideoTracks = composition.addMutableTrack(
-      withMediaType: .video,
-      preferredTrackID: kCMPersistentTrackID_Invalid)!
+    let compositionVideoTracks = [
+      composition.addMutableTrack(
+        withMediaType: .video,
+        preferredTrackID: kCMPersistentTrackID_Invalid)!,
+      composition.addMutableTrack(
+        withMediaType: .video,
+        preferredTrackID: kCMPersistentTrackID_Invalid)!,
+    ]
 
-    let compositionAudioTracks = composition.addMutableTrack(
-      withMediaType: .audio,
-      preferredTrackID: kCMPersistentTrackID_Invalid)!
+    let compositionAudioTracks = [
+      composition.addMutableTrack(
+        withMediaType: .audio,
+        preferredTrackID: kCMPersistentTrackID_Invalid)!,
+      composition.addMutableTrack(
+        withMediaType: .audio,
+        preferredTrackID: kCMPersistentTrackID_Invalid)!,
+    ]
 
     buildComposition(
       composition,
-      compositionVideoTrack: compositionVideoTracks,
-      compositionAudioTrack: compositionAudioTracks)
+      compositionVideoTracks: compositionVideoTracks,
+      compositionAudioTracks: compositionAudioTracks)
+
+    let instructions = makeTransitionInstructions(
+      videoComposition: videoComposition,
+      compositionVideoTracks: compositionVideoTracks)
+    guard let newInstructions = instructions as? [AVVideoCompositionInstructionProtocol] else {
+      videoComposition.instructions = []
+      print("new instructions empty")
+      return
+    }
+    videoComposition.instructions = newInstructions
   }
 
   func buildComposition(
     _ composition: AVMutableComposition,
-    compositionVideoTrack: AVMutableCompositionTrack,
-    compositionAudioTrack: AVMutableCompositionTrack
+    compositionVideoTracks: [AVMutableCompositionTrack],
+    compositionAudioTracks: [AVMutableCompositionTrack]
   ) {
+    // Make transitionDuration no greater than half the shortest clip duration.
+    for timeRange in clipTimeRanges {
+      var halfClipDuration = timeRange.duration
+      // You can halve a rational by doubling its denominator.
+      halfClipDuration.timescale *= 2
+      transitionDuration = CMTimeMinimum(transitionDuration, halfClipDuration)
+    }
     let clipsCount = clips.count
+    var alternatingIndex = 0
     var nextClipStartTime = CMTime.zero
-    var hasAudio = false
 
     for index in 0 ..< clipsCount {
+      alternatingIndex = index % 2
       let asset = clips[index]
       var timeRangeInAsset: CMTimeRange
       if index < (clipTimeRanges.count - 1) {
@@ -120,38 +166,108 @@ private extension VideoTransition {
       }
 
       do {
-        if let clipVideoTrack = asset.tracks(withMediaType: .video).first {
-          try compositionVideoTrack.insertTimeRange(
-            timeRangeInAsset,
-            of: clipVideoTrack,
-            at: nextClipStartTime)
+        if let clipVideoTrack = asset.tracks(withMediaType: AVMediaType.video).first {
+          try compositionVideoTracks[alternatingIndex].insertTimeRange(timeRangeInAsset, of: clipVideoTrack, at: nextClipStartTime)
         } else {
           print("video track nil")
         }
 
-        if let clipAudioTrack = asset.tracks(withMediaType: .audio).first {
-          try compositionAudioTrack.insertTimeRange(
-            timeRangeInAsset,
-            of: clipAudioTrack,
-            at: nextClipStartTime)
-          hasAudio = true
+        if let clipAudioTrack = asset.tracks(withMediaType: AVMediaType.audio).first {
+          try compositionAudioTracks[alternatingIndex].insertTimeRange(timeRangeInAsset, of: clipAudioTrack, at: nextClipStartTime)
         } else {
+          /*
+           Remove audio track if not exists, otherwise it will cause export error:
+           Error Domain=AVFoundationErrorDomain Code=-11838
+           "Operation Stopped" UserInfo={NSLocalizedFailureReason=The operation is not supported for this media., NSLocalizedDescription=Operation Stopped, NSUnderlyingError=0x2808acde0 {Error Domain=NSOSStatusErrorDomain Code=-16976 "(null)"}}
+           */
+          composition.removeTrack(compositionAudioTracks[alternatingIndex])
           print("audio track nil")
         }
       } catch {
-        print("An error occurred inserting a time range of the source track into the video composition.")
+        print("An error occurred inserting a time range of the source track into the composition.")
       }
 
-      nextClipStartTime = CMTimeAdd(nextClipStartTime, timeRangeInAsset.duration)
-    }
-
-    if !hasAudio {
       /*
-      Remove audio track if not exists, otherwise it will cause export error:
-      Error Domain=AVFoundationErrorDomain Code=-11838
-      "Operation Stopped" UserInfo={NSLocalizedFailureReason=The operation is not supported for this media., NSLocalizedDescription=Operation Stopped, NSUnderlyingError=0x2808acde0 {Error Domain=NSOSStatusErrorDomain Code=-16976 "(null)"}}
-      */
-      composition.removeTrack(compositionAudioTrack)
+       Remember the time range in which this clip should pass through.
+       First clip ends with a transition.
+       Second clip begins with a transition.
+       Exclude that transition from the pass through time ranges.
+       */
+      passThroughTimeRanges[index] = CMTimeRangeMake(start: nextClipStartTime, duration: timeRangeInAsset.duration)
+      if index > 0 {
+        passThroughTimeRanges[index].start = CMTimeAdd(passThroughTimeRanges[index].start, transitionDuration)
+        passThroughTimeRanges[index].duration = CMTimeSubtract(passThroughTimeRanges[index].duration, transitionDuration)
+      }
+      if index + 1 < clipsCount {
+        passThroughTimeRanges[index].duration = CMTimeSubtract(passThroughTimeRanges[index].duration, transitionDuration)
+      }
+
+      /*
+       The end of this clip will overlap the start of the next by transitionDuration.
+       (Note: this arithmetic falls apart if timeRangeInAsset.duration < 2 * transitionDuration.)
+       */
+      nextClipStartTime = CMTimeAdd(nextClipStartTime, timeRangeInAsset.duration)
+      nextClipStartTime = CMTimeSubtract(nextClipStartTime, transitionDuration)
+
+      // Remember the time range for the transition to the next item.
+      if index + 1 < clipsCount {
+        transitionTimeRanges[index] = CMTimeRangeMake(start: nextClipStartTime, duration: transitionDuration)
+      }
     }
+  }
+
+  func makeTransitionInstructions(
+    videoComposition: AVMutableVideoComposition,
+    compositionVideoTracks: [AVMutableCompositionTrack]
+  ) -> [Any] {
+    var alternatingIndex = 0
+    var instructions = [Any]()
+
+    for index in 0 ..< clips.count {
+      alternatingIndex = index % 2
+      if videoComposition.customVideoCompositorClass != nil {
+        let trackID = compositionVideoTracks[alternatingIndex].trackID
+        let timeRange = passThroughTimeRanges[index]
+        let videoInstruction = VideoCompositionInstruction(
+          thePassthroughTrackID: trackID,
+          forTimeRange: timeRange)
+        instructions.append(videoInstruction)
+      } else {
+        // Pass through clip i.
+        let passThroughInstruction = AVMutableVideoCompositionInstruction()
+        passThroughInstruction.timeRange = passThroughTimeRanges[index]
+        let passThroughLayer = AVMutableVideoCompositionLayerInstruction(
+          assetTrack: compositionVideoTracks[alternatingIndex])
+        passThroughInstruction.layerInstructions = [passThroughLayer]
+        instructions.append(passThroughInstruction)
+      }
+
+      // Add transition from clip[i] to clip[i + 1]
+      if index + 1 < clips.count {
+        if videoComposition.customVideoCompositorClass != nil {
+          let trackIDs: [NSNumber] = [
+            NSNumber(value: compositionVideoTracks[0].trackID),
+            NSNumber(value: compositionVideoTracks[1].trackID)
+          ]
+          let timeRange = transitionTimeRanges[index]
+          let videoInstruction = VideoCompositionInstruction(theSourceTrackIDs: trackIDs, forTimeRange: timeRange)
+          // First track -> Foreground track while compositing.
+          videoInstruction.foregroundTrackID = compositionVideoTracks[alternatingIndex].trackID
+          // Second track -> Background track while compositing.
+          videoInstruction.backgroundTrackID = compositionVideoTracks[1 - alternatingIndex].trackID
+          instructions.append(videoInstruction)
+        } else {
+          let transitionInstruction = AVMutableVideoCompositionInstruction()
+          transitionInstruction.timeRange = transitionTimeRanges[index]
+          let fromLayer = AVMutableVideoCompositionLayerInstruction(
+              assetTrack: compositionVideoTracks[alternatingIndex])
+          let toLayer = AVMutableVideoCompositionLayerInstruction(
+            assetTrack:compositionVideoTracks[1 - alternatingIndex])
+          transitionInstruction.layerInstructions = [fromLayer, toLayer]
+          instructions.append(transitionInstruction)
+        }
+      }
+    }
+    return instructions
   }
 }
