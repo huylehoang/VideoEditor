@@ -51,12 +51,10 @@ private extension HomeViewController {
     guard
       let url1 = Bundle.main.url(forResource: "cut1.mp4", withExtension: nil),
       let url2 = Bundle.main.url(forResource: "cut2.mp4", withExtension: nil),
-      let url3 = Bundle.main.url(forResource: "cut3.mp4", withExtension: nil),
-      let url4 = Bundle.main.url(forResource: "sample-mp4-file.mp4", withExtension: nil)
+      let url3 = Bundle.main.url(forResource: "cut3.mp4", withExtension: nil)
     else { return }
-    let multipleVideoTransition = MultipleVideoTranstionsViewController(urls: [url1, url4, url2, url3])
+    let multipleVideoTransition = MultipleVideoTranstionsViewController(urls: [url1, url2, url3])
     multipleVideoTransition.modalPresentationStyle = .fullScreen
-    multipleVideoTransition.isModalInPresentation = true
     navigationController?.pushViewController(multipleVideoTransition, animated: true)
   }
 }
@@ -70,7 +68,6 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
     guard let videoUrl = info[.mediaURL] as? URL else { return }
     let videoEditorViewController = VideoEditorViewController(videoUrl: videoUrl)
     videoEditorViewController.modalPresentationStyle = .fullScreen
-    videoEditorViewController.isModalInPresentation = true
     navigationController?.pushViewController(videoEditorViewController, animated: true)
   }
 }
