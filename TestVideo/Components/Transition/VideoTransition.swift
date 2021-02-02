@@ -87,29 +87,24 @@ private extension VideoTransition {
     _ composition: AVMutableComposition,
     videoComposition: AVMutableVideoComposition
   ) {
-    // Add two video tracks and two audio tracks.
-    var compositionVideoTracks = [
-      composition.addMutableTrack(
-        withMediaType: .video,
-        preferredTrackID: kCMPersistentTrackID_Invalid)!
-    ]
+    let compositionVideoTracks = composition.addMutableTrack(
+      withMediaType: .video,
+      preferredTrackID: kCMPersistentTrackID_Invalid)!
 
-    var compositionAudioTracks = [
-      composition.addMutableTrack(
-        withMediaType: .audio,
-        preferredTrackID: kCMPersistentTrackID_Invalid)!
-    ]
+    let compositionAudioTracks = composition.addMutableTrack(
+      withMediaType: .audio,
+      preferredTrackID: kCMPersistentTrackID_Invalid)!
 
     buildComposition(
       composition,
-      compositionVideoTracks: &compositionVideoTracks,
-      compositionAudioTracks: &compositionAudioTracks)
+      compositionVideoTrack: compositionVideoTracks,
+      compositionAudioTrack: compositionAudioTracks)
   }
 
   func buildComposition(
     _ composition: AVMutableComposition,
-    compositionVideoTracks: inout [AVMutableCompositionTrack],
-    compositionAudioTracks: inout [AVMutableCompositionTrack]
+    compositionVideoTrack: AVMutableCompositionTrack,
+    compositionAudioTrack: AVMutableCompositionTrack
   ) {
     let clipsCount = clips.count
     var nextClipStartTime = CMTime.zero
@@ -126,7 +121,7 @@ private extension VideoTransition {
 
       do {
         if let clipVideoTrack = asset.tracks(withMediaType: .video).first {
-          try compositionVideoTracks[0].insertTimeRange(
+          try compositionVideoTrack.insertTimeRange(
             timeRangeInAsset,
             of: clipVideoTrack,
             at: nextClipStartTime)
@@ -135,7 +130,7 @@ private extension VideoTransition {
         }
 
         if let clipAudioTrack = asset.tracks(withMediaType: .audio).first {
-          try compositionAudioTracks[0].insertTimeRange(
+          try compositionAudioTrack.insertTimeRange(
             timeRangeInAsset,
             of: clipAudioTrack,
             at: nextClipStartTime)
@@ -156,7 +151,7 @@ private extension VideoTransition {
       Error Domain=AVFoundationErrorDomain Code=-11838
       "Operation Stopped" UserInfo={NSLocalizedFailureReason=The operation is not supported for this media., NSLocalizedDescription=Operation Stopped, NSUnderlyingError=0x2808acde0 {Error Domain=NSOSStatusErrorDomain Code=-16976 "(null)"}}
       */
-      composition.removeTrack(compositionAudioTracks[0])
+      composition.removeTrack(compositionAudioTrack)
     }
   }
 }
