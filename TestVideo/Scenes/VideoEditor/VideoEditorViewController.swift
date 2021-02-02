@@ -40,9 +40,7 @@ final class VideoEditorViewController: UIViewController {
   init(videoUrl: URL) {
     asset = AVAsset(url: videoUrl)
     videoCompositor = VideoCompositor()
-    playbackController = PlaybackController(
-      asset: asset,
-      playerItem: videoCompositor.makePlayerItemWithComposition(for: asset))
+    playbackController = PlaybackController(playerItem: videoCompositor.makePlayerItemWithComposition(for: asset))
     videoExporter = VideoExporter()
     super.init(nibName: nil, bundle: nil)
   }

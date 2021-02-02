@@ -2,7 +2,6 @@ import AVFoundation
 
 /// Referene FrameGrabber github: https://github.com/arthurhammer/FrameGrabber
 class PlaybackController {
-  private let asset: AVAsset
   private let seeker: PlayerSeeker
 
   let player: AVPlayer
@@ -18,18 +17,8 @@ class PlaybackController {
   private var currentTimeObserver: Any?
   private var isPlayingObserver: NSKeyValueObservation?
 
-  init(asset: AVAsset, playerItem: AVPlayerItem) {
-    self.asset = asset
+  init(playerItem: AVPlayerItem) {
     player = AVPlayer(playerItem: playerItem)
-    // TODO: Remove later. This is just for listening to music while coding
-    // None of our videos should interrupt system music playback.
-    player.isMuted = true
-    do {
-      try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: .mixWithOthers)
-      try AVAudioSession.sharedInstance().setActive(true)
-    } catch {
-      print(error)
-    }
     seeker = PlayerSeeker(player: player)
     addObserver()
   }
