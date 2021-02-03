@@ -2,7 +2,7 @@ import UIKit
 import AVFoundation
 
 /// Referene FrameGrabber github: https://github.com/arthurhammer/FrameGrabber
-final class ThumbnaiSlider: UIControl, TimeAndPositionTrackable {
+final class ThumbnaiSlider: UIControl {
   private var asset: AVAsset
 
   private lazy var handle: UIView = {
@@ -67,7 +67,7 @@ final class ThumbnaiSlider: UIControl, TimeAndPositionTrackable {
   override public func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
     super.continueTracking(touch, with: event)
     let position = touch.location(in: self).x
-    time = trackTime(for: position, withDuration: duration)
+    time = UIControlHelper.trackTime(inView: self, for: position, withDuration: duration)
     sendActions(for: .valueChanged)
     return true
   }
@@ -113,6 +113,6 @@ private extension ThumbnaiSlider {
   }
 
   func updateHandlePosition() {
-    handleLeading?.constant = trackPosition(for: time, withDuration: duration) - handleWidth/2
+    handleLeading?.constant = UIControlHelper.trackPosition(inView: self, for: time, withDuration: duration) - handleWidth/2
   }
 }

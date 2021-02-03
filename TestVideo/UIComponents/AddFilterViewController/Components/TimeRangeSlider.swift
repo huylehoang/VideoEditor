@@ -1,7 +1,7 @@
 import UIKit
 import AVFoundation
 
-final class TimeRangeSlider: UIControl, TimeAndPositionTrackable {
+final class TimeRangeSlider: UIControl {
   enum TrackingThumb {
     case lower, upper, none
   }
@@ -91,7 +91,7 @@ final class TimeRangeSlider: UIControl, TimeAndPositionTrackable {
 
   override func continueTracking(_ touch: UITouch, with event: UIEvent?) -> Bool {
     let position = touch.location(in: self).x
-    let newTime = trackTime(for: position, withDuration: duration)
+    let newTime = UIControlHelper.trackTime(inView: self, for: position, withDuration: duration)
     switch trackingThumb {
     case .lower:
       return updateFromTime(newTime: newTime)
@@ -215,12 +215,12 @@ private extension TimeRangeSlider {
   }
 
   func updateLowerThumbPosition() {
-    lowerThumbLeading?.constant = trackPosition(for: from, withDuration: duration)
+    lowerThumbLeading?.constant = UIControlHelper.trackPosition(inView: self, for: from, withDuration: duration)
     fromTimeLabel.text = from.hoursMinutesSecondsFormatted
   }
 
   func updateUpperThumbPosision() {
-    upperThumbTrailing?.constant = -(frame.width - trackPosition(for: to, withDuration: duration))
+    upperThumbTrailing?.constant = -(frame.width - UIControlHelper.trackPosition(inView: self,for: to, withDuration: duration))
     toTimeLabel.text = to.hoursMinutesSecondsFormatted
   }
 

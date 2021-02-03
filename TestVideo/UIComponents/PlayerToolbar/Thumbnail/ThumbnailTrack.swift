@@ -2,7 +2,7 @@ import UIKit
 import AVFoundation
 
 /// Referene FrameGrabber github: https://github.com/arthurhammer/FrameGrabber
-final class ThumbnailTrack: UIView, TimeAndPositionTrackable {
+final class ThumbnailTrack: UIView {
   private lazy var thumbnailStack: UIStackView = {
     let view = UIStackView()
     view.translatesAutoresizingMaskIntoConstraints = false
@@ -127,7 +127,7 @@ private extension ThumbnailTrack {
   }
 
   func trackTime(for position: CGFloat) -> CMTime {
-    return trackTime(for: position, withDuration: duration)
+    return UIControlHelper.trackTime(inView: self, for: position, withDuration: duration)
   }
 }
 
