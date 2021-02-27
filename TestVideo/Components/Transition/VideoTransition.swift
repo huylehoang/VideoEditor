@@ -59,7 +59,7 @@ class VideoTransition {
      Set up the video composition to cycle between "pass through A", "transition from A to B", "pass through B".
      */
     let videoComposition = AVMutableVideoComposition()
-    videoComposition.customVideoCompositorClass = VideoCompositing.self
+    videoComposition.customVideoCompositorClass = Compositor.self
     videoComposition.frameDuration = CMTimeMake(value: 1, timescale: 30) // 30 fps.
     videoComposition.renderSize = videoSize
 
@@ -228,7 +228,7 @@ private extension VideoTransition {
       if videoComposition.customVideoCompositorClass != nil {
         let trackID = compositionVideoTracks[alternatingIndex].trackID
         let timeRange = passThroughTimeRanges[index]
-        let videoInstruction = VideoCompositionInstruction(
+        let videoInstruction = CompositionInstruction(
           thePassthroughTrackID: trackID,
           forTimeRange: timeRange)
         instructions.append(videoInstruction)
@@ -250,7 +250,8 @@ private extension VideoTransition {
             NSNumber(value: compositionVideoTracks[1].trackID)
           ]
           let timeRange = transitionTimeRanges[index]
-          let videoInstruction = VideoCompositionInstruction(theSourceTrackIDs: trackIDs, forTimeRange: timeRange)
+          let videoInstruction = CompositionInstruction(theSourceTrackIDs: trackIDs, forTimeRange: timeRange)
+          videoInstruction.effect = .normal
           // First track -> Foreground track while compositing.
           videoInstruction.foregroundTrackID = compositionVideoTracks[alternatingIndex].trackID
           // Second track -> Background track while compositing.

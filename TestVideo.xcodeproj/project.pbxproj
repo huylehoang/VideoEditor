@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1002729D25EA5993001347CE /* VideoTransition+BaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1002729C25EA5993001347CE /* VideoTransition+BaseTransition.swift */; };
+		100272A125EA8E83001347CE /* NormalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100272A025EA8E83001347CE /* NormalTransition.swift */; };
+		100272A425EA913E001347CE /* VideoTransition+Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100272A325EA913E001347CE /* VideoTransition+Renderer.swift */; };
+		100272A725EA9258001347CE /* VideoTransition+Effect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100272A625EA9258001347CE /* VideoTransition+Effect.swift */; };
 		101770C52589485100848937 /* VideoCompositor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101770C42589485100848937 /* VideoCompositor.swift */; };
 		101770CA25894FC400848937 /* VideoExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101770C925894FC400848937 /* VideoExporter.swift */; };
 		1062D234258E534500CCF343 /* FilterOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1062D233258E534400CCF343 /* FilterOptionsView.swift */; };
@@ -19,8 +23,8 @@
 		8413DA7325C9345C00FCE1D8 /* cut3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8413DA7025C9345C00FCE1D8 /* cut3.mp4 */; };
 		8413DA7425C9345C00FCE1D8 /* cut2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8413DA7125C9345C00FCE1D8 /* cut2.mp4 */; };
 		8413DA7525C9345C00FCE1D8 /* cut1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 8413DA7225C9345C00FCE1D8 /* cut1.mp4 */; };
-		8413DA8425C9564A00FCE1D8 /* VideoCompositionInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413DA8325C9564A00FCE1D8 /* VideoCompositionInstruction.swift */; };
-		8413DA8725C957F300FCE1D8 /* VIdeoCompositing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413DA8625C957F300FCE1D8 /* VIdeoCompositing.swift */; };
+		8413DA8425C9564A00FCE1D8 /* VideoTransition+CompositionInstruction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413DA8325C9564A00FCE1D8 /* VideoTransition+CompositionInstruction.swift */; };
+		8413DA8725C957F300FCE1D8 /* VIdeoTransition+Compositor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413DA8625C957F300FCE1D8 /* VIdeoTransition+Compositor.swift */; };
 		841DBDFC259592B8005A3171 /* FilterSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841DBDFB259592B8005A3171 /* FilterSlider.swift */; };
 		842313BE2589BFB3008B3860 /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842313BD2589BFB3008B3860 /* CustomSlider.swift */; };
 		842313C12589C1A7008B3860 /* PlayerToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842313C02589C1A7008B3860 /* PlayerToolbar.swift */; };
@@ -38,12 +42,7 @@
 		8464CFF02594480800798523 /* TimeRangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464CFEF2594480800798523 /* TimeRangeSlider.swift */; };
 		847D0C1F25909F26000689D2 /* MetalDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D0C1E25909F26000689D2 /* MetalDevice.swift */; };
 		847D0C2325909FC6000689D2 /* Filter+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D0C2225909FC6000689D2 /* Filter+Extensions.swift */; };
-		84994D3D259054200020A3E7 /* KernelHDRZebraFilter.ci.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84994D3C259054200020A3E7 /* KernelHDRZebraFilter.ci.metal */; };
-		84994D41259055890020A3E7 /* KernelHDRZebraFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84994D40259055890020A3E7 /* KernelHDRZebraFilter.swift */; };
-		84994D45259057A20020A3E7 /* KernelThresholdFilter.ci.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84994D44259057A20020A3E7 /* KernelThresholdFilter.ci.metal */; };
-		84994D482590589B0020A3E7 /* KernelThresholdFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84994D472590589B0020A3E7 /* KernelThresholdFilter.swift */; };
 		84994D4C25905D550020A3E7 /* sample-mp4-file.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 84994D4B25905D540020A3E7 /* sample-mp4-file.mp4 */; };
-		84994D4F25905EB00020A3E7 /* KernelBaseFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84994D4E25905EB00020A3E7 /* KernelBaseFilter.swift */; };
 		849B63EA2590A3A700CFB6A9 /* MetalBaseFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849B63E92590A3A700CFB6A9 /* MetalBaseFilter.swift */; };
 		849F582C2592FEAE004477AD /* MetalSaturationFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 849F582B2592FEAE004477AD /* MetalSaturationFilter.metal */; };
 		849F58302592FF49004477AD /* MetalSaturationFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849F582F2592FF49004477AD /* MetalSaturationFilter.swift */; };
@@ -101,6 +100,10 @@
 /* End PBXBuildRule section */
 
 /* Begin PBXFileReference section */
+		1002729C25EA5993001347CE /* VideoTransition+BaseTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoTransition+BaseTransition.swift"; sourceTree = "<group>"; };
+		100272A025EA8E83001347CE /* NormalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalTransition.swift; sourceTree = "<group>"; };
+		100272A325EA913E001347CE /* VideoTransition+Renderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoTransition+Renderer.swift"; sourceTree = "<group>"; };
+		100272A625EA9258001347CE /* VideoTransition+Effect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoTransition+Effect.swift"; sourceTree = "<group>"; };
 		101770C42589485100848937 /* VideoCompositor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCompositor.swift; sourceTree = "<group>"; };
 		101770C925894FC400848937 /* VideoExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoExporter.swift; sourceTree = "<group>"; };
 		1062D233258E534400CCF343 /* FilterOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOptionsView.swift; sourceTree = "<group>"; };
@@ -113,8 +116,8 @@
 		8413DA7025C9345C00FCE1D8 /* cut3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cut3.mp4; sourceTree = "<group>"; };
 		8413DA7125C9345C00FCE1D8 /* cut2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cut2.mp4; sourceTree = "<group>"; };
 		8413DA7225C9345C00FCE1D8 /* cut1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cut1.mp4; sourceTree = "<group>"; };
-		8413DA8325C9564A00FCE1D8 /* VideoCompositionInstruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCompositionInstruction.swift; sourceTree = "<group>"; };
-		8413DA8625C957F300FCE1D8 /* VIdeoCompositing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VIdeoCompositing.swift; sourceTree = "<group>"; };
+		8413DA8325C9564A00FCE1D8 /* VideoTransition+CompositionInstruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoTransition+CompositionInstruction.swift"; sourceTree = "<group>"; };
+		8413DA8625C957F300FCE1D8 /* VIdeoTransition+Compositor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VIdeoTransition+Compositor.swift"; sourceTree = "<group>"; };
 		841DBDFB259592B8005A3171 /* FilterSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSlider.swift; sourceTree = "<group>"; };
 		842313BD2589BFB3008B3860 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		842313C02589C1A7008B3860 /* PlayerToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerToolbar.swift; sourceTree = "<group>"; };
@@ -134,12 +137,7 @@
 		8464CFEF2594480800798523 /* TimeRangeSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeRangeSlider.swift; sourceTree = "<group>"; };
 		847D0C1E25909F26000689D2 /* MetalDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalDevice.swift; sourceTree = "<group>"; };
 		847D0C2225909FC6000689D2 /* Filter+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Filter+Extensions.swift"; sourceTree = "<group>"; };
-		84994D3C259054200020A3E7 /* KernelHDRZebraFilter.ci.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = KernelHDRZebraFilter.ci.metal; sourceTree = "<group>"; };
-		84994D40259055890020A3E7 /* KernelHDRZebraFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KernelHDRZebraFilter.swift; sourceTree = "<group>"; };
-		84994D44259057A20020A3E7 /* KernelThresholdFilter.ci.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = KernelThresholdFilter.ci.metal; sourceTree = "<group>"; };
-		84994D472590589B0020A3E7 /* KernelThresholdFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KernelThresholdFilter.swift; sourceTree = "<group>"; };
 		84994D4B25905D540020A3E7 /* sample-mp4-file.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "sample-mp4-file.mp4"; sourceTree = "<group>"; };
-		84994D4E25905EB00020A3E7 /* KernelBaseFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KernelBaseFilter.swift; sourceTree = "<group>"; };
 		849B63E92590A3A700CFB6A9 /* MetalBaseFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalBaseFilter.swift; sourceTree = "<group>"; };
 		849F582B2592FEAE004477AD /* MetalSaturationFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MetalSaturationFilter.metal; sourceTree = "<group>"; };
 		849F582F2592FF49004477AD /* MetalSaturationFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalSaturationFilter.swift; sourceTree = "<group>"; };
@@ -167,6 +165,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1002729F25EA8E05001347CE /* Effects */ = {
+			isa = PBXGroup;
+			children = (
+				104904C025EA99F7008367C2 /* Normal */,
+			);
+			path = Effects;
+			sourceTree = "<group>";
+		};
+		104904C025EA99F7008367C2 /* Normal */ = {
+			isa = PBXGroup;
+			children = (
+				100272A025EA8E83001347CE /* NormalTransition.swift */,
+			);
+			path = Normal;
+			sourceTree = "<group>";
+		};
 		8413DA5D25C90AED00FCE1D8 /* MultipleVideoTranstitions */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,8 +195,12 @@
 				8413DA6225C90B9C00FCE1D8 /* VideoTransition.swift */,
 				8413DA6825C9130D00FCE1D8 /* VideoTransition+Result.swift */,
 				8413DA6525C90DDD00FCE1D8 /* VideoTransition+Error.swift */,
-				8413DA8325C9564A00FCE1D8 /* VideoCompositionInstruction.swift */,
-				8413DA8625C957F300FCE1D8 /* VIdeoCompositing.swift */,
+				8413DA8325C9564A00FCE1D8 /* VideoTransition+CompositionInstruction.swift */,
+				8413DA8625C957F300FCE1D8 /* VIdeoTransition+Compositor.swift */,
+				100272A325EA913E001347CE /* VideoTransition+Renderer.swift */,
+				1002729C25EA5993001347CE /* VideoTransition+BaseTransition.swift */,
+				100272A625EA9258001347CE /* VideoTransition+Effect.swift */,
+				1002729F25EA8E05001347CE /* Effects */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -374,37 +392,8 @@
 			isa = PBXGroup;
 			children = (
 				849B63EF2590B13200CFB6A9 /* MetalFilters */,
-				849B63ED2590B0E000CFB6A9 /* KernelFilters */,
 			);
 			path = CustomFilters;
-			sourceTree = "<group>";
-		};
-		84994D3B259053D10020A3E7 /* KernelHDRZebraFilter */ = {
-			isa = PBXGroup;
-			children = (
-				84994D3C259054200020A3E7 /* KernelHDRZebraFilter.ci.metal */,
-				84994D40259055890020A3E7 /* KernelHDRZebraFilter.swift */,
-			);
-			path = KernelHDRZebraFilter;
-			sourceTree = "<group>";
-		};
-		84994D43259057240020A3E7 /* KernelThresholdFilter */ = {
-			isa = PBXGroup;
-			children = (
-				84994D44259057A20020A3E7 /* KernelThresholdFilter.ci.metal */,
-				84994D472590589B0020A3E7 /* KernelThresholdFilter.swift */,
-			);
-			path = KernelThresholdFilter;
-			sourceTree = "<group>";
-		};
-		849B63ED2590B0E000CFB6A9 /* KernelFilters */ = {
-			isa = PBXGroup;
-			children = (
-				84994D4E25905EB00020A3E7 /* KernelBaseFilter.swift */,
-				84994D43259057240020A3E7 /* KernelThresholdFilter */,
-				84994D3B259053D10020A3E7 /* KernelHDRZebraFilter */,
-			);
-			path = KernelFilters;
 			sourceTree = "<group>";
 		};
 		849B63EF2590B13200CFB6A9 /* MetalFilters */ = {
@@ -542,20 +531,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84994D482590589B0020A3E7 /* KernelThresholdFilter.swift in Sources */,
 				84FD017C25CA52B600968ED6 /* UIControlHelper.swift in Sources */,
 				101770C52589485100848937 /* VideoCompositor.swift in Sources */,
 				842313BE2589BFB3008B3860 /* CustomSlider.swift in Sources */,
-				84994D3D259054200020A3E7 /* KernelHDRZebraFilter.ci.metal in Sources */,
-				8413DA8725C957F300FCE1D8 /* VIdeoCompositing.swift in Sources */,
+				8413DA8725C957F300FCE1D8 /* VIdeoTransition+Compositor.swift in Sources */,
 				847D0C1F25909F26000689D2 /* MetalDevice.swift in Sources */,
 				8413DA5F25C90B1300FCE1D8 /* MultipleVideoTranstionsViewController.swift in Sources */,
 				84499F852587228100041921 /* AppDelegate.swift in Sources */,
 				8464CFF02594480800798523 /* TimeRangeSlider.swift in Sources */,
+				1002729D25EA5993001347CE /* VideoTransition+BaseTransition.swift in Sources */,
 				845A9909258B33BA005B81D0 /* ThumbnailSlider.swift in Sources */,
 				849F582C2592FEAE004477AD /* MetalSaturationFilter.metal in Sources */,
 				84499F9D2587231800041921 /* VideoEditorViewController.swift in Sources */,
-				84994D45259057A20020A3E7 /* KernelThresholdFilter.ci.metal in Sources */,
 				8464CFEC2594476400798523 /* FilterControlViewController.swift in Sources */,
 				842313C12589C1A7008B3860 /* PlayerToolbar.swift in Sources */,
 				8413DA6625C90DDD00FCE1D8 /* VideoTransition+Error.swift in Sources */,
@@ -565,6 +552,7 @@
 				84FE8AB5258A03C800E7D1C9 /* PlaybackController.swift in Sources */,
 				84FE8AB8258A0AF300E7D1C9 /* PlayerSeeker.swift in Sources */,
 				84499F872587228100041921 /* SceneDelegate.swift in Sources */,
+				100272A125EA8E83001347CE /* NormalTransition.swift in Sources */,
 				843E10A625889D8600997900 /* PlayerView.swift in Sources */,
 				1062D238258E8B5200CCF343 /* HomeViewController.swift in Sources */,
 				1070D70D258E8E7B00CCE304 /* Utilites.swift in Sources */,
@@ -577,16 +565,16 @@
 				84581270259477E2002223E7 /* FilterControlPresentationController.swift in Sources */,
 				849F584025930653004477AD /* MetalSourceOverlayFilter.swift in Sources */,
 				842313CD2589CD23008B3860 /* Extensions.swift in Sources */,
-				84994D4F25905EB00020A3E7 /* KernelBaseFilter.swift in Sources */,
 				849F58302592FF49004477AD /* MetalSaturationFilter.swift in Sources */,
 				84BE888E25889EDE00F05BBE /* FilterOption.swift in Sources */,
 				849F583825930335004477AD /* MetalThresholdFilter.swift in Sources */,
+				100272A725EA9258001347CE /* VideoTransition+Effect.swift in Sources */,
 				8413DA6925C9130D00FCE1D8 /* VideoTransition+Result.swift in Sources */,
 				849F5834259300FF004477AD /* MetalThresholdFilter.metal in Sources */,
-				84994D41259055890020A3E7 /* KernelHDRZebraFilter.swift in Sources */,
 				841DBDFC259592B8005A3171 /* FilterSlider.swift in Sources */,
 				84D236152590B272009FA2C6 /* MetalBrightnessFilter.swift in Sources */,
-				8413DA8425C9564A00FCE1D8 /* VideoCompositionInstruction.swift in Sources */,
+				100272A425EA913E001347CE /* VideoTransition+Renderer.swift in Sources */,
+				8413DA8425C9564A00FCE1D8 /* VideoTransition+CompositionInstruction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

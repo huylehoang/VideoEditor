@@ -35,7 +35,7 @@ class MetalBaseFilter {
     descriptor.usage = [.shaderRead, .shaderWrite]
 
     guard
-      let outputTextture = MetalDevice.sharedDevice.makeTexture(descriptor: descriptor),
+      let outputTexture = MetalDevice.sharedDevice.makeTexture(descriptor: descriptor),
       let commanBuffer = MetalDevice.sharedCommandQueue.makeCommandBuffer(),
       let encoder = commanBuffer.makeComputeCommandEncoder()
     else {
@@ -48,7 +48,7 @@ class MetalBaseFilter {
       depth: 1)
 
     encoder.setComputePipelineState(computePipeline)
-    encoder.setTexture(outputTextture, index: 0)
+    encoder.setTexture(outputTexture, index: 0)
     encoder.setTexture(inputTexture, index: 1)
     updateParameters(forComputeCommandEncoder: encoder)
     encoder.dispatchThreadgroups(threadgroupCount, threadsPerThreadgroup: threadgroupSize)
@@ -57,6 +57,6 @@ class MetalBaseFilter {
     commanBuffer.commit()
     commanBuffer.waitUntilCompleted()
 
-    return outputTextture.ciImage
+    return outputTexture.ciImage
   }
 }
