@@ -60,9 +60,7 @@ extension VideoTransition {
       return outputTexture.ciImage
     }
 
-    func updateParameters(forComputeCommandEncoder encoder: MTLComputeCommandEncoder) {
-        fatalError("\(#function) must be overridden by subclass")
-    }
+    func updateParameters(forComputeCommandEncoder encoder: MTLComputeCommandEncoder) {}
   }
 }
 
