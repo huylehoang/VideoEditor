@@ -19,8 +19,8 @@ extension VideoTransition {
       let foregroundImage = CIImage(cvPixelBuffer: foregroundPixelBuffer)
       let backgroundImage = CIImage(cvPixelBuffer: backgroundPixelBuffer)
 
-      transition.fromImage = foregroundImage
-      transition.toImage = backgroundImage
+      transition.fromImage = foregroundImage.oriented(.downMirrored)
+      transition.toImage = backgroundImage.oriented(.downMirrored)
       transition.progress = tween
 
       guard let output = transition.outputImage else { return }
