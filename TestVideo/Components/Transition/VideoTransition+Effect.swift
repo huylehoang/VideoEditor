@@ -3,12 +3,12 @@ import Foundation
 extension VideoTransition {
   enum Effect: CustomStringConvertible {
     case normal
-    case wipeLeft
+    case fade
 
     var transition: BaseTransition {
       switch self {
       case .normal: return NormalTransition()
-      case .wipeLeft: return WipeLeftTransition()
+      case .fade: return FadeTransition()
       }
     }
 

@@ -251,7 +251,7 @@ private extension VideoTransition {
           ]
           let timeRange = transitionTimeRanges[index]
           let videoInstruction = CompositionInstruction(theSourceTrackIDs: trackIDs, forTimeRange: timeRange)
-          videoInstruction.effect = .wipeLeft
+          videoInstruction.effect = .fade
           // First track -> Foreground track while compositing.
           videoInstruction.foregroundTrackID = compositionVideoTracks[alternatingIndex].trackID
           // Second track -> Background track while compositing.

@@ -18,7 +18,6 @@ final class MultipleVideoTranstionsViewController: UIViewController {
     let view = PlayerView()
     view.translatesAutoresizingMaskIntoConstraints = false
     view.backgroundColor = .black
-//    view.player = playbackController.player
     return view
   }()
 
@@ -37,6 +36,7 @@ final class MultipleVideoTranstionsViewController: UIViewController {
   }()
 
   private var asset: AVAsset
+  private var videoComposition: AVVideoComposition?
 
   init(urls: [URL]) {
     clips = urls.map { AVAsset(url: $0) }
@@ -108,8 +108,9 @@ private extension MultipleVideoTranstionsViewController {
       try videoTransition.merge(clips, completion: { [weak self] result in
         guard let self = self else { return }
         self.asset = result.composition
+        self.videoComposition = result.videoComposition
         let playerItem = AVPlayerItem(asset: self.asset)
-        playerItem.videoComposition = result.videoComposition
+        playerItem.videoComposition = self.videoComposition
 
         self.playbackController.smoothlySeek(to: .zero)
         self.playbackController.replaceCurrentItem(with: playerItem)
@@ -149,6 +150,7 @@ private extension MultipleVideoTranstionsViewController {
       self.indicator.startAnimating()
       self.videoExporter.exportAndSaveToAlbum(
         asset: self.asset,
+        videoComposition: self.videoComposition,
         completion: { errorMessage in
           DispatchQueue.main.async { [weak self] in
             self?.indicator.stopAnimating()

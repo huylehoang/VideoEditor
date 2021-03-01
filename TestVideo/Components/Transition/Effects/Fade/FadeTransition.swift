@@ -1,9 +1,9 @@
 import UIKit
 
 extension VideoTransition {
-  final class WipeLeftTransition: BaseTransition {
+  final class FadeTransition: BaseTransition {
     override var functionName: String {
-      return "WipeLeftTransition"
+      return "FadeTransition"
     }
   }
 }

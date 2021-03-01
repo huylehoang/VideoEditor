@@ -28,28 +28,42 @@ class VideoExporter {
         completion(exportSession.error?.localizedDescription)
         return
       }
-      PHPhotoLibrary.shared().performChanges {
-        PHAssetChangeRequest.creationRequestForAssetFromVideo(atFileURL: outputUrl)
-      } completionHandler: { saved, error in
-        self?.removeVideoAtTempURL()
-        guard saved else {
-          completion(error?.localizedDescription)
-          return
-        }
-        completion(nil)
-      }
+      self?.saveVideo(fileUrl: outputUrl, completion: completion)
     }
   }
 }
 
 private extension VideoExporter {
   var tempOutputURL: URL {
-    let documentDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-    let outputURL = documentDirectory.appendingPathComponent("video.mp4")
-    return outputURL
+    return URL(fileURLWithPath: NSTemporaryDirectory().appending("exported.mp4"))
   }
 
   func removeVideoAtTempURL() {
-    try? FileManager.default.removeItem(at: tempOutputURL)
+    guard FileManager.default.fileExists(atPath: tempOutputURL.path) else {
+      print("Do not exist file at path: \(tempOutputURL.path)")
+      return
+    }
+    do {
+      try FileManager.default.removeItem(at: tempOutputURL)
+      print("Removed file at path: \(tempOutputURL.path)")
+    } catch {
+      print("Error while removing video at temp output url (\(tempOutputURL.path): \(error.localizedDescription)")
+    }
+  }
+
+  func saveVideo(fileUrl: URL, completion: @escaping (String?) -> Void) {
+    PHPhotoLibrary.shared().performChanges {
+      let options = PHAssetResourceCreationOptions()
+      options.shouldMoveFile = true
+      let creationRequest = PHAssetCreationRequest.forAsset()
+      creationRequest.addResource(with: .video, fileURL: fileUrl, options: options)
+    } completionHandler: { [weak self] saved, error in
+      self?.removeVideoAtTempURL()
+      guard saved else {
+        completion(error?.localizedDescription)
+        return
+      }
+      completion(nil)
+    }
   }
 }
