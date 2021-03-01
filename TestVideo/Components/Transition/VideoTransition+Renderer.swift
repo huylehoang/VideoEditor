@@ -1,7 +1,7 @@
 import UIKit
 
 extension VideoTransition {
-  static let context = CIContext(mtlDevice: MTLCreateSystemDefaultDevice()!)
+  private static let context = CIContext(mtlDevice: MTLCreateSystemDefaultDevice()!)
 
   final class Renderer {
     private let transition: BaseTransition
@@ -24,7 +24,7 @@ extension VideoTransition {
       transition.progress = tween
 
       guard let output = transition.outputImage else { return }
-      try? context.render(output, to: destinationPixelBuffer)
+      context.render(output, to: destinationPixelBuffer)
     }
   }
 }
