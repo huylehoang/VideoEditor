@@ -2,6 +2,7 @@ import AVFoundation
 import UIKit
 import CoreImage
 
+/// Referene MTTransitions github: https://github.com/alexiscn/MTTransitions
 extension VideoTransition {
   final class Compositor: NSObject, AVVideoCompositing {
     /// Returns the pixel buffer attributes required by the video compositor for new buffers created for processing.

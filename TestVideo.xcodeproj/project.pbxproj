@@ -56,6 +56,17 @@
 		84BE88912588ABAC00F05BBE /* ThumbnailTrack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE88902588ABAC00F05BBE /* ThumbnailTrack.swift */; };
 		84D236122590B241009FA2C6 /* MetalBrightnessFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84D236112590B241009FA2C6 /* MetalBrightnessFilter.metal */; };
 		84D236152590B272009FA2C6 /* MetalBrightnessFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D236142590B272009FA2C6 /* MetalBrightnessFilter.swift */; };
+		84F68D6325EE1ABF0095C7DF /* WindTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84F68D6225EE1ABF0095C7DF /* WindTransition.metal */; };
+		84F68D6625EE1B600095C7DF /* WindTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68D6525EE1B600095C7DF /* WindTransition.swift */; };
+		84F68D6B25EE1FD40095C7DF /* MultiplyBlendTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84F68D6A25EE1FD40095C7DF /* MultiplyBlendTransition.metal */; };
+		84F68D6E25EE20AB0095C7DF /* MultiplyBlendTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68D6D25EE20AB0095C7DF /* MultiplyBlendTransition.swift */; };
+		84F68D7125EE221F0095C7DF /* PinwheelTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84F68D7025EE221F0095C7DF /* PinwheelTransition.metal */; };
+		84F68D7425EE22E30095C7DF /* PinwheelTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68D7325EE22E30095C7DF /* PinwheelTransition.swift */; };
+		84F68D7725EE23DB0095C7DF /* VideoTransition+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68D7625EE23DB0095C7DF /* VideoTransition+Extensions.swift */; };
+		84F68D7B25EE24F40095C7DF /* GridFlipTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84F68D7A25EE24F40095C7DF /* GridFlipTransition.metal */; };
+		84F68D7F25EE29470095C7DF /* GridFlipTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68D7E25EE29470095C7DF /* GridFlipTransition.swift */; };
+		84F68D8225EE325E0095C7DF /* BounceTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84F68D8125EE325E0095C7DF /* BounceTransition.metal */; };
+		84F68D8525EE33650095C7DF /* BounceTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68D8425EE33650095C7DF /* BounceTransition.swift */; };
 		84FD017C25CA52B600968ED6 /* UIControlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FD017B25CA52B600968ED6 /* UIControlHelper.swift */; };
 		84FE8AB5258A03C800E7D1C9 /* PlaybackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE8AB4258A03C800E7D1C9 /* PlaybackController.swift */; };
 		84FE8AB8258A0AF300E7D1C9 /* PlayerSeeker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE8AB7258A0AF300E7D1C9 /* PlayerSeeker.swift */; };
@@ -154,6 +165,17 @@
 		84BE88902588ABAC00F05BBE /* ThumbnailTrack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailTrack.swift; sourceTree = "<group>"; };
 		84D236112590B241009FA2C6 /* MetalBrightnessFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MetalBrightnessFilter.metal; sourceTree = "<group>"; };
 		84D236142590B272009FA2C6 /* MetalBrightnessFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetalBrightnessFilter.swift; sourceTree = "<group>"; };
+		84F68D6225EE1ABF0095C7DF /* WindTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = WindTransition.metal; sourceTree = "<group>"; };
+		84F68D6525EE1B600095C7DF /* WindTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindTransition.swift; sourceTree = "<group>"; };
+		84F68D6A25EE1FD40095C7DF /* MultiplyBlendTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MultiplyBlendTransition.metal; sourceTree = "<group>"; };
+		84F68D6D25EE20AB0095C7DF /* MultiplyBlendTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplyBlendTransition.swift; sourceTree = "<group>"; };
+		84F68D7025EE221F0095C7DF /* PinwheelTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = PinwheelTransition.metal; sourceTree = "<group>"; };
+		84F68D7325EE22E30095C7DF /* PinwheelTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinwheelTransition.swift; sourceTree = "<group>"; };
+		84F68D7625EE23DB0095C7DF /* VideoTransition+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoTransition+Extensions.swift"; sourceTree = "<group>"; };
+		84F68D7A25EE24F40095C7DF /* GridFlipTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = GridFlipTransition.metal; sourceTree = "<group>"; };
+		84F68D7E25EE29470095C7DF /* GridFlipTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridFlipTransition.swift; sourceTree = "<group>"; };
+		84F68D8125EE325E0095C7DF /* BounceTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = BounceTransition.metal; sourceTree = "<group>"; };
+		84F68D8425EE33650095C7DF /* BounceTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceTransition.swift; sourceTree = "<group>"; };
 		84FD017B25CA52B600968ED6 /* UIControlHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControlHelper.swift; sourceTree = "<group>"; };
 		84FE8AB4258A03C800E7D1C9 /* PlaybackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackController.swift; sourceTree = "<group>"; };
 		84FE8AB7258A0AF300E7D1C9 /* PlayerSeeker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSeeker.swift; sourceTree = "<group>"; };
@@ -177,6 +199,16 @@
 				100272A025EA8E83001347CE /* NormalTransition.swift */,
 				10C9D44825EB453C00A8CD3A /* FadeTransition.metal */,
 				10C9D44B25EB4D9B00A8CD3A /* FadeTransition.swift */,
+				84F68D6225EE1ABF0095C7DF /* WindTransition.metal */,
+				84F68D6525EE1B600095C7DF /* WindTransition.swift */,
+				84F68D6A25EE1FD40095C7DF /* MultiplyBlendTransition.metal */,
+				84F68D6D25EE20AB0095C7DF /* MultiplyBlendTransition.swift */,
+				84F68D7025EE221F0095C7DF /* PinwheelTransition.metal */,
+				84F68D7325EE22E30095C7DF /* PinwheelTransition.swift */,
+				84F68D7A25EE24F40095C7DF /* GridFlipTransition.metal */,
+				84F68D7E25EE29470095C7DF /* GridFlipTransition.swift */,
+				84F68D8125EE325E0095C7DF /* BounceTransition.metal */,
+				84F68D8425EE33650095C7DF /* BounceTransition.swift */,
 			);
 			path = Effects;
 			sourceTree = "<group>";
@@ -200,6 +232,7 @@
 				100272A325EA913E001347CE /* VideoTransition+Renderer.swift */,
 				1002729C25EA5993001347CE /* VideoTransition+BaseTransition.swift */,
 				100272A625EA9258001347CE /* VideoTransition+Effect.swift */,
+				84F68D7625EE23DB0095C7DF /* VideoTransition+Extensions.swift */,
 				1002729F25EA8E05001347CE /* Effects */,
 			);
 			path = Transition;
@@ -531,6 +564,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F68D7F25EE29470095C7DF /* GridFlipTransition.swift in Sources */,
 				84FD017C25CA52B600968ED6 /* UIControlHelper.swift in Sources */,
 				101770C52589485100848937 /* VideoCompositor.swift in Sources */,
 				842313BE2589BFB3008B3860 /* CustomSlider.swift in Sources */,
@@ -543,20 +577,25 @@
 				1002729D25EA5993001347CE /* VideoTransition+BaseTransition.swift in Sources */,
 				845A9909258B33BA005B81D0 /* ThumbnailSlider.swift in Sources */,
 				849F582C2592FEAE004477AD /* MetalSaturationFilter.metal in Sources */,
+				84F68D6625EE1B600095C7DF /* WindTransition.swift in Sources */,
 				84499F9D2587231800041921 /* VideoEditorViewController.swift in Sources */,
+				84F68D7425EE22E30095C7DF /* PinwheelTransition.swift in Sources */,
 				8464CFEC2594476400798523 /* FilterControlViewController.swift in Sources */,
 				842313C12589C1A7008B3860 /* PlayerToolbar.swift in Sources */,
 				8413DA6625C90DDD00FCE1D8 /* VideoTransition+Error.swift in Sources */,
 				84BE88912588ABAC00F05BBE /* ThumbnailTrack.swift in Sources */,
+				84F68D6B25EE1FD40095C7DF /* MultiplyBlendTransition.metal in Sources */,
 				8413DA6325C90B9C00FCE1D8 /* VideoTransition.swift in Sources */,
 				847D0C2325909FC6000689D2 /* Filter+Extensions.swift in Sources */,
 				84FE8AB5258A03C800E7D1C9 /* PlaybackController.swift in Sources */,
 				84FE8AB8258A0AF300E7D1C9 /* PlayerSeeker.swift in Sources */,
 				84499F872587228100041921 /* SceneDelegate.swift in Sources */,
+				84F68D6325EE1ABF0095C7DF /* WindTransition.metal in Sources */,
 				100272A125EA8E83001347CE /* NormalTransition.swift in Sources */,
 				843E10A625889D8600997900 /* PlayerView.swift in Sources */,
 				1062D238258E8B5200CCF343 /* HomeViewController.swift in Sources */,
 				1070D70D258E8E7B00CCE304 /* Utilites.swift in Sources */,
+				84F68D7125EE221F0095C7DF /* PinwheelTransition.metal in Sources */,
 				84D236122590B241009FA2C6 /* MetalBrightnessFilter.metal in Sources */,
 				8464CFDC2594452000798523 /* Filter.swift in Sources */,
 				849F583C25930622004477AD /* MetalSourceOverlayFilter.metal in Sources */,
@@ -567,15 +606,20 @@
 				849F584025930653004477AD /* MetalSourceOverlayFilter.swift in Sources */,
 				842313CD2589CD23008B3860 /* Extensions.swift in Sources */,
 				10C9D44925EB453C00A8CD3A /* FadeTransition.metal in Sources */,
+				84F68D7B25EE24F40095C7DF /* GridFlipTransition.metal in Sources */,
 				849F58302592FF49004477AD /* MetalSaturationFilter.swift in Sources */,
+				84F68D6E25EE20AB0095C7DF /* MultiplyBlendTransition.swift in Sources */,
 				84BE888E25889EDE00F05BBE /* FilterOption.swift in Sources */,
 				849F583825930335004477AD /* MetalThresholdFilter.swift in Sources */,
 				100272A725EA9258001347CE /* VideoTransition+Effect.swift in Sources */,
+				84F68D7725EE23DB0095C7DF /* VideoTransition+Extensions.swift in Sources */,
 				8413DA6925C9130D00FCE1D8 /* VideoTransition+Result.swift in Sources */,
 				849F5834259300FF004477AD /* MetalThresholdFilter.metal in Sources */,
+				84F68D8525EE33650095C7DF /* BounceTransition.swift in Sources */,
 				841DBDFC259592B8005A3171 /* FilterSlider.swift in Sources */,
 				84D236152590B272009FA2C6 /* MetalBrightnessFilter.swift in Sources */,
 				100272A425EA913E001347CE /* VideoTransition+Renderer.swift in Sources */,
+				84F68D8225EE325E0095C7DF /* BounceTransition.metal in Sources */,
 				8413DA8425C9564A00FCE1D8 /* VideoTransition+CompositionInstruction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

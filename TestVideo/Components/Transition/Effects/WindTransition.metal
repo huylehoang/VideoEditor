@@ -5,11 +5,12 @@
 
 using namespace metal;
 
-kernel void FadeTransition(texture2d<float, access::write> outputTexture [[ texture(0) ]],
+kernel void WindTransition(texture2d<float, access::write> outputTexture [[ texture(0) ]],
                            texture2d<float, access::sample> fromTexture [[ texture(1) ]],
                            texture2d<float, access::sample> toTexture [[ texture(2) ]],
                            constant float & ratio [[ buffer(0) ]],
                            constant float & progress [[ buffer(1) ]],
+                           constant float & size [[ buffer(2) ]],
                            uint2 gid [[ thread_position_in_grid ]],
                            uint2 tpg [[ threads_per_grid ]])
 {
@@ -18,6 +19,8 @@ kernel void FadeTransition(texture2d<float, access::write> outputTexture [[ text
   uv.y = 1.0 - uv.y;
   float4 fromColor = getColor(uv, fromTexture, ratio);
   float4 toColor = getColor(uv, toTexture, ratio);
-  float4 outColor = mix(fromColor, toColor, progress);
+  float r = rand(float2(0, uv.y));
+  float m = smoothstep(0.0, -size, uv.x * (1.0 - size) + size * r - (progress * (1.0 + size)));
+  float4 outColor = mix(fromColor, toColor, m);
   outputTexture.write(outColor, gid);
 }

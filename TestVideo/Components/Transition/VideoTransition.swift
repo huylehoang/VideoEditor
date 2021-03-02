@@ -1,6 +1,7 @@
 import Foundation
 import AVFoundation
 
+/// Referene MTTransitions github: https://github.com/alexiscn/MTTransitions
 class VideoTransition {
   typealias Completion = (Result) -> Void
 
@@ -251,7 +252,12 @@ private extension VideoTransition {
           ]
           let timeRange = transitionTimeRanges[index]
           let videoInstruction = CompositionInstruction(theSourceTrackIDs: trackIDs, forTimeRange: timeRange)
-          videoInstruction.effect = .fade
+
+          // TODO: Random Effect for testing
+//          videoInstruction.effect = Effect(rawValue: Int.random(in: 1...Effect.allCases.count - 1)) ?? .normal
+          videoInstruction.effect = .bounce
+          print("Video Transition Effect: \(videoInstruction.effect.description) at \(index)")
+
           // First track -> Foreground track while compositing.
           videoInstruction.foregroundTrackID = compositionVideoTracks[alternatingIndex].trackID
           // Second track -> Background track while compositing.

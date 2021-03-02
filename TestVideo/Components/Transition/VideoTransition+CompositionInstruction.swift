@@ -1,5 +1,6 @@
 import AVFoundation
 
+/// Referene MTTransitions github: https://github.com/alexiscn/MTTransitions
 extension VideoTransition {
   final class CompositionInstruction: NSObject, AVVideoCompositionInstructionProtocol {
     /// ID used to identify the foreground frame.

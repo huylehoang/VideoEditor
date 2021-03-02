@@ -1,5 +1,6 @@
 import UIKit
 
+/// Referene MTTransitions github: https://github.com/alexiscn/MTTransitions
 extension VideoTransition {
   class BaseTransition {
     var functionName: String { return "" }
