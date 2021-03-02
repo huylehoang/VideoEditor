@@ -67,6 +67,36 @@
 		84F68D7F25EE29470095C7DF /* GridFlipTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68D7E25EE29470095C7DF /* GridFlipTransition.swift */; };
 		84F68D8225EE325E0095C7DF /* BounceTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84F68D8125EE325E0095C7DF /* BounceTransition.metal */; };
 		84F68D8525EE33650095C7DF /* BounceTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68D8425EE33650095C7DF /* BounceTransition.swift */; };
+		84F68D8825EE42630095C7DF /* BowTieHorizontalTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84F68D8725EE42630095C7DF /* BowTieHorizontalTransition.metal */; };
+		84F68D8B25EE43B50095C7DF /* BowTieHorizontalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68D8A25EE43B50095C7DF /* BowTieHorizontalTransition.swift */; };
+		84F68D9025EE452B0095C7DF /* BowTieVerticalTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84F68D8F25EE452B0095C7DF /* BowTieVerticalTransition.metal */; };
+		84F68D9325EE459E0095C7DF /* BowTieVerticalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68D9225EE459E0095C7DF /* BowTieVerticalTransition.swift */; };
+		84F68D9625EE47E50095C7DF /* BurnTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84F68D9525EE47E50095C7DF /* BurnTransition.metal */; };
+		84F68D9925EE48D30095C7DF /* BurnTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68D9825EE48D30095C7DF /* BurnTransition.swift */; };
+		84F68D9C25EE4A1D0095C7DF /* ButterflyWaveScrawlerTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84F68D9B25EE4A1D0095C7DF /* ButterflyWaveScrawlerTransition.metal */; };
+		84F68D9F25EE4AFB0095C7DF /* ButterflyWaveScrawlerTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68D9E25EE4AFB0095C7DF /* ButterflyWaveScrawlerTransition.swift */; };
+		84F68DA225EE4BE90095C7DF /* CannabisleafTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84F68DA125EE4BE90095C7DF /* CannabisleafTransition.metal */; };
+		84F68DA525EE4D350095C7DF /* CannabisleafTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68DA425EE4D350095C7DF /* CannabisleafTransition.swift */; };
+		84F68DA825EE4E7B0095C7DF /* CircleCropTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84F68DA725EE4E7B0095C7DF /* CircleCropTransition.metal */; };
+		84F68DAB25EE508E0095C7DF /* CircleCropTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68DAA25EE508E0095C7DF /* CircleCropTransition.swift */; };
+		84F68DAE25EE51640095C7DF /* CircleOpenTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84F68DAD25EE51640095C7DF /* CircleOpenTransition.metal */; };
+		84F68DB125EE51DF0095C7DF /* CircleOpenTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68DB025EE51DF0095C7DF /* CircleOpenTransition.swift */; };
+		84F68DB425EE52910095C7DF /* CircleTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84F68DB325EE52910095C7DF /* CircleTransition.metal */; };
+		84F68DB725EE533A0095C7DF /* CircleTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68DB625EE533A0095C7DF /* CircleTransition.swift */; };
+		84F68DBA25EE55030095C7DF /* ColorPhaseTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84F68DB925EE55030095C7DF /* ColorPhaseTransition.metal */; };
+		84F68DBD25EE559E0095C7DF /* ColorPhaseTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68DBC25EE559E0095C7DF /* ColorPhaseTransition.swift */; };
+		84F68DC025EE56B10095C7DF /* ColourDistanceTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84F68DBF25EE56B10095C7DF /* ColourDistanceTransition.metal */; };
+		84F68DC325EE57470095C7DF /* ColourDistanceTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68DC225EE57470095C7DF /* ColourDistanceTransition.swift */; };
+		84F68DC625EE58050095C7DF /* CrazyParametricFuncTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84F68DC525EE58050095C7DF /* CrazyParametricFuncTransition.metal */; };
+		84F68DC925EE58AD0095C7DF /* CrazyParametricFunTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68DC825EE58AD0095C7DF /* CrazyParametricFunTransition.swift */; };
+		84F68DCC25EE59C20095C7DF /* CrossHatchTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84F68DCB25EE59C20095C7DF /* CrossHatchTransition.metal */; };
+		84F68DCF25EE5A7A0095C7DF /* CrossHatchTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68DCE25EE5A7A0095C7DF /* CrossHatchTransition.swift */; };
+		84F68DD225EE5B4F0095C7DF /* CrossWarpTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84F68DD125EE5B4F0095C7DF /* CrossWarpTransition.metal */; };
+		84F68DD525EE5BFD0095C7DF /* CrossWarpTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68DD425EE5BFD0095C7DF /* CrossWarpTransition.swift */; };
+		84F68DD825EE5C660095C7DF /* CrossZoomTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84F68DD725EE5C660095C7DF /* CrossZoomTransition.metal */; };
+		84F68DDB25EE5CFF0095C7DF /* CrossZoomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68DDA25EE5CFF0095C7DF /* CrossZoomTransition.swift */; };
+		84F68DDE25EE5D8A0095C7DF /* CubeTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84F68DDD25EE5D8A0095C7DF /* CubeTransition.metal */; };
+		84F68DE125EE5EF40095C7DF /* CubeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F68DE025EE5EF40095C7DF /* CubeTransition.swift */; };
 		84FD017C25CA52B600968ED6 /* UIControlHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FD017B25CA52B600968ED6 /* UIControlHelper.swift */; };
 		84FE8AB5258A03C800E7D1C9 /* PlaybackController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE8AB4258A03C800E7D1C9 /* PlaybackController.swift */; };
 		84FE8AB8258A0AF300E7D1C9 /* PlayerSeeker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84FE8AB7258A0AF300E7D1C9 /* PlayerSeeker.swift */; };
@@ -176,6 +206,36 @@
 		84F68D7E25EE29470095C7DF /* GridFlipTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridFlipTransition.swift; sourceTree = "<group>"; };
 		84F68D8125EE325E0095C7DF /* BounceTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = BounceTransition.metal; sourceTree = "<group>"; };
 		84F68D8425EE33650095C7DF /* BounceTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BounceTransition.swift; sourceTree = "<group>"; };
+		84F68D8725EE42630095C7DF /* BowTieHorizontalTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = BowTieHorizontalTransition.metal; sourceTree = "<group>"; };
+		84F68D8A25EE43B50095C7DF /* BowTieHorizontalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowTieHorizontalTransition.swift; sourceTree = "<group>"; };
+		84F68D8F25EE452B0095C7DF /* BowTieVerticalTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = BowTieVerticalTransition.metal; sourceTree = "<group>"; };
+		84F68D9225EE459E0095C7DF /* BowTieVerticalTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BowTieVerticalTransition.swift; sourceTree = "<group>"; };
+		84F68D9525EE47E50095C7DF /* BurnTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = BurnTransition.metal; sourceTree = "<group>"; };
+		84F68D9825EE48D30095C7DF /* BurnTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BurnTransition.swift; sourceTree = "<group>"; };
+		84F68D9B25EE4A1D0095C7DF /* ButterflyWaveScrawlerTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ButterflyWaveScrawlerTransition.metal; sourceTree = "<group>"; };
+		84F68D9E25EE4AFB0095C7DF /* ButterflyWaveScrawlerTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButterflyWaveScrawlerTransition.swift; sourceTree = "<group>"; };
+		84F68DA125EE4BE90095C7DF /* CannabisleafTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = CannabisleafTransition.metal; sourceTree = "<group>"; };
+		84F68DA425EE4D350095C7DF /* CannabisleafTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CannabisleafTransition.swift; sourceTree = "<group>"; };
+		84F68DA725EE4E7B0095C7DF /* CircleCropTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = CircleCropTransition.metal; sourceTree = "<group>"; };
+		84F68DAA25EE508E0095C7DF /* CircleCropTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCropTransition.swift; sourceTree = "<group>"; };
+		84F68DAD25EE51640095C7DF /* CircleOpenTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = CircleOpenTransition.metal; sourceTree = "<group>"; };
+		84F68DB025EE51DF0095C7DF /* CircleOpenTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleOpenTransition.swift; sourceTree = "<group>"; };
+		84F68DB325EE52910095C7DF /* CircleTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = CircleTransition.metal; sourceTree = "<group>"; };
+		84F68DB625EE533A0095C7DF /* CircleTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleTransition.swift; sourceTree = "<group>"; };
+		84F68DB925EE55030095C7DF /* ColorPhaseTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ColorPhaseTransition.metal; sourceTree = "<group>"; };
+		84F68DBC25EE559E0095C7DF /* ColorPhaseTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPhaseTransition.swift; sourceTree = "<group>"; };
+		84F68DBF25EE56B10095C7DF /* ColourDistanceTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ColourDistanceTransition.metal; sourceTree = "<group>"; };
+		84F68DC225EE57470095C7DF /* ColourDistanceTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourDistanceTransition.swift; sourceTree = "<group>"; };
+		84F68DC525EE58050095C7DF /* CrazyParametricFuncTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = CrazyParametricFuncTransition.metal; sourceTree = "<group>"; };
+		84F68DC825EE58AD0095C7DF /* CrazyParametricFunTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrazyParametricFunTransition.swift; sourceTree = "<group>"; };
+		84F68DCB25EE59C20095C7DF /* CrossHatchTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = CrossHatchTransition.metal; sourceTree = "<group>"; };
+		84F68DCE25EE5A7A0095C7DF /* CrossHatchTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossHatchTransition.swift; sourceTree = "<group>"; };
+		84F68DD125EE5B4F0095C7DF /* CrossWarpTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = CrossWarpTransition.metal; sourceTree = "<group>"; };
+		84F68DD425EE5BFD0095C7DF /* CrossWarpTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossWarpTransition.swift; sourceTree = "<group>"; };
+		84F68DD725EE5C660095C7DF /* CrossZoomTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = CrossZoomTransition.metal; sourceTree = "<group>"; };
+		84F68DDA25EE5CFF0095C7DF /* CrossZoomTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossZoomTransition.swift; sourceTree = "<group>"; };
+		84F68DDD25EE5D8A0095C7DF /* CubeTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = CubeTransition.metal; sourceTree = "<group>"; };
+		84F68DE025EE5EF40095C7DF /* CubeTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeTransition.swift; sourceTree = "<group>"; };
 		84FD017B25CA52B600968ED6 /* UIControlHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControlHelper.swift; sourceTree = "<group>"; };
 		84FE8AB4258A03C800E7D1C9 /* PlaybackController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackController.swift; sourceTree = "<group>"; };
 		84FE8AB7258A0AF300E7D1C9 /* PlayerSeeker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSeeker.swift; sourceTree = "<group>"; };
@@ -209,6 +269,36 @@
 				84F68D7E25EE29470095C7DF /* GridFlipTransition.swift */,
 				84F68D8125EE325E0095C7DF /* BounceTransition.metal */,
 				84F68D8425EE33650095C7DF /* BounceTransition.swift */,
+				84F68D8725EE42630095C7DF /* BowTieHorizontalTransition.metal */,
+				84F68D8A25EE43B50095C7DF /* BowTieHorizontalTransition.swift */,
+				84F68D8F25EE452B0095C7DF /* BowTieVerticalTransition.metal */,
+				84F68D9225EE459E0095C7DF /* BowTieVerticalTransition.swift */,
+				84F68D9525EE47E50095C7DF /* BurnTransition.metal */,
+				84F68D9825EE48D30095C7DF /* BurnTransition.swift */,
+				84F68D9B25EE4A1D0095C7DF /* ButterflyWaveScrawlerTransition.metal */,
+				84F68D9E25EE4AFB0095C7DF /* ButterflyWaveScrawlerTransition.swift */,
+				84F68DA125EE4BE90095C7DF /* CannabisleafTransition.metal */,
+				84F68DA425EE4D350095C7DF /* CannabisleafTransition.swift */,
+				84F68DA725EE4E7B0095C7DF /* CircleCropTransition.metal */,
+				84F68DAA25EE508E0095C7DF /* CircleCropTransition.swift */,
+				84F68DAD25EE51640095C7DF /* CircleOpenTransition.metal */,
+				84F68DB025EE51DF0095C7DF /* CircleOpenTransition.swift */,
+				84F68DB325EE52910095C7DF /* CircleTransition.metal */,
+				84F68DB625EE533A0095C7DF /* CircleTransition.swift */,
+				84F68DB925EE55030095C7DF /* ColorPhaseTransition.metal */,
+				84F68DBC25EE559E0095C7DF /* ColorPhaseTransition.swift */,
+				84F68DBF25EE56B10095C7DF /* ColourDistanceTransition.metal */,
+				84F68DC225EE57470095C7DF /* ColourDistanceTransition.swift */,
+				84F68DC525EE58050095C7DF /* CrazyParametricFuncTransition.metal */,
+				84F68DC825EE58AD0095C7DF /* CrazyParametricFunTransition.swift */,
+				84F68DCB25EE59C20095C7DF /* CrossHatchTransition.metal */,
+				84F68DCE25EE5A7A0095C7DF /* CrossHatchTransition.swift */,
+				84F68DD125EE5B4F0095C7DF /* CrossWarpTransition.metal */,
+				84F68DD425EE5BFD0095C7DF /* CrossWarpTransition.swift */,
+				84F68DD725EE5C660095C7DF /* CrossZoomTransition.metal */,
+				84F68DDA25EE5CFF0095C7DF /* CrossZoomTransition.swift */,
+				84F68DDD25EE5D8A0095C7DF /* CubeTransition.metal */,
+				84F68DE025EE5EF40095C7DF /* CubeTransition.swift */,
 			);
 			path = Effects;
 			sourceTree = "<group>";
@@ -564,15 +654,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F68DAE25EE51640095C7DF /* CircleOpenTransition.metal in Sources */,
 				84F68D7F25EE29470095C7DF /* GridFlipTransition.swift in Sources */,
 				84FD017C25CA52B600968ED6 /* UIControlHelper.swift in Sources */,
 				101770C52589485100848937 /* VideoCompositor.swift in Sources */,
 				842313BE2589BFB3008B3860 /* CustomSlider.swift in Sources */,
 				8413DA8725C957F300FCE1D8 /* VIdeoTransition+Compositor.swift in Sources */,
+				84F68DBD25EE559E0095C7DF /* ColorPhaseTransition.swift in Sources */,
 				847D0C1F25909F26000689D2 /* MetalDevice.swift in Sources */,
 				8413DA5F25C90B1300FCE1D8 /* MultipleVideoTranstionsViewController.swift in Sources */,
 				84499F852587228100041921 /* AppDelegate.swift in Sources */,
 				8464CFF02594480800798523 /* TimeRangeSlider.swift in Sources */,
+				84F68D9925EE48D30095C7DF /* BurnTransition.swift in Sources */,
 				10C9D44C25EB4D9B00A8CD3A /* FadeTransition.swift in Sources */,
 				1002729D25EA5993001347CE /* VideoTransition+BaseTransition.swift in Sources */,
 				845A9909258B33BA005B81D0 /* ThumbnailSlider.swift in Sources */,
@@ -584,31 +677,54 @@
 				842313C12589C1A7008B3860 /* PlayerToolbar.swift in Sources */,
 				8413DA6625C90DDD00FCE1D8 /* VideoTransition+Error.swift in Sources */,
 				84BE88912588ABAC00F05BBE /* ThumbnailTrack.swift in Sources */,
+				84F68DA225EE4BE90095C7DF /* CannabisleafTransition.metal in Sources */,
+				84F68DCC25EE59C20095C7DF /* CrossHatchTransition.metal in Sources */,
 				84F68D6B25EE1FD40095C7DF /* MultiplyBlendTransition.metal in Sources */,
 				8413DA6325C90B9C00FCE1D8 /* VideoTransition.swift in Sources */,
+				84F68D9025EE452B0095C7DF /* BowTieVerticalTransition.metal in Sources */,
 				847D0C2325909FC6000689D2 /* Filter+Extensions.swift in Sources */,
 				84FE8AB5258A03C800E7D1C9 /* PlaybackController.swift in Sources */,
 				84FE8AB8258A0AF300E7D1C9 /* PlayerSeeker.swift in Sources */,
+				84F68DA825EE4E7B0095C7DF /* CircleCropTransition.metal in Sources */,
+				84F68DBA25EE55030095C7DF /* ColorPhaseTransition.metal in Sources */,
 				84499F872587228100041921 /* SceneDelegate.swift in Sources */,
+				84F68DC025EE56B10095C7DF /* ColourDistanceTransition.metal in Sources */,
 				84F68D6325EE1ABF0095C7DF /* WindTransition.metal in Sources */,
+				84F68DE125EE5EF40095C7DF /* CubeTransition.swift in Sources */,
 				100272A125EA8E83001347CE /* NormalTransition.swift in Sources */,
+				84F68D9F25EE4AFB0095C7DF /* ButterflyWaveScrawlerTransition.swift in Sources */,
 				843E10A625889D8600997900 /* PlayerView.swift in Sources */,
 				1062D238258E8B5200CCF343 /* HomeViewController.swift in Sources */,
+				84F68DD825EE5C660095C7DF /* CrossZoomTransition.metal in Sources */,
+				84F68DAB25EE508E0095C7DF /* CircleCropTransition.swift in Sources */,
 				1070D70D258E8E7B00CCE304 /* Utilites.swift in Sources */,
+				84F68D9325EE459E0095C7DF /* BowTieVerticalTransition.swift in Sources */,
 				84F68D7125EE221F0095C7DF /* PinwheelTransition.metal in Sources */,
 				84D236122590B241009FA2C6 /* MetalBrightnessFilter.metal in Sources */,
 				8464CFDC2594452000798523 /* Filter.swift in Sources */,
 				849F583C25930622004477AD /* MetalSourceOverlayFilter.metal in Sources */,
 				849B63EA2590A3A700CFB6A9 /* MetalBaseFilter.swift in Sources */,
 				1062D234258E534500CCF343 /* FilterOptionsView.swift in Sources */,
+				84F68D9C25EE4A1D0095C7DF /* ButterflyWaveScrawlerTransition.metal in Sources */,
+				84F68DCF25EE5A7A0095C7DF /* CrossHatchTransition.swift in Sources */,
 				101770CA25894FC400848937 /* VideoExporter.swift in Sources */,
+				84F68DC625EE58050095C7DF /* CrazyParametricFuncTransition.metal in Sources */,
+				84F68D8B25EE43B50095C7DF /* BowTieHorizontalTransition.swift in Sources */,
 				84581270259477E2002223E7 /* FilterControlPresentationController.swift in Sources */,
+				84F68D8825EE42630095C7DF /* BowTieHorizontalTransition.metal in Sources */,
 				849F584025930653004477AD /* MetalSourceOverlayFilter.swift in Sources */,
 				842313CD2589CD23008B3860 /* Extensions.swift in Sources */,
 				10C9D44925EB453C00A8CD3A /* FadeTransition.metal in Sources */,
 				84F68D7B25EE24F40095C7DF /* GridFlipTransition.metal in Sources */,
 				849F58302592FF49004477AD /* MetalSaturationFilter.swift in Sources */,
+				84F68DA525EE4D350095C7DF /* CannabisleafTransition.swift in Sources */,
+				84F68DC925EE58AD0095C7DF /* CrazyParametricFunTransition.swift in Sources */,
+				84F68DD525EE5BFD0095C7DF /* CrossWarpTransition.swift in Sources */,
+				84F68DD225EE5B4F0095C7DF /* CrossWarpTransition.metal in Sources */,
 				84F68D6E25EE20AB0095C7DF /* MultiplyBlendTransition.swift in Sources */,
+				84F68DDE25EE5D8A0095C7DF /* CubeTransition.metal in Sources */,
+				84F68DB125EE51DF0095C7DF /* CircleOpenTransition.swift in Sources */,
+				84F68D9625EE47E50095C7DF /* BurnTransition.metal in Sources */,
 				84BE888E25889EDE00F05BBE /* FilterOption.swift in Sources */,
 				849F583825930335004477AD /* MetalThresholdFilter.swift in Sources */,
 				100272A725EA9258001347CE /* VideoTransition+Effect.swift in Sources */,
@@ -616,8 +732,12 @@
 				8413DA6925C9130D00FCE1D8 /* VideoTransition+Result.swift in Sources */,
 				849F5834259300FF004477AD /* MetalThresholdFilter.metal in Sources */,
 				84F68D8525EE33650095C7DF /* BounceTransition.swift in Sources */,
+				84F68DB725EE533A0095C7DF /* CircleTransition.swift in Sources */,
+				84F68DC325EE57470095C7DF /* ColourDistanceTransition.swift in Sources */,
 				841DBDFC259592B8005A3171 /* FilterSlider.swift in Sources */,
 				84D236152590B272009FA2C6 /* MetalBrightnessFilter.swift in Sources */,
+				84F68DDB25EE5CFF0095C7DF /* CrossZoomTransition.swift in Sources */,
+				84F68DB425EE52910095C7DF /* CircleTransition.metal in Sources */,
 				100272A425EA913E001347CE /* VideoTransition+Renderer.swift in Sources */,
 				84F68D8225EE325E0095C7DF /* BounceTransition.metal in Sources */,
 				8413DA8425C9564A00FCE1D8 /* VideoTransition+CompositionInstruction.swift in Sources */,

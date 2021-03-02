@@ -254,8 +254,7 @@ private extension VideoTransition {
           let videoInstruction = CompositionInstruction(theSourceTrackIDs: trackIDs, forTimeRange: timeRange)
 
           // TODO: Random Effect for testing
-//          videoInstruction.effect = Effect(rawValue: Int.random(in: 1...Effect.allCases.count - 1)) ?? .normal
-          videoInstruction.effect = .bounce
+          videoInstruction.effect = Effect(rawValue: Int.random(in: 1...Effect.allCases.count - 1)) ?? .normal
           print("Video Transition Effect: \(videoInstruction.effect.description) at \(index)")
 
           // First track -> Foreground track while compositing.

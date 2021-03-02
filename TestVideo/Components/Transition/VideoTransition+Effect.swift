@@ -10,6 +10,21 @@ extension VideoTransition {
     case pinwheel
     case gridFlip
     case bounce
+    case bowTieHorizontal
+    case bowTieVertical
+    case burn
+    case butterflyWaveScrawler
+    case cannabisleaf
+    case circleCrop
+    case circleOpen
+    case circle
+    case colorPhase
+    case colourDistance
+    case crazyParametricFun
+    case crossHatch
+    case crossWarp
+    case crossZoom
+    case cube
 
     var transition: BaseTransition {
       switch self {
@@ -20,6 +35,21 @@ extension VideoTransition {
       case .pinwheel: return PinwheelTransition()
       case .gridFlip: return GridFlipTransition()
       case .bounce: return BounceTransition()
+      case .bowTieHorizontal: return BowTieHorizontalTransition()
+      case .bowTieVertical: return BowTieVerticalTransition()
+      case .burn: return BurnTransition()
+      case .butterflyWaveScrawler: return ButterflyWaveScrawlerTransition()
+      case .cannabisleaf: return CannabisleafTransition()
+      case .circleCrop: return CircleCropTransition()
+      case .circleOpen: return CircleOpenTransition()
+      case .circle: return CircleTransition()
+      case .colorPhase: return ColorPhaseTransition()
+      case .colourDistance: return ColourDistanceTransition()
+      case .crazyParametricFun: return CrazyParametricFunTransition()
+      case .crossHatch: return CrossHatchTransition()
+      case .crossWarp: return CrossWarpTransition()
+      case .crossZoom: return CrossZoomTransition()
+      case .cube: return CubeTransition()
       }
     }
 

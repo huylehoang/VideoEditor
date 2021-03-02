@@ -8,13 +8,13 @@ extension VideoTransition {
     private var pause: Float = 0.1
     private var dividerWidth: Float = 0.05
     private var size: SIMD2<Int32> = SIMD2(4, 4)
-
+    
     override var functionName: String {
       return "GridFlipTransition"
     }
-
+    
     override func updateParameters(forComputeCommandEncoder encoder: MTLComputeCommandEncoder) {
-      encoder.setColorValue(bgColor, at: 2)
+      encoder.setColorValueForFloat4(bgColor, at: 2)
       encoder.setValue(&randomness, at: 3)
       encoder.setValue(&pause, at: 4)
       encoder.setValue(&dividerWidth, at: 5)
