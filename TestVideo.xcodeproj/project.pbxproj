@@ -134,6 +134,7 @@
 		84499F902587228400041921 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84499F922587228400041921 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84499F9C2587231800041921 /* VideoEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEditorViewController.swift; sourceTree = "<group>"; };
+		8453B40525EDFB7B00FCA9A5 /* VideoTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoTransition.h; sourceTree = "<group>"; };
 		8458126F259477E2002223E7 /* FilterControlPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterControlPresentationController.swift; sourceTree = "<group>"; };
 		845A9908258B33BA005B81D0 /* ThumbnailSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailSlider.swift; sourceTree = "<group>"; };
 		8464CFDB2594452000798523 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
@@ -172,27 +173,12 @@
 		1002729F25EA8E05001347CE /* Effects */ = {
 			isa = PBXGroup;
 			children = (
-				104904C025EA99F7008367C2 /* Normal */,
-				10C9D44725EB44FC00A8CD3A /* Fade */,
-			);
-			path = Effects;
-			sourceTree = "<group>";
-		};
-		104904C025EA99F7008367C2 /* Normal */ = {
-			isa = PBXGroup;
-			children = (
+				8453B40525EDFB7B00FCA9A5 /* VideoTransition.h */,
 				100272A025EA8E83001347CE /* NormalTransition.swift */,
-			);
-			path = Normal;
-			sourceTree = "<group>";
-		};
-		10C9D44725EB44FC00A8CD3A /* Fade */ = {
-			isa = PBXGroup;
-			children = (
 				10C9D44825EB453C00A8CD3A /* FadeTransition.metal */,
 				10C9D44B25EB4D9B00A8CD3A /* FadeTransition.swift */,
 			);
-			path = Fade;
+			path = Effects;
 			sourceTree = "<group>";
 		};
 		8413DA5D25C90AED00FCE1D8 /* MultipleVideoTranstitions */ = {
