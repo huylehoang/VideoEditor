@@ -38,7 +38,7 @@ extension VideoTransition {
       }
     }
 
-    private lazy var renderer = Renderer(effect: .normal)
+    private lazy var renderer = Renderer(effect: .none)
 
     func renderContextChanged(_ newRenderContext: AVVideoCompositionRenderContext) {
       renderContextQueue.sync { renderContext = newRenderContext }
@@ -55,8 +55,19 @@ extension VideoTransition {
           }
 
           guard
-            let currentInstruction = asyncVideoCompositionRequest.videoCompositionInstruction as? CompositionInstruction,
-            let resultPixels = self.newRenderedPixelBufferForRequest(asyncVideoCompositionRequest, withRenderer: Renderer(effect: currentInstruction.effect))
+            let currentInstruction = asyncVideoCompositionRequest.videoCompositionInstruction
+              as? CompositionInstruction
+          else {
+            asyncVideoCompositionRequest.finish(with: Error.newRenderedPixelBufferForRequestFailure)
+            return
+          }
+
+          if self.renderer.effect != currentInstruction.effect {
+            self.renderer = Renderer(effect: currentInstruction.effect)
+          }
+
+          guard
+            let resultPixels = self.newRenderedPixelBufferForRequest( asyncVideoCompositionRequest)
           else {
             asyncVideoCompositionRequest.finish(with: Error.newRenderedPixelBufferForRequestFailure)
             return
@@ -84,10 +95,7 @@ extension VideoTransition {
       return CMTimeGetSeconds(elapsed) / CMTimeGetSeconds(range.duration)
     }
 
-    func newRenderedPixelBufferForRequest(
-      _ request: AVAsynchronousVideoCompositionRequest,
-      withRenderer renderer: Renderer
-    ) -> CVPixelBuffer? {
+    func newRenderedPixelBufferForRequest(_ request: AVAsynchronousVideoCompositionRequest) -> CVPixelBuffer? {
       // Source pixel buffers are used as inputs while rendering the transition.
       guard
         let currentInstruction = request.videoCompositionInstruction as? CompositionInstruction,

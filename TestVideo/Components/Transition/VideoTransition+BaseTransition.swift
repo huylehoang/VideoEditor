@@ -16,25 +16,16 @@ extension VideoTransition {
         let kernel = self.kernel,
         let fromImage = self.fromImage,
         let fromTexture = fromImage.metalTexture,
-        let toTexture = toImage?.metalTexture
-      else {
-        return self.fromImage
-      }
-
-      let descriptor = makeTextureDescriptor(fromTexture: fromTexture)
-
-      guard
-        let outputTexture = MetalDevice.sharedDevice.makeTexture(descriptor: descriptor),
+        let toTexture = toImage?.metalTexture,
+        let outputTexture = makeOutputTexture(withFromTexture: fromTexture),
         let commandBuffer = MetalDevice.sharedCommandQueue.makeCommandBuffer(),
         let encoder = commandBuffer.makeComputeCommandEncoder()
       else {
-        return fromImage
+        return self.fromImage
       }
-
+      
       let threadgroupSize = makeThreadgroupSize(from: kernel)
-
       let threadgroupCount = makeThreadgroupCount(fromSize: threadgroupSize, andFromTexture: fromTexture)
-
       var ratio = makeRatio(fromCIImage: fromImage)
 
       encoder.setComputePipelineState(kernel)
@@ -76,6 +67,11 @@ private extension VideoTransition.BaseTransition {
     descriptor.height = texture.height
     descriptor.usage = [.shaderRead, .shaderWrite]
     return descriptor
+  }
+
+  func makeOutputTexture(withFromTexture fromTexture: MTLTexture) -> MTLTexture? {
+    let descriptor = makeTextureDescriptor(fromTexture: fromTexture)
+    return MetalDevice.sharedDevice.makeTexture(descriptor: descriptor)
   }
 
   func makeThreadgroupSize(from kernel: MTLComputePipelineState) -> MTLSize {

@@ -3,7 +3,7 @@ import Foundation
 /// Referene MTTransitions github: https://github.com/alexiscn/MTTransitions
 extension VideoTransition {
   enum Effect: Int, CaseIterable, CustomStringConvertible {
-    case normal
+    case none
     case fade
     case wind
     case multiplyBlend
@@ -28,7 +28,7 @@ extension VideoTransition {
 
     var transition: BaseTransition {
       switch self {
-      case .normal: return NormalTransition()
+      case .none: return NoneTransition()
       case .fade: return FadeTransition()
       case .wind: return WindTransition()
       case .multiplyBlend: return MultiplyBlendTransition()

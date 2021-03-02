@@ -5,9 +5,11 @@ extension VideoTransition {
   private static let context = CIContext(mtlDevice: MTLCreateSystemDefaultDevice()!)
 
   final class Renderer {
+    let effect: Effect
     private let transition: BaseTransition
 
     init(effect: Effect) {
+      self.effect = effect
       transition = effect.transition
     }
 

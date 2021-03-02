@@ -10,7 +10,7 @@ extension VideoTransition {
     var backgroundTrackID: CMPersistentTrackID = kCMPersistentTrackID_Invalid
 
     /// Effect applied to video transition
-    var effect: Effect = .normal
+    var effect: Effect = .none
 
     var timeRange: CMTimeRange {
         get { return self.overrideTimeRange }
