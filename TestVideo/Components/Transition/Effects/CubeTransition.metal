@@ -43,9 +43,6 @@ kernel void CubeTransition(texture2d<float, access::write> outputTexture [[ text
   if ((gid.x >= outputTexture.get_width()) || (gid.y >= outputTexture.get_height())) { return; }
   float2 uv = float2(gid) / float2(tpg);
   uv.y = 1.0 - uv.y;
-  float2 texCoord = uv.xy / float2(1.0).xy;
-
-
 
   float uz = unzoom * 2.0*(0.5 - abs(0.5 - progress));
   float2 p = -uz*0.5+(1.0+uz) * uv;
