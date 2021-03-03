@@ -98,7 +98,12 @@ extension VideoTransition {
     }
 
     var description: String {
-      return transition.functionName
+      return transition
+        .functionName
+        .replacingOccurrences(
+          of: "Transition",
+          with: "",
+          options: [.caseInsensitive, .regularExpression])
     }
   }
 }
