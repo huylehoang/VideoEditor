@@ -43,11 +43,9 @@ extension VideoTransition {
     var transition: BaseTransition {
       switch self {
       case .none: return NoneTransition()
-      case .fade: return FadeTransition()
       case .wind: return WindTransition()
       case .multiplyBlend: return MultiplyBlendTransition()
       case .pinwheel: return PinwheelTransition()
-      case .gridFlip: return GridFlipTransition()
       case .bounce: return BounceTransition()
       case .bowTieHorizontal: return BowTieHorizontalTransition()
       case .bowTieVertical: return BowTieVerticalTransition()
@@ -74,9 +72,11 @@ extension VideoTransition {
       case .dreamyZoom: return DreamyZoomTransition()
       case .fadeColor: return FadeColorTransition()
       case .fadegrayscale: return FadegrayscaleTransition()
+      case .fade: return FadeTransition()
       case .flyeye: return FlyeyeTransition()
       case .glitchDisplace: return GlitchDisplaceTransition()
       case .glitchMemories: return GlitchMemoriesTransition()
+      case .gridFlip: return GridFlipTransition()
       case .heart: return HeartTransition()
       }
     }
