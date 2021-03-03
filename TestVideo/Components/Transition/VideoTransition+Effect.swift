@@ -3,12 +3,8 @@ import Foundation
 /// Referene MTTransitions github: https://github.com/alexiscn/MTTransitions
 extension VideoTransition {
   enum Effect: Int, CaseIterable, CustomStringConvertible {
-    case none
-    case fade
     case wind
-    case multiplyBlend
     case pinwheel
-    case gridFlip
     case bounce
     case bowTieHorizontal
     case bowTieVertical
@@ -35,9 +31,11 @@ extension VideoTransition {
     case dreamyZoom
     case fadeColor
     case fadegrayscale
+    case fade
     case flyeye
     case glitchDisplace
     case glitchMemories
+    case gridFlip
     case heart
     case hexagonalize
     case invertedPageCurl
@@ -47,6 +45,8 @@ extension VideoTransition {
     case luminanceMelt
     case morph
     case mosaic
+    case multiplyBlend
+    case none
 
     var transition: BaseTransition {
       switch self {
