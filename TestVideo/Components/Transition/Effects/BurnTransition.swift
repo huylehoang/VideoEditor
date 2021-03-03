@@ -10,7 +10,7 @@ extension VideoTransition {
     }
 
     override func updateParameters(forComputeCommandEncoder encoder: MTLComputeCommandEncoder) {
-      encoder.setColorValueForFloat3(color, at: 2)
+      encoder.setColorValueAsFloat3(color, at: 2)
     }
   }
 }

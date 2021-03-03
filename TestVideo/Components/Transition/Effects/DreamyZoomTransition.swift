@@ -2,15 +2,17 @@ import UIKit
 
 /// Referene MTTransitions github: https://github.com/alexiscn/MTTransitions
 extension VideoTransition {
-  final class CircleCropTransition: BaseTransition {
-    private var bgColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+  final class DreamyZoomTransition: BaseTransition {
+    private var rotation: Float = 6
+    private var scale: Float = 1.2
 
     override var functionName: String {
-      return "CircleCropTransition"
+      return "DreamyZoomTransition"
     }
 
     override func updateParameters(forComputeCommandEncoder encoder: MTLComputeCommandEncoder) {
-      encoder.setColorValueAsFloat4(bgColor, at: 2)
+      encoder.setValue(&rotation, at: 2)
+      encoder.setValue(&scale, at: 3)
     }
   }
 }

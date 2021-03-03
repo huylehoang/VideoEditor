@@ -25,6 +25,20 @@ extension VideoTransition {
     case crossWarp
     case crossZoom
     case cube
+    case directional
+    case directionalWarp
+    case directionalWipe
+    case displacement
+    case doomScreen
+    case doorway
+    case dreamy
+    case dreamyZoom
+    case fadeColor
+    case fadegrayscale
+    case flyeye
+    case glitchDisplace
+    case glitchMemories
+    case heart
 
     var transition: BaseTransition {
       switch self {
@@ -50,6 +64,20 @@ extension VideoTransition {
       case .crossWarp: return CrossWarpTransition()
       case .crossZoom: return CrossZoomTransition()
       case .cube: return CubeTransition()
+      case .directional: return DirectionalTransition()
+      case .directionalWarp: return DirectionalWarpTransition()
+      case .directionalWipe: return DirectionalWipeTransition()
+      case .displacement: return DisplacementTransition()
+      case .doomScreen: return DoomScreenTransition()
+      case .doorway: return DoorwayTransition()
+      case .dreamy: return DreamyTransition()
+      case .dreamyZoom: return DreamyZoomTransition()
+      case .fadeColor: return FadeColorTransition()
+      case .fadegrayscale: return FadegrayscaleTransition()
+      case .flyeye: return FlyeyeTransition()
+      case .glitchDisplace: return GlitchDisplaceTransition()
+      case .glitchMemories: return GlitchMemoriesTransition()
+      case .heart: return HeartTransition()
       }
     }
 

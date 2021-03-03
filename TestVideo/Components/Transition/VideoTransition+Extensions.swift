@@ -6,21 +6,30 @@ extension MTLComputeCommandEncoder {
     setBytes(value, length: MemoryLayout.size(ofValue: value), index: index)
   }
 
-  func setColorValueForFloat3(_ value: UIColor, at index: Int) {
+  func setColorValueAsFloat3(_ value: UIColor, at index: Int) {
     let rbga = value.rgba
     var color = vector_float3(Float(rbga.red), Float(rbga.green), Float(rbga.blue))
     setBytes(&color, length: MemoryLayout.size(ofValue: color), index: index)
   }
 
-  func setColorValueForFloat4(_ value: UIColor, at index: Int) {
+  func setColorValueAsFloat4(_ value: UIColor, at index: Int) {
     let rbga = value.rgba
     var color = vector_float4(Float(rbga.red), Float(rbga.green), Float(rbga.blue), Float(rbga.alpha))
     setBytes(&color, length: MemoryLayout.size(ofValue: color), index: index)
   }
 
-  func setPointValueForFloat2(_ value: CGPoint, at index: Int) {
+  func setPointValueAsFloat2(_ value: CGPoint, at index: Int) {
     var point = vector_float2(Float(value.x), Float(value.y))
     setBytes(&point, length: MemoryLayout.size(ofValue: point), index: index)
+  }
+
+  func setImageAsTexture(_ image: UIImage?, at index: Int) {
+    guard
+      let images = image,
+      let ciImage = CIImage(image: images),
+      let texture = ciImage.metalTexture
+    else { return }
+    setTexture(texture, index: index)
   }
 }
 
