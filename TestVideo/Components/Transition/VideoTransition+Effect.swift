@@ -39,12 +39,18 @@ extension VideoTransition {
     case glitchDisplace
     case glitchMemories
     case heart
+    case hexagonalize
+    case invertedPageCurl
+    case kaleidoScope
+    case linearBlur
+    case luma
+    case luminanceMelt
+    case morph
+    case mosaic
 
     var transition: BaseTransition {
       switch self {
-      case .none: return NoneTransition()
       case .wind: return WindTransition()
-      case .multiplyBlend: return MultiplyBlendTransition()
       case .pinwheel: return PinwheelTransition()
       case .bounce: return BounceTransition()
       case .bowTieHorizontal: return BowTieHorizontalTransition()
@@ -78,6 +84,16 @@ extension VideoTransition {
       case .glitchMemories: return GlitchMemoriesTransition()
       case .gridFlip: return GridFlipTransition()
       case .heart: return HeartTransition()
+      case .hexagonalize: return HexagonalizeTransition()
+      case .invertedPageCurl: return InvertedPageCurlTransition()
+      case .kaleidoScope: return KaleidoScopeTransition()
+      case .linearBlur: return LinearBlurTransition()
+      case .luma: return LumaTransition()
+      case .luminanceMelt: return LuminanceMeltTransition()
+      case .morph: return MorphTransition()
+      case .mosaic: return MosaicTransition()
+      case .multiplyBlend: return MultiplyBlendTransition()
+      case .none: return NoneTransition()
       }
     }
 
