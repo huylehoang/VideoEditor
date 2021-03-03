@@ -625,9 +625,9 @@
 		8464CFE92594462900798523 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				10A5E31025EE9DA1007B66E6 /* Metal */,
 				8413DA7B25C94AE100FCE1D8 /* VideoCompositor */,
 				8413DA7A25C94AD800FCE1D8 /* VideoExporter */,
+				10A5E31025EE9DA1007B66E6 /* Metal */,
 				8413DA6125C90B6F00FCE1D8 /* Transition */,
 				84994D3A259052A00020A3E7 /* CustomFilters */,
 				8464CFE7259445C800798523 /* PlayerController */,
