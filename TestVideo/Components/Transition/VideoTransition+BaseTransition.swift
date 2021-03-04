@@ -2,8 +2,10 @@ import UIKit
 
 /// Referene MTTransitions github: https://github.com/alexiscn/MTTransitions
 extension VideoTransition {
-  class BaseTransition {
+  class BaseTransition: CustomStringConvertible {
     var functionName: String { return "" }
+
+    var description: String { return functionName }
 
     var fromImage: CIImage?
 

@@ -1,5 +1,8 @@
 /// Referene MTTransitions github: https://github.com/alexiscn/MTTransitions
 
+// License: MIT
+// Author: gre
+
 #include <metal_stdlib>
 #include "VideoTransition.h"
 

@@ -40,6 +40,8 @@ extension VideoTransition {
     case kaleidoScope
     case linearBlur
     case luma
+    case lumaRandom
+    case lumaRandomSpiral
     case luminanceMelt
     case morph
     case mosaic
@@ -112,6 +114,8 @@ extension VideoTransition {
       case .kaleidoScope: return KaleidoScopeTransition()
       case .linearBlur: return LinearBlurTransition()
       case .luma: return LumaTransition()
+      case .lumaRandom: return LumaRandomTransition()
+      case .lumaRandomSpiral: return LumaRandomSpiralTransition()
       case .luminanceMelt: return LuminanceMeltTransition()
       case .morph: return MorphTransition()
       case .mosaic: return MosaicTransition()
@@ -149,7 +153,7 @@ extension VideoTransition {
 
     var description: String {
       return transition
-        .functionName
+        .description
         .replacingOccurrences(
           of: "Transition",
           with: "",
