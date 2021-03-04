@@ -18,6 +18,8 @@
 		1070D70D258E8E7B00CCE304 /* Utilites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070D70C258E8E7B00CCE304 /* Utilites.swift */; };
 		10C9D44925EB453C00A8CD3A /* FadeTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 10C9D44825EB453C00A8CD3A /* FadeTransition.metal */; };
 		10C9D44C25EB4D9B00A8CD3A /* FadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10C9D44B25EB4D9B00A8CD3A /* FadeTransition.swift */; };
+		10E3B67A25F13C28003B9216 /* TransitionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E3B67925F13C28003B9216 /* TransitionPickerViewController.swift */; };
+		10E3B67E25F13CCD003B9216 /* TransitionPickerPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10E3B67D25F13CCD003B9216 /* TransitionPickerPresentationController.swift */; };
 		8413DA5F25C90B1300FCE1D8 /* MultipleVideoTranstionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413DA5E25C90B1300FCE1D8 /* MultipleVideoTranstionsViewController.swift */; };
 		8413DA6325C90B9C00FCE1D8 /* VideoTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413DA6225C90B9C00FCE1D8 /* VideoTransition.swift */; };
 		8413DA6625C90DDD00FCE1D8 /* VideoTransition+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413DA6525C90DDD00FCE1D8 /* VideoTransition+Error.swift */; };
@@ -249,6 +251,8 @@
 		1070D70C258E8E7B00CCE304 /* Utilites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilites.swift; sourceTree = "<group>"; };
 		10C9D44825EB453C00A8CD3A /* FadeTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = FadeTransition.metal; sourceTree = "<group>"; };
 		10C9D44B25EB4D9B00A8CD3A /* FadeTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FadeTransition.swift; sourceTree = "<group>"; };
+		10E3B67925F13C28003B9216 /* TransitionPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionPickerViewController.swift; sourceTree = "<group>"; };
+		10E3B67D25F13CCD003B9216 /* TransitionPickerPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionPickerPresentationController.swift; sourceTree = "<group>"; };
 		8413DA5E25C90B1300FCE1D8 /* MultipleVideoTranstionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleVideoTranstionsViewController.swift; sourceTree = "<group>"; };
 		8413DA6225C90B9C00FCE1D8 /* VideoTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTransition.swift; sourceTree = "<group>"; };
 		8413DA6525C90DDD00FCE1D8 /* VideoTransition+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoTransition+Error.swift"; sourceTree = "<group>"; };
@@ -595,9 +599,19 @@
 			path = Metal;
 			sourceTree = "<group>";
 		};
+		10E3B67C25F13C8A003B9216 /* TransitionPicker */ = {
+			isa = PBXGroup;
+			children = (
+				10E3B67925F13C28003B9216 /* TransitionPickerViewController.swift */,
+				10E3B67D25F13CCD003B9216 /* TransitionPickerPresentationController.swift */,
+			);
+			path = TransitionPicker;
+			sourceTree = "<group>";
+		};
 		8413DA5D25C90AED00FCE1D8 /* MultipleVideoTranstitions */ = {
 			isa = PBXGroup;
 			children = (
+				10E3B67C25F13C8A003B9216 /* TransitionPicker */,
 				8413DA5E25C90B1300FCE1D8 /* MultipleVideoTranstionsViewController.swift */,
 			);
 			path = MultipleVideoTranstitions;
@@ -628,7 +642,6 @@
 				8413DA7925C94A2600FCE1D8 /* CustomSlider */,
 				8413DA7825C949F300FCE1D8 /* PlayerToolbar */,
 				8464CFE82594461500798523 /* PlayerView */,
-				8464CFEA2594475100798523 /* AddFilterViewController */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -742,6 +755,7 @@
 			isa = PBXGroup;
 			children = (
 				84499F9C2587231800041921 /* VideoEditorViewController.swift */,
+				8464CFEA2594475100798523 /* FilterControl */,
 			);
 			path = VideoEditor;
 			sourceTree = "<group>";
@@ -786,14 +800,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		8464CFEA2594475100798523 /* AddFilterViewController */ = {
+		8464CFEA2594475100798523 /* FilterControl */ = {
 			isa = PBXGroup;
 			children = (
 				8464CFEE259447EB00798523 /* Components */,
 				8464CFEB2594476400798523 /* FilterControlViewController.swift */,
 				8458126F259477E2002223E7 /* FilterControlPresentationController.swift */,
 			);
-			path = AddFilterViewController;
+			path = FilterControl;
 			sourceTree = "<group>";
 		};
 		8464CFEE259447EB00798523 /* Components */ = {
@@ -1017,6 +1031,7 @@
 				84FE8AB5258A03C800E7D1C9 /* PlaybackController.swift in Sources */,
 				84FE8AB8258A0AF300E7D1C9 /* PlayerSeeker.swift in Sources */,
 				84F68DA825EE4E7B0095C7DF /* CircleCropTransition.metal in Sources */,
+				10E3B67A25F13C28003B9216 /* TransitionPickerViewController.swift in Sources */,
 				845829F825F083A800FF9E56 /* PixelizeTransition.swift in Sources */,
 				84F68DBA25EE55030095C7DF /* ColorPhaseTransition.metal in Sources */,
 				84EABE9825EFA1DE008DB4D2 /* KaleidoScopeTransition.swift in Sources */,
@@ -1135,6 +1150,7 @@
 				84582A5A25F0B4EA00FF9E56 /* WaterDropTransition.swift in Sources */,
 				84582A1B25F090D600FF9E56 /* RotateScaleFadeTransition.metal in Sources */,
 				84F68D8225EE325E0095C7DF /* BounceTransition.metal in Sources */,
+				10E3B67E25F13CCD003B9216 /* TransitionPickerPresentationController.swift in Sources */,
 				8413DA8425C9564A00FCE1D8 /* VideoTransition+CompositionInstruction.swift in Sources */,
 				84582A0725F0878400FF9E56 /* RadialTransition.metal in Sources */,
 			);

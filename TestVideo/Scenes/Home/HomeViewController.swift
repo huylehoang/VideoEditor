@@ -48,14 +48,9 @@ private extension HomeViewController {
   }
 
   @objc func mergeVideoButtonDidtap(_ sender: UIButton) {
-    guard
-      let url1 = Bundle.main.url(forResource: "cut1.mp4", withExtension: nil),
-      let url2 = Bundle.main.url(forResource: "cut2.mp4", withExtension: nil),
-      let url3 = Bundle.main.url(forResource: "cut3.mp4", withExtension: nil)
-    else { return }
-    let multipleVideoTransition = MultipleVideoTranstionsViewController(urls: [url1, url2, url3])
-    multipleVideoTransition.modalPresentationStyle = .fullScreen
-    navigationController?.pushViewController(multipleVideoTransition, animated: true)
+    let transitionPicker = TransitionPickerViewController()
+    transitionPicker.delegate = self
+    navigationController?.present(transitionPicker, animated: true)
   }
 }
 
@@ -69,5 +64,22 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
     let videoEditorViewController = VideoEditorViewController(videoUrl: videoUrl)
     videoEditorViewController.modalPresentationStyle = .fullScreen
     navigationController?.pushViewController(videoEditorViewController, animated: true)
+  }
+}
+
+extension HomeViewController: TransitionPickerViewControllerDelegate {
+  func transitionPickerViewController(
+    _ picker: TransitionPickerViewController,
+    effects: [VideoTransition.Effect]) {
+    picker.dismiss(animated: true)
+    guard
+      let url1 = Bundle.main.url(forResource: "cut1.mp4", withExtension: nil),
+      let url2 = Bundle.main.url(forResource: "cut2.mp4", withExtension: nil),
+      let url3 = Bundle.main.url(forResource: "cut3.mp4", withExtension: nil)
+    else { return }
+    let multipleVideoTransition = MultipleVideoTranstionsViewController(
+      urls: [url1, url2, url3],
+      effects: effects)
+    navigationController?.pushViewController(multipleVideoTransition, animated: true)
   }
 }

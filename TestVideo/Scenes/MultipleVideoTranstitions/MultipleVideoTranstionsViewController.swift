@@ -10,6 +10,7 @@ import AVFoundation
 
 final class MultipleVideoTranstionsViewController: UIViewController {
   private let clips: [AVAsset]
+  private let effects: [VideoTransition.Effect]
   private let videoTransition: VideoTransition
   private let playbackController: PlaybackController
   private let videoExporter: VideoExporter
@@ -38,8 +39,9 @@ final class MultipleVideoTranstionsViewController: UIViewController {
   private var asset: AVAsset
   private var videoComposition: AVVideoComposition?
 
-  init(urls: [URL]) {
+  init(urls: [URL], effects: [VideoTransition.Effect]) {
     clips = urls.map { AVAsset(url: $0) }
+    self.effects = effects
     videoTransition = VideoTransition()
     asset = AVAsset(url: urls[0])
     playbackController = PlaybackController(playerItem: AVPlayerItem(asset: asset))
@@ -105,7 +107,7 @@ private extension MultipleVideoTranstionsViewController {
 
   func setupTranstions() {
     do {
-      try videoTransition.merge(clips, completion: { [weak self] result in
+      try videoTransition.merge(clips, effects: effects, completion: { [weak self] result in
         guard let self = self else { return }
         self.asset = result.composition
         self.videoComposition = result.videoComposition

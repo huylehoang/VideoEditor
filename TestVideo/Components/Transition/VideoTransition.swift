@@ -3,13 +3,18 @@ import AVFoundation
 
 /// Referene MTTransitions github: https://github.com/alexiscn/MTTransitions
 class VideoTransition {
+  private static let defaultTransitionDuration = CMTimeMakeWithSeconds(2.0, preferredTimescale: 1000)
+
   typealias Completion = (Result) -> Void
 
   //// The duration of the transition.
-  private var transitionDuration: CMTime = CMTimeMakeWithSeconds(2.0, preferredTimescale: 1000)
+  private var transitionDuration: CMTime = defaultTransitionDuration
 
   /// The movie clips.
   private var clips: [AVAsset] = []
+
+  /// The effects of transitions. The count of effects should be clips.count - 1
+  private var effects: [Effect] = []
 
   /// The available time ranges for the movie clips.
   private var clipTimeRanges: [CMTimeRange] = []
@@ -20,15 +25,26 @@ class VideoTransition {
   /// The transition time range for the clips.
   private var transitionTimeRanges: [CMTimeRange] = []
 
-  func merge(_ assets: [AVAsset], completion: @escaping Completion) throws {
+  func merge(
+    _ assets: [AVAsset],
+    effects: [Effect],
+    transitionDuration: CMTime = defaultTransitionDuration,
+    completion: @escaping Completion
+  ) throws {
     guard assets.count >= 2 else {
       throw Error.numberOfAssetsMustLargeThanTwo
+    }
+
+    guard effects.count == assets.count - 1 else {
+        throw Error.numberOfEffectsWrong
     }
 
     clips.removeAll()
     clipTimeRanges.removeAll()
     passThroughTimeRanges.removeAll()
     transitionTimeRanges.removeAll()
+    self.effects = effects
+    self.transitionDuration = transitionDuration
 
     /*
      Load Asset with keys: ["tracks", "duration", "composable"]
@@ -252,11 +268,8 @@ private extension VideoTransition {
           ]
           let timeRange = transitionTimeRanges[index]
           let videoInstruction = CompositionInstruction(theSourceTrackIDs: trackIDs, forTimeRange: timeRange)
-
-          // TODO: Random Effect for testing
-          videoInstruction.effect = Effect(rawValue: Int.random(in: 0...Effect.allCases.count - 1)) ?? .none
+          videoInstruction.effect = effects[index]
           print("Video Transition Effect: \(videoInstruction.effect.description) at \(index)")
-
           // First track -> Foreground track while compositing.
           videoInstruction.foregroundTrackID = compositionVideoTracks[alternatingIndex].trackID
           // Second track -> Background track while compositing.
@@ -266,7 +279,7 @@ private extension VideoTransition {
           let transitionInstruction = AVMutableVideoCompositionInstruction()
           transitionInstruction.timeRange = transitionTimeRanges[index]
           let fromLayer = AVMutableVideoCompositionLayerInstruction(
-              assetTrack: compositionVideoTracks[alternatingIndex])
+            assetTrack: compositionVideoTracks[alternatingIndex])
           let toLayer = AVMutableVideoCompositionLayerInstruction(
             assetTrack:compositionVideoTracks[1 - alternatingIndex])
           transitionInstruction.layerInstructions = [fromLayer, toLayer]
