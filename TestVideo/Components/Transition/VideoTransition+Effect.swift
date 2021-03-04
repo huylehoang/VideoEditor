@@ -41,7 +41,7 @@ extension VideoTransition {
     case linearBlur
     case luma
     case lumaRandom
-    case lumaRandomSpiral
+    case lumaSpiral
     case luminanceMelt
     case morph
     case mosaic
@@ -115,7 +115,7 @@ extension VideoTransition {
       case .linearBlur: return LinearBlurTransition()
       case .luma: return LumaTransition()
       case .lumaRandom: return LumaRandomTransition()
-      case .lumaRandomSpiral: return LumaRandomSpiralTransition()
+      case .lumaSpiral: return LumaSpiralTransition()
       case .luminanceMelt: return LuminanceMeltTransition()
       case .morph: return MorphTransition()
       case .mosaic: return MosaicTransition()
