@@ -4,7 +4,6 @@ import Foundation
 extension VideoTransition {
   enum Effect: Int, CaseIterable, CustomStringConvertible {
     case wind
-    case pinwheel
     case bounce
     case bowTieHorizontal
     case bowTieVertical
@@ -47,11 +46,28 @@ extension VideoTransition {
     case mosaic
     case multiplyBlend
     case none
+    case perlin
+    case pinwheel
+    case pixelize
+    case polarFunction
+    case polkaDotsCurtain
+    case radial
+    case randomSquares
+    case ripple
+    case rotateScaleFade
+    case simpleZoom
+    case squaresWire
+    case squeeze
+    case stereoViewer
+    case swap
+    case swirl
+    case tangentMotionBlur
+    case tvStatic
+    case undulatingBurnOut
 
     var transition: BaseTransition {
       switch self {
       case .wind: return WindTransition()
-      case .pinwheel: return PinwheelTransition()
       case .bounce: return BounceTransition()
       case .bowTieHorizontal: return BowTieHorizontalTransition()
       case .bowTieVertical: return BowTieVerticalTransition()
@@ -94,6 +110,24 @@ extension VideoTransition {
       case .mosaic: return MosaicTransition()
       case .multiplyBlend: return MultiplyBlendTransition()
       case .none: return NoneTransition()
+      case .perlin: return PerlinTransition()
+      case .pinwheel: return PinwheelTransition()
+      case .pixelize: return PixelizeTransition()
+      case .polarFunction: return PolarFunctionTransition()
+      case .polkaDotsCurtain: return PolkaDotsCurtainTransition()
+      case .radial: return RadialTransition()
+      case .randomSquares: return RandomSquaresTransition()
+      case .ripple: return RippleTransition()
+      case .rotateScaleFade: return RotateScaleFadeTransition()
+      case .simpleZoom: return SimpleZoomTransition()
+      case .squaresWire: return SquaresWireTransition()
+      case .squeeze: return SqueezeTransition()
+      case .stereoViewer: return StereoViewerTransition()
+      case .swap: return SwapTransition()
+      case .swirl: return SwirlTransition()
+      case .tangentMotionBlur: return TangentMotionBlurTransition()
+      case .tvStatic: return TVStaticTransition()
+      case .undulatingBurnOut: return UndulatingBurnOutTransition()
       }
     }
 

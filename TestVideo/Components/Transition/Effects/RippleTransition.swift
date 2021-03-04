@@ -2,17 +2,17 @@ import UIKit
 
 /// Referene MTTransitions github: https://github.com/alexiscn/MTTransitions
 extension VideoTransition {
-  final class MosaicTransition: BaseTransition {
-    private var endy: Int = -1
-    private var endx: Int = 2
+  final class RippleTransition: BaseTransition {
+    private var speed: Float = 50
+    private var amplitude: Float = 100
 
     override var functionName: String {
-      return "MosaicTransition"
+      return "RippleTransition"
     }
 
     override func updateParameters(forComputeCommandEncoder encoder: MTLComputeCommandEncoder) {
-      encoder.setValue(&endy, at: 2)
-      encoder.setValue(&endx, at: 3)
+      encoder.setValue(&speed, at: 2)
+      encoder.setValue(&amplitude, at: 3)
     }
   }
 }

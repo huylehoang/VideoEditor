@@ -11,8 +11,7 @@ extension VideoTransition {
     }
 
     override func updateParameters(forComputeCommandEncoder encoder: MTLComputeCommandEncoder) {
-      var stepsValue = Int32(steps)
-      encoder.setValue(&stepsValue, at: 2)
+      encoder.setValue(&steps, at: 2)
       encoder.setValue(&horizontalHexagons, at: 3)
     }
   }

@@ -24,8 +24,7 @@ extension VideoTransition {
 
     override func updateParameters(forComputeCommandEncoder encoder: MTLComputeCommandEncoder) {
       encoder.setValue(&dripScale, at: 2)
-      var barsValue = Int32(bars)
-      encoder.setValue(&barsValue, at: 3)
+      encoder.setValue(&bars, at: 3)
       encoder.setValue(&noise, at: 4)
       encoder.setValue(&frequency, at: 5)
       encoder.setValue(&amplitude, at: 6)

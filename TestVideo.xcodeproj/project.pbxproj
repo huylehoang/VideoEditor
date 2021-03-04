@@ -38,6 +38,40 @@
 		84499F912587228400041921 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84499F8F2587228400041921 /* LaunchScreen.storyboard */; };
 		84499F9D2587231800041921 /* VideoEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84499F9C2587231800041921 /* VideoEditorViewController.swift */; };
 		84581270259477E2002223E7 /* FilterControlPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8458126F259477E2002223E7 /* FilterControlPresentationController.swift */; };
+		845829EE25F0813100FF9E56 /* PerlinTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 845829ED25F0813100FF9E56 /* PerlinTransition.metal */; };
+		845829F125F081BB00FF9E56 /* PerlinTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845829F025F081BB00FF9E56 /* PerlinTransition.swift */; };
+		845829F425F082D500FF9E56 /* PixelizeTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 845829F325F082D500FF9E56 /* PixelizeTransition.metal */; };
+		845829F825F083A800FF9E56 /* PixelizeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845829F725F083A800FF9E56 /* PixelizeTransition.swift */; };
+		845829FB25F0854500FF9E56 /* PolarFunctionTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 845829FA25F0854500FF9E56 /* PolarFunctionTransition.metal */; };
+		845829FE25F085E900FF9E56 /* PolarFunctionTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845829FD25F085E900FF9E56 /* PolarFunctionTransition.swift */; };
+		84582A0125F0866D00FF9E56 /* PolkaDotsCurtainTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A0025F0866D00FF9E56 /* PolkaDotsCurtainTransition.metal */; };
+		84582A0425F086E700FF9E56 /* PolkaDotsCurtainTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A0325F086E700FF9E56 /* PolkaDotsCurtainTransition.swift */; };
+		84582A0725F0878400FF9E56 /* RadialTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A0625F0878400FF9E56 /* RadialTransition.metal */; };
+		84582A0A25F087F500FF9E56 /* RadialTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A0925F087F500FF9E56 /* RadialTransition.swift */; };
+		84582A0D25F08CF100FF9E56 /* RandomSquaresTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A0C25F08CF100FF9E56 /* RandomSquaresTransition.metal */; };
+		84582A1025F08D6200FF9E56 /* RandomSquaresTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A0F25F08D6200FF9E56 /* RandomSquaresTransition.swift */; };
+		84582A1525F08FA100FF9E56 /* RippleTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A1425F08FA100FF9E56 /* RippleTransition.metal */; };
+		84582A1825F0902900FF9E56 /* RippleTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A1725F0902900FF9E56 /* RippleTransition.swift */; };
+		84582A1B25F090D600FF9E56 /* RotateScaleFadeTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A1A25F090D600FF9E56 /* RotateScaleFadeTransition.metal */; };
+		84582A1E25F0917900FF9E56 /* RotateScaleFadeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A1D25F0917900FF9E56 /* RotateScaleFadeTransition.swift */; };
+		84582A2125F0931400FF9E56 /* SimpleZoomTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A2025F0931400FF9E56 /* SimpleZoomTransition.metal */; };
+		84582A2425F093AD00FF9E56 /* SimpleZoomTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A2325F093AD00FF9E56 /* SimpleZoomTransition.swift */; };
+		84582A2725F0944A00FF9E56 /* SquaresWireTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A2625F0944A00FF9E56 /* SquaresWireTransition.metal */; };
+		84582A2A25F094B700FF9E56 /* SquaresWireTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A2925F094B700FF9E56 /* SquaresWireTransition.swift */; };
+		84582A2D25F0955100FF9E56 /* SqueezeTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A2C25F0955100FF9E56 /* SqueezeTransition.metal */; };
+		84582A3025F095CD00FF9E56 /* SqueezeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A2F25F095CD00FF9E56 /* SqueezeTransition.swift */; };
+		84582A3325F0966100FF9E56 /* StereoViewerTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A3225F0966100FF9E56 /* StereoViewerTransition.metal */; };
+		84582A3625F097CE00FF9E56 /* StereoViewerTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A3525F097CE00FF9E56 /* StereoViewerTransition.swift */; };
+		84582A3925F0987800FF9E56 /* SwapTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A3825F0987800FF9E56 /* SwapTransition.metal */; };
+		84582A3C25F0994D00FF9E56 /* SwapTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A3B25F0994D00FF9E56 /* SwapTransition.swift */; };
+		84582A3F25F09ABF00FF9E56 /* SwirlTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A3E25F09ABF00FF9E56 /* SwirlTransition.metal */; };
+		84582A4225F09B2000FF9E56 /* SwirlTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A4125F09B2000FF9E56 /* SwirlTransition.swift */; };
+		84582A4525F09BE800FF9E56 /* TangentMotionBlurTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A4425F09BE800FF9E56 /* TangentMotionBlurTransition.metal */; };
+		84582A4825F09C9C00FF9E56 /* TangentMotionBlurTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A4725F09C9C00FF9E56 /* TangentMotionBlurTransition.swift */; };
+		84582A4B25F09D1200FF9E56 /* TVStaticTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A4A25F09D1200FF9E56 /* TVStaticTransition.metal */; };
+		84582A4E25F09EE400FF9E56 /* TVStaticTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A4D25F09EE400FF9E56 /* TVStaticTransition.swift */; };
+		84582A5125F09F8F00FF9E56 /* UndulatingBurnOutTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A5025F09F8F00FF9E56 /* UndulatingBurnOutTransition.metal */; };
+		84582A5425F0A03A00FF9E56 /* UndulatingBurnOutTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A5325F0A03A00FF9E56 /* UndulatingBurnOutTransition.swift */; };
 		845A9909258B33BA005B81D0 /* ThumbnailSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A9908258B33BA005B81D0 /* ThumbnailSlider.swift */; };
 		8464CFDC2594452000798523 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464CFDB2594452000798523 /* Filter.swift */; };
 		8464CFEC2594476400798523 /* FilterControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464CFEB2594476400798523 /* FilterControlViewController.swift */; };
@@ -222,6 +256,40 @@
 		84499F9C2587231800041921 /* VideoEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoEditorViewController.swift; sourceTree = "<group>"; };
 		8453B40525EDFB7B00FCA9A5 /* VideoTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoTransition.h; sourceTree = "<group>"; };
 		8458126F259477E2002223E7 /* FilterControlPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterControlPresentationController.swift; sourceTree = "<group>"; };
+		845829ED25F0813100FF9E56 /* PerlinTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = PerlinTransition.metal; sourceTree = "<group>"; };
+		845829F025F081BB00FF9E56 /* PerlinTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerlinTransition.swift; sourceTree = "<group>"; };
+		845829F325F082D500FF9E56 /* PixelizeTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = PixelizeTransition.metal; sourceTree = "<group>"; };
+		845829F725F083A800FF9E56 /* PixelizeTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelizeTransition.swift; sourceTree = "<group>"; };
+		845829FA25F0854500FF9E56 /* PolarFunctionTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = PolarFunctionTransition.metal; sourceTree = "<group>"; };
+		845829FD25F085E900FF9E56 /* PolarFunctionTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolarFunctionTransition.swift; sourceTree = "<group>"; };
+		84582A0025F0866D00FF9E56 /* PolkaDotsCurtainTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = PolkaDotsCurtainTransition.metal; sourceTree = "<group>"; };
+		84582A0325F086E700FF9E56 /* PolkaDotsCurtainTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolkaDotsCurtainTransition.swift; sourceTree = "<group>"; };
+		84582A0625F0878400FF9E56 /* RadialTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = RadialTransition.metal; sourceTree = "<group>"; };
+		84582A0925F087F500FF9E56 /* RadialTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialTransition.swift; sourceTree = "<group>"; };
+		84582A0C25F08CF100FF9E56 /* RandomSquaresTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = RandomSquaresTransition.metal; sourceTree = "<group>"; };
+		84582A0F25F08D6200FF9E56 /* RandomSquaresTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomSquaresTransition.swift; sourceTree = "<group>"; };
+		84582A1425F08FA100FF9E56 /* RippleTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = RippleTransition.metal; sourceTree = "<group>"; };
+		84582A1725F0902900FF9E56 /* RippleTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RippleTransition.swift; sourceTree = "<group>"; };
+		84582A1A25F090D600FF9E56 /* RotateScaleFadeTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = RotateScaleFadeTransition.metal; sourceTree = "<group>"; };
+		84582A1D25F0917900FF9E56 /* RotateScaleFadeTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateScaleFadeTransition.swift; sourceTree = "<group>"; };
+		84582A2025F0931400FF9E56 /* SimpleZoomTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SimpleZoomTransition.metal; sourceTree = "<group>"; };
+		84582A2325F093AD00FF9E56 /* SimpleZoomTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleZoomTransition.swift; sourceTree = "<group>"; };
+		84582A2625F0944A00FF9E56 /* SquaresWireTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SquaresWireTransition.metal; sourceTree = "<group>"; };
+		84582A2925F094B700FF9E56 /* SquaresWireTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquaresWireTransition.swift; sourceTree = "<group>"; };
+		84582A2C25F0955100FF9E56 /* SqueezeTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SqueezeTransition.metal; sourceTree = "<group>"; };
+		84582A2F25F095CD00FF9E56 /* SqueezeTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqueezeTransition.swift; sourceTree = "<group>"; };
+		84582A3225F0966100FF9E56 /* StereoViewerTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = StereoViewerTransition.metal; sourceTree = "<group>"; };
+		84582A3525F097CE00FF9E56 /* StereoViewerTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StereoViewerTransition.swift; sourceTree = "<group>"; };
+		84582A3825F0987800FF9E56 /* SwapTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SwapTransition.metal; sourceTree = "<group>"; };
+		84582A3B25F0994D00FF9E56 /* SwapTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapTransition.swift; sourceTree = "<group>"; };
+		84582A3E25F09ABF00FF9E56 /* SwirlTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = SwirlTransition.metal; sourceTree = "<group>"; };
+		84582A4125F09B2000FF9E56 /* SwirlTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwirlTransition.swift; sourceTree = "<group>"; };
+		84582A4425F09BE800FF9E56 /* TangentMotionBlurTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = TangentMotionBlurTransition.metal; sourceTree = "<group>"; };
+		84582A4725F09C9C00FF9E56 /* TangentMotionBlurTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TangentMotionBlurTransition.swift; sourceTree = "<group>"; };
+		84582A4A25F09D1200FF9E56 /* TVStaticTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = TVStaticTransition.metal; sourceTree = "<group>"; };
+		84582A4D25F09EE400FF9E56 /* TVStaticTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVStaticTransition.swift; sourceTree = "<group>"; };
+		84582A5025F09F8F00FF9E56 /* UndulatingBurnOutTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = UndulatingBurnOutTransition.metal; sourceTree = "<group>"; };
+		84582A5325F0A03A00FF9E56 /* UndulatingBurnOutTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndulatingBurnOutTransition.swift; sourceTree = "<group>"; };
 		845A9908258B33BA005B81D0 /* ThumbnailSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailSlider.swift; sourceTree = "<group>"; };
 		8464CFDB2594452000798523 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		8464CFEB2594476400798523 /* FilterControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterControlViewController.swift; sourceTree = "<group>"; };
@@ -348,8 +416,6 @@
 				8453B40525EDFB7B00FCA9A5 /* VideoTransition.h */,
 				84F68D6225EE1ABF0095C7DF /* WindTransition.metal */,
 				84F68D6525EE1B600095C7DF /* WindTransition.swift */,
-				84F68D7025EE221F0095C7DF /* PinwheelTransition.metal */,
-				84F68D7325EE22E30095C7DF /* PinwheelTransition.swift */,
 				84F68D8125EE325E0095C7DF /* BounceTransition.metal */,
 				84F68D8425EE33650095C7DF /* BounceTransition.swift */,
 				84F68D8725EE42630095C7DF /* BowTieHorizontalTransition.metal */,
@@ -433,6 +499,42 @@
 				84F68D6A25EE1FD40095C7DF /* MultiplyBlendTransition.metal */,
 				84F68D6D25EE20AB0095C7DF /* MultiplyBlendTransition.swift */,
 				100272A025EA8E83001347CE /* NoneTransition.swift */,
+				845829ED25F0813100FF9E56 /* PerlinTransition.metal */,
+				845829F025F081BB00FF9E56 /* PerlinTransition.swift */,
+				84F68D7025EE221F0095C7DF /* PinwheelTransition.metal */,
+				84F68D7325EE22E30095C7DF /* PinwheelTransition.swift */,
+				845829F325F082D500FF9E56 /* PixelizeTransition.metal */,
+				845829F725F083A800FF9E56 /* PixelizeTransition.swift */,
+				845829FA25F0854500FF9E56 /* PolarFunctionTransition.metal */,
+				845829FD25F085E900FF9E56 /* PolarFunctionTransition.swift */,
+				84582A0025F0866D00FF9E56 /* PolkaDotsCurtainTransition.metal */,
+				84582A0325F086E700FF9E56 /* PolkaDotsCurtainTransition.swift */,
+				84582A0625F0878400FF9E56 /* RadialTransition.metal */,
+				84582A0925F087F500FF9E56 /* RadialTransition.swift */,
+				84582A0C25F08CF100FF9E56 /* RandomSquaresTransition.metal */,
+				84582A0F25F08D6200FF9E56 /* RandomSquaresTransition.swift */,
+				84582A1425F08FA100FF9E56 /* RippleTransition.metal */,
+				84582A1725F0902900FF9E56 /* RippleTransition.swift */,
+				84582A1A25F090D600FF9E56 /* RotateScaleFadeTransition.metal */,
+				84582A1D25F0917900FF9E56 /* RotateScaleFadeTransition.swift */,
+				84582A2025F0931400FF9E56 /* SimpleZoomTransition.metal */,
+				84582A2325F093AD00FF9E56 /* SimpleZoomTransition.swift */,
+				84582A2625F0944A00FF9E56 /* SquaresWireTransition.metal */,
+				84582A2925F094B700FF9E56 /* SquaresWireTransition.swift */,
+				84582A2C25F0955100FF9E56 /* SqueezeTransition.metal */,
+				84582A2F25F095CD00FF9E56 /* SqueezeTransition.swift */,
+				84582A3225F0966100FF9E56 /* StereoViewerTransition.metal */,
+				84582A3525F097CE00FF9E56 /* StereoViewerTransition.swift */,
+				84582A3825F0987800FF9E56 /* SwapTransition.metal */,
+				84582A3B25F0994D00FF9E56 /* SwapTransition.swift */,
+				84582A3E25F09ABF00FF9E56 /* SwirlTransition.metal */,
+				84582A4125F09B2000FF9E56 /* SwirlTransition.swift */,
+				84582A4425F09BE800FF9E56 /* TangentMotionBlurTransition.metal */,
+				84582A4725F09C9C00FF9E56 /* TangentMotionBlurTransition.swift */,
+				84582A4A25F09D1200FF9E56 /* TVStaticTransition.metal */,
+				84582A4D25F09EE400FF9E56 /* TVStaticTransition.swift */,
+				84582A5025F09F8F00FF9E56 /* UndulatingBurnOutTransition.metal */,
+				84582A5325F0A03A00FF9E56 /* UndulatingBurnOutTransition.swift */,
 			);
 			path = Effects;
 			sourceTree = "<group>";
@@ -806,14 +908,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84582A1E25F0917900FF9E56 /* RotateScaleFadeTransition.swift in Sources */,
+				84582A4225F09B2000FF9E56 /* SwirlTransition.swift in Sources */,
 				84F68DAE25EE51640095C7DF /* CircleOpenTransition.metal in Sources */,
+				84582A2425F093AD00FF9E56 /* SimpleZoomTransition.swift in Sources */,
 				84F68D7F25EE29470095C7DF /* GridFlipTransition.swift in Sources */,
 				84FD017C25CA52B600968ED6 /* UIControlHelper.swift in Sources */,
 				101770C52589485100848937 /* VideoCompositor.swift in Sources */,
+				84582A2125F0931400FF9E56 /* SimpleZoomTransition.metal in Sources */,
 				842313BE2589BFB3008B3860 /* CustomSlider.swift in Sources */,
 				8413DA8725C957F300FCE1D8 /* VIdeoTransition+Compositor.swift in Sources */,
 				84EABEB025EFA8E0008DB4D2 /* MorphTransition.swift in Sources */,
 				84F68DBD25EE559E0095C7DF /* ColorPhaseTransition.swift in Sources */,
+				845829EE25F0813100FF9E56 /* PerlinTransition.metal in Sources */,
 				84EABEAD25EFA86C008DB4D2 /* MorphTransition.metal in Sources */,
 				847D0C1F25909F26000689D2 /* MetalDevice.swift in Sources */,
 				8413DA5F25C90B1300FCE1D8 /* MultipleVideoTranstionsViewController.swift in Sources */,
@@ -824,6 +931,7 @@
 				84F68D9925EE48D30095C7DF /* BurnTransition.swift in Sources */,
 				84E322FB25EF46E800F37ACA /* FadeColorTransition.metal in Sources */,
 				10C9D44C25EB4D9B00A8CD3A /* FadeTransition.swift in Sources */,
+				845829F125F081BB00FF9E56 /* PerlinTransition.swift in Sources */,
 				1002729D25EA5993001347CE /* VideoTransition+BaseTransition.swift in Sources */,
 				84E322FE25EF476900F37ACA /* FadeColorTransition.swift in Sources */,
 				84EABEA725EFA61A008DB4D2 /* LuminanceMeltTransition.metal in Sources */,
@@ -834,6 +942,7 @@
 				84F68D7425EE22E30095C7DF /* PinwheelTransition.swift in Sources */,
 				84E322D025EF375000F37ACA /* DirectionalWarpTransition.swift in Sources */,
 				8464CFEC2594476400798523 /* FilterControlViewController.swift in Sources */,
+				84582A0425F086E700FF9E56 /* PolkaDotsCurtainTransition.swift in Sources */,
 				842313C12589C1A7008B3860 /* PlayerToolbar.swift in Sources */,
 				84E322F825EF457F00F37ACA /* DreamyZoomTransition.swift in Sources */,
 				84E3231B25EF4DE600F37ACA /* HeartTransition.metal in Sources */,
@@ -843,15 +952,19 @@
 				84BE88912588ABAC00F05BBE /* ThumbnailTrack.swift in Sources */,
 				84E3230825EF4A0C00F37ACA /* FlyeyeTransition.metal in Sources */,
 				84E3230125EF487B00F37ACA /* FadegrayscaleTransition.metal in Sources */,
+				84582A4825F09C9C00FF9E56 /* TangentMotionBlurTransition.swift in Sources */,
 				84F68DA225EE4BE90095C7DF /* CannabisleafTransition.metal in Sources */,
 				84F68DCC25EE59C20095C7DF /* CrossHatchTransition.metal in Sources */,
 				84F68D6B25EE1FD40095C7DF /* MultiplyBlendTransition.metal in Sources */,
 				8413DA6325C90B9C00FCE1D8 /* VideoTransition.swift in Sources */,
 				84F68D9025EE452B0095C7DF /* BowTieVerticalTransition.metal in Sources */,
 				847D0C2325909FC6000689D2 /* Filter+Extensions.swift in Sources */,
+				84582A2A25F094B700FF9E56 /* SquaresWireTransition.swift in Sources */,
+				84582A3625F097CE00FF9E56 /* StereoViewerTransition.swift in Sources */,
 				84FE8AB5258A03C800E7D1C9 /* PlaybackController.swift in Sources */,
 				84FE8AB8258A0AF300E7D1C9 /* PlayerSeeker.swift in Sources */,
 				84F68DA825EE4E7B0095C7DF /* CircleCropTransition.metal in Sources */,
+				845829F825F083A800FF9E56 /* PixelizeTransition.swift in Sources */,
 				84F68DBA25EE55030095C7DF /* ColorPhaseTransition.metal in Sources */,
 				84EABE9825EFA1DE008DB4D2 /* KaleidoScopeTransition.swift in Sources */,
 				84EABEA425EFA4E1008DB4D2 /* LumaTransition.swift in Sources */,
@@ -860,15 +973,21 @@
 				84F68DC025EE56B10095C7DF /* ColourDistanceTransition.metal in Sources */,
 				84F68D6325EE1ABF0095C7DF /* WindTransition.metal in Sources */,
 				84F68DE125EE5EF40095C7DF /* CubeTransition.swift in Sources */,
+				84582A5425F0A03A00FF9E56 /* UndulatingBurnOutTransition.swift in Sources */,
+				84582A0A25F087F500FF9E56 /* RadialTransition.swift in Sources */,
 				84E322D925EF391C00F37ACA /* DisplacementTransition.metal in Sources */,
 				100272A125EA8E83001347CE /* NoneTransition.swift in Sources */,
 				84F68D9F25EE4AFB0095C7DF /* ButterflyWaveScrawlerTransition.swift in Sources */,
 				843E10A625889D8600997900 /* PlayerView.swift in Sources */,
 				1062D238258E8B5200CCF343 /* HomeViewController.swift in Sources */,
+				84582A1025F08D6200FF9E56 /* RandomSquaresTransition.swift in Sources */,
+				84582A2D25F0955100FF9E56 /* SqueezeTransition.metal in Sources */,
+				84582A4E25F09EE400FF9E56 /* TVStaticTransition.swift in Sources */,
 				84E322F525EF44FF00F37ACA /* DreamyZoomTransition.metal in Sources */,
 				84EABEA125EFA420008DB4D2 /* LumaTransition.metal in Sources */,
 				84F68DD825EE5C660095C7DF /* CrossZoomTransition.metal in Sources */,
 				84F68DAB25EE508E0095C7DF /* CircleCropTransition.swift in Sources */,
+				84582A0125F0866D00FF9E56 /* PolkaDotsCurtainTransition.metal in Sources */,
 				1070D70D258E8E7B00CCE304 /* Utilites.swift in Sources */,
 				84F68D9325EE459E0095C7DF /* BowTieVerticalTransition.swift in Sources */,
 				84F68D7125EE221F0095C7DF /* PinwheelTransition.metal in Sources */,
@@ -876,25 +995,33 @@
 				8464CFDC2594452000798523 /* Filter.swift in Sources */,
 				849F583C25930622004477AD /* MetalSourceOverlayFilter.metal in Sources */,
 				849B63EA2590A3A700CFB6A9 /* MetalBaseFilter.swift in Sources */,
+				84582A3925F0987800FF9E56 /* SwapTransition.metal in Sources */,
+				84582A3325F0966100FF9E56 /* StereoViewerTransition.metal in Sources */,
 				84EABE9E25EFA31A008DB4D2 /* LinearBlurTransition.swift in Sources */,
 				84EABE8C25EF9DE0008DB4D2 /* HexagonalizeTransition.swift in Sources */,
 				84E3231725EF4D3300F37ACA /* GlitchMemoriesTransition.swift in Sources */,
 				84E322E325EF3F1000F37ACA /* DoomScreenTransition.metal in Sources */,
 				1062D234258E534500CCF343 /* FilterOptionsView.swift in Sources */,
 				84F68D9C25EE4A1D0095C7DF /* ButterflyWaveScrawlerTransition.metal in Sources */,
+				845829FE25F085E900FF9E56 /* PolarFunctionTransition.swift in Sources */,
 				84E322D625EF388600F37ACA /* DirectionalWipeTransition.swift in Sources */,
 				84E322D325EF381100F37ACA /* DirectionalWipeTransition.metal in Sources */,
 				84E322F225EF446A00F37ACA /* DreamyTransition.swift in Sources */,
 				84F68DCF25EE5A7A0095C7DF /* CrossHatchTransition.swift in Sources */,
 				101770CA25894FC400848937 /* VideoExporter.swift in Sources */,
+				84582A3025F095CD00FF9E56 /* SqueezeTransition.swift in Sources */,
 				84E3231425EF4CAA00F37ACA /* GlitchMemoriesTransition.metal in Sources */,
 				84F68DC625EE58050095C7DF /* CrazyParametricFuncTransition.metal in Sources */,
 				84E3230E25EF4B7000F37ACA /* GlitchDisplaceTransition.metal in Sources */,
 				84EABE8925EF9CF9008DB4D2 /* HexagonalizeTransition.metal in Sources */,
 				84F68D8B25EE43B50095C7DF /* BowTieHorizontalTransition.swift in Sources */,
 				84E322CA25EF314F00F37ACA /* DirectionalTransition.swift in Sources */,
+				84582A1825F0902900FF9E56 /* RippleTransition.swift in Sources */,
 				84581270259477E2002223E7 /* FilterControlPresentationController.swift in Sources */,
+				84582A3F25F09ABF00FF9E56 /* SwirlTransition.metal in Sources */,
+				845829F425F082D500FF9E56 /* PixelizeTransition.metal in Sources */,
 				84F68D8825EE42630095C7DF /* BowTieHorizontalTransition.metal in Sources */,
+				845829FB25F0854500FF9E56 /* PolarFunctionTransition.metal in Sources */,
 				849F584025930653004477AD /* MetalSourceOverlayFilter.swift in Sources */,
 				84E3231E25EF4E6700F37ACA /* HeartTransition.swift in Sources */,
 				842313CD2589CD23008B3860 /* Extensions.swift in Sources */,
@@ -907,6 +1034,7 @@
 				84F68DD525EE5BFD0095C7DF /* CrossWarpTransition.swift in Sources */,
 				84E322E625EF3FC800F37ACA /* DoomScreenTransition.swift in Sources */,
 				84F68DD225EE5B4F0095C7DF /* CrossWarpTransition.metal in Sources */,
+				84582A4525F09BE800FF9E56 /* TangentMotionBlurTransition.metal in Sources */,
 				84F68D6E25EE20AB0095C7DF /* MultiplyBlendTransition.swift in Sources */,
 				84F68DDE25EE5D8A0095C7DF /* CubeTransition.metal in Sources */,
 				84F68DB125EE51DF0095C7DF /* CircleOpenTransition.swift in Sources */,
@@ -922,21 +1050,29 @@
 				84EABE9B25EFA286008DB4D2 /* LinearBlurTransition.metal in Sources */,
 				84EABEB625EFAA11008DB4D2 /* MosaicTransition.swift in Sources */,
 				8413DA6925C9130D00FCE1D8 /* VideoTransition+Result.swift in Sources */,
+				84582A5125F09F8F00FF9E56 /* UndulatingBurnOutTransition.metal in Sources */,
+				84582A2725F0944A00FF9E56 /* SquaresWireTransition.metal in Sources */,
+				84582A1525F08FA100FF9E56 /* RippleTransition.metal in Sources */,
 				849F5834259300FF004477AD /* MetalThresholdFilter.metal in Sources */,
+				84582A3C25F0994D00FF9E56 /* SwapTransition.swift in Sources */,
 				84F68D8525EE33650095C7DF /* BounceTransition.swift in Sources */,
 				84E322E025EF3B9900F37ACA /* DisplacementTransition.swift in Sources */,
 				84F68DB725EE533A0095C7DF /* CircleTransition.swift in Sources */,
 				84EABE9225EFA0B5008DB4D2 /* InvertedPageCurlTransition.swift in Sources */,
+				84582A0D25F08CF100FF9E56 /* RandomSquaresTransition.metal in Sources */,
 				84F68DC325EE57470095C7DF /* ColourDistanceTransition.swift in Sources */,
 				841DBDFC259592B8005A3171 /* FilterSlider.swift in Sources */,
 				84D236152590B272009FA2C6 /* MetalBrightnessFilter.swift in Sources */,
+				84582A4B25F09D1200FF9E56 /* TVStaticTransition.metal in Sources */,
 				84F68DDB25EE5CFF0095C7DF /* CrossZoomTransition.swift in Sources */,
 				84EABE9525EFA146008DB4D2 /* KaleidoScopeTransition.metal in Sources */,
 				84EABEAA25EFA76A008DB4D2 /* LuminanceMeltTransition.swift in Sources */,
 				84F68DB425EE52910095C7DF /* CircleTransition.metal in Sources */,
 				100272A425EA913E001347CE /* VideoTransition+Renderer.swift in Sources */,
+				84582A1B25F090D600FF9E56 /* RotateScaleFadeTransition.metal in Sources */,
 				84F68D8225EE325E0095C7DF /* BounceTransition.metal in Sources */,
 				8413DA8425C9564A00FCE1D8 /* VideoTransition+CompositionInstruction.swift in Sources */,
+				84582A0725F0878400FF9E56 /* RadialTransition.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

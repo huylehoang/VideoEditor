@@ -23,6 +23,11 @@ extension MTLComputeCommandEncoder {
     setBytes(&point, length: MemoryLayout.size(ofValue: point), index: index)
   }
 
+  func setSizeValueAsFloat2(_ value: CGSize, at index: Int) {
+    var point = vector_float2(Float(value.width), Float(value.height))
+    setBytes(&point, length: MemoryLayout.size(ofValue: point), index: index)
+  }
+
   func setImageAsTexture(_ image: UIImage?, at index: Int) {
     guard
       let images = image,
