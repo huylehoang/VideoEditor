@@ -111,11 +111,12 @@ extension TransitionPickerViewController: UIPickerViewDelegate, UIPickerViewData
     return transitions.count
   }
 
-  func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    return transitions[row].description
-  }
-
-  func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+  func pickerView(
+    _ pickerView: UIPickerView,
+    viewForRow row: Int,
+    forComponent component: Int,
+    reusing view: UIView?
+  ) -> UIView {
     let label = view as? UILabel ?? UILabel()
     label.text = transitions[row].description
     label.textColor = .darkText
