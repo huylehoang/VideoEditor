@@ -3,7 +3,6 @@ import Foundation
 /// Referene MTTransitions github: https://github.com/alexiscn/MTTransitions
 extension VideoTransition {
   enum Effect: Int, CaseIterable, CustomStringConvertible {
-    case wind
     case bounce
     case bowTieHorizontal
     case bowTieVertical
@@ -64,10 +63,18 @@ extension VideoTransition {
     case tangentMotionBlur
     case tvStatic
     case undulatingBurnOut
+    case waterDrop
+    case windowBlinds
+    case windowSlice
+    case wind
+    case wipeDown
+    case wipeLeft
+    case wipeRight
+    case wipeUp
+    case zoomInCircles
 
     var transition: BaseTransition {
       switch self {
-      case .wind: return WindTransition()
       case .bounce: return BounceTransition()
       case .bowTieHorizontal: return BowTieHorizontalTransition()
       case .bowTieVertical: return BowTieVerticalTransition()
@@ -128,6 +135,15 @@ extension VideoTransition {
       case .tangentMotionBlur: return TangentMotionBlurTransition()
       case .tvStatic: return TVStaticTransition()
       case .undulatingBurnOut: return UndulatingBurnOutTransition()
+      case .waterDrop: return WaterDropTransition()
+      case .windowBlinds: return WindowBlindsTransition()
+      case .windowSlice: return WindowSliceTransition()
+      case .wind: return WindTransition()
+      case .wipeDown: return WipeDownTransition()
+      case .wipeLeft: return WipeLeftTransition()
+      case .wipeRight: return WipeRightTransition()
+      case .wipeUp: return WipeUpTransition()
+      case .zoomInCircles: return ZoomInCirclesTransition()
       }
     }
 

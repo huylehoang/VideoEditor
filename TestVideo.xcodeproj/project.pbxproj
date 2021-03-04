@@ -72,6 +72,22 @@
 		84582A4E25F09EE400FF9E56 /* TVStaticTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A4D25F09EE400FF9E56 /* TVStaticTransition.swift */; };
 		84582A5125F09F8F00FF9E56 /* UndulatingBurnOutTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A5025F09F8F00FF9E56 /* UndulatingBurnOutTransition.metal */; };
 		84582A5425F0A03A00FF9E56 /* UndulatingBurnOutTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A5325F0A03A00FF9E56 /* UndulatingBurnOutTransition.swift */; };
+		84582A5725F0B44900FF9E56 /* WaterDropTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A5625F0B44800FF9E56 /* WaterDropTransition.metal */; };
+		84582A5A25F0B4EA00FF9E56 /* WaterDropTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A5925F0B4EA00FF9E56 /* WaterDropTransition.swift */; };
+		84582A5D25F0B58A00FF9E56 /* WindowBlindsTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A5C25F0B58A00FF9E56 /* WindowBlindsTransition.metal */; };
+		84582A6025F0B5E300FF9E56 /* WindowBlindsTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A5F25F0B5E300FF9E56 /* WindowBlindsTransition.swift */; };
+		84582A6325F0B66800FF9E56 /* WindowSliceTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A6225F0B66800FF9E56 /* WindowSliceTransition.metal */; };
+		84582A6625F0B6D700FF9E56 /* WindowSliceTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A6525F0B6D700FF9E56 /* WindowSliceTransition.swift */; };
+		84582A6925F0B78B00FF9E56 /* WipeDownTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A6825F0B78B00FF9E56 /* WipeDownTransition.metal */; };
+		84582A6C25F0B7EA00FF9E56 /* WipeDownTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A6B25F0B7EA00FF9E56 /* WipeDownTransition.swift */; };
+		84582A6F25F0B86A00FF9E56 /* WipeLeftTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A6E25F0B86A00FF9E56 /* WipeLeftTransition.metal */; };
+		84582A7225F0B8AF00FF9E56 /* WipeLeftTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A7125F0B8AF00FF9E56 /* WipeLeftTransition.swift */; };
+		84582A7525F0B90E00FF9E56 /* WipeRightTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A7425F0B90E00FF9E56 /* WipeRightTransition.metal */; };
+		84582A7825F0B94C00FF9E56 /* WipeRightTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A7725F0B94C00FF9E56 /* WipeRightTransition.swift */; };
+		84582A7B25F0B99800FF9E56 /* WipeUpTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A7A25F0B99800FF9E56 /* WipeUpTransition.metal */; };
+		84582A7E25F0B9CF00FF9E56 /* WipeUpTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A7D25F0B9CF00FF9E56 /* WipeUpTransition.swift */; };
+		84582A8125F0BA4100FF9E56 /* ZoomInCirclesTransition.metal in Sources */ = {isa = PBXBuildFile; fileRef = 84582A8025F0BA4100FF9E56 /* ZoomInCirclesTransition.metal */; };
+		84582A8425F0BAB700FF9E56 /* ZoomInCirclesTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84582A8325F0BAB700FF9E56 /* ZoomInCirclesTransition.swift */; };
 		845A9909258B33BA005B81D0 /* ThumbnailSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845A9908258B33BA005B81D0 /* ThumbnailSlider.swift */; };
 		8464CFDC2594452000798523 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464CFDB2594452000798523 /* Filter.swift */; };
 		8464CFEC2594476400798523 /* FilterControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8464CFEB2594476400798523 /* FilterControlViewController.swift */; };
@@ -290,6 +306,22 @@
 		84582A4D25F09EE400FF9E56 /* TVStaticTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVStaticTransition.swift; sourceTree = "<group>"; };
 		84582A5025F09F8F00FF9E56 /* UndulatingBurnOutTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = UndulatingBurnOutTransition.metal; sourceTree = "<group>"; };
 		84582A5325F0A03A00FF9E56 /* UndulatingBurnOutTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UndulatingBurnOutTransition.swift; sourceTree = "<group>"; };
+		84582A5625F0B44800FF9E56 /* WaterDropTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = WaterDropTransition.metal; sourceTree = "<group>"; };
+		84582A5925F0B4EA00FF9E56 /* WaterDropTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterDropTransition.swift; sourceTree = "<group>"; };
+		84582A5C25F0B58A00FF9E56 /* WindowBlindsTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = WindowBlindsTransition.metal; sourceTree = "<group>"; };
+		84582A5F25F0B5E300FF9E56 /* WindowBlindsTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowBlindsTransition.swift; sourceTree = "<group>"; };
+		84582A6225F0B66800FF9E56 /* WindowSliceTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = WindowSliceTransition.metal; sourceTree = "<group>"; };
+		84582A6525F0B6D700FF9E56 /* WindowSliceTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowSliceTransition.swift; sourceTree = "<group>"; };
+		84582A6825F0B78B00FF9E56 /* WipeDownTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = WipeDownTransition.metal; sourceTree = "<group>"; };
+		84582A6B25F0B7EA00FF9E56 /* WipeDownTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WipeDownTransition.swift; sourceTree = "<group>"; };
+		84582A6E25F0B86A00FF9E56 /* WipeLeftTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = WipeLeftTransition.metal; sourceTree = "<group>"; };
+		84582A7125F0B8AF00FF9E56 /* WipeLeftTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WipeLeftTransition.swift; sourceTree = "<group>"; };
+		84582A7425F0B90E00FF9E56 /* WipeRightTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = WipeRightTransition.metal; sourceTree = "<group>"; };
+		84582A7725F0B94C00FF9E56 /* WipeRightTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WipeRightTransition.swift; sourceTree = "<group>"; };
+		84582A7A25F0B99800FF9E56 /* WipeUpTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = WipeUpTransition.metal; sourceTree = "<group>"; };
+		84582A7D25F0B9CF00FF9E56 /* WipeUpTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WipeUpTransition.swift; sourceTree = "<group>"; };
+		84582A8025F0BA4100FF9E56 /* ZoomInCirclesTransition.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ZoomInCirclesTransition.metal; sourceTree = "<group>"; };
+		84582A8325F0BAB700FF9E56 /* ZoomInCirclesTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomInCirclesTransition.swift; sourceTree = "<group>"; };
 		845A9908258B33BA005B81D0 /* ThumbnailSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailSlider.swift; sourceTree = "<group>"; };
 		8464CFDB2594452000798523 /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		8464CFEB2594476400798523 /* FilterControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterControlViewController.swift; sourceTree = "<group>"; };
@@ -414,8 +446,6 @@
 			isa = PBXGroup;
 			children = (
 				8453B40525EDFB7B00FCA9A5 /* VideoTransition.h */,
-				84F68D6225EE1ABF0095C7DF /* WindTransition.metal */,
-				84F68D6525EE1B600095C7DF /* WindTransition.swift */,
 				84F68D8125EE325E0095C7DF /* BounceTransition.metal */,
 				84F68D8425EE33650095C7DF /* BounceTransition.swift */,
 				84F68D8725EE42630095C7DF /* BowTieHorizontalTransition.metal */,
@@ -535,6 +565,24 @@
 				84582A4D25F09EE400FF9E56 /* TVStaticTransition.swift */,
 				84582A5025F09F8F00FF9E56 /* UndulatingBurnOutTransition.metal */,
 				84582A5325F0A03A00FF9E56 /* UndulatingBurnOutTransition.swift */,
+				84582A5625F0B44800FF9E56 /* WaterDropTransition.metal */,
+				84582A5925F0B4EA00FF9E56 /* WaterDropTransition.swift */,
+				84582A5C25F0B58A00FF9E56 /* WindowBlindsTransition.metal */,
+				84582A5F25F0B5E300FF9E56 /* WindowBlindsTransition.swift */,
+				84582A6225F0B66800FF9E56 /* WindowSliceTransition.metal */,
+				84582A6525F0B6D700FF9E56 /* WindowSliceTransition.swift */,
+				84F68D6225EE1ABF0095C7DF /* WindTransition.metal */,
+				84F68D6525EE1B600095C7DF /* WindTransition.swift */,
+				84582A6825F0B78B00FF9E56 /* WipeDownTransition.metal */,
+				84582A6B25F0B7EA00FF9E56 /* WipeDownTransition.swift */,
+				84582A6E25F0B86A00FF9E56 /* WipeLeftTransition.metal */,
+				84582A7125F0B8AF00FF9E56 /* WipeLeftTransition.swift */,
+				84582A7425F0B90E00FF9E56 /* WipeRightTransition.metal */,
+				84582A7725F0B94C00FF9E56 /* WipeRightTransition.swift */,
+				84582A7A25F0B99800FF9E56 /* WipeUpTransition.metal */,
+				84582A7D25F0B9CF00FF9E56 /* WipeUpTransition.swift */,
+				84582A8025F0BA4100FF9E56 /* ZoomInCirclesTransition.metal */,
+				84582A8325F0BAB700FF9E56 /* ZoomInCirclesTransition.swift */,
 			);
 			path = Effects;
 			sourceTree = "<group>";
@@ -923,7 +971,9 @@
 				845829EE25F0813100FF9E56 /* PerlinTransition.metal in Sources */,
 				84EABEAD25EFA86C008DB4D2 /* MorphTransition.metal in Sources */,
 				847D0C1F25909F26000689D2 /* MetalDevice.swift in Sources */,
+				84582A7225F0B8AF00FF9E56 /* WipeLeftTransition.swift in Sources */,
 				8413DA5F25C90B1300FCE1D8 /* MultipleVideoTranstionsViewController.swift in Sources */,
+				84582A7E25F0B9CF00FF9E56 /* WipeUpTransition.swift in Sources */,
 				84499F852587228100041921 /* AppDelegate.swift in Sources */,
 				84EABEB325EFA974008DB4D2 /* MosaicTransition.metal in Sources */,
 				84E3230B25EF4AD000F37ACA /* FlyeyeTransition.swift in Sources */,
@@ -935,6 +985,7 @@
 				1002729D25EA5993001347CE /* VideoTransition+BaseTransition.swift in Sources */,
 				84E322FE25EF476900F37ACA /* FadeColorTransition.swift in Sources */,
 				84EABEA725EFA61A008DB4D2 /* LuminanceMeltTransition.metal in Sources */,
+				84582A6325F0B66800FF9E56 /* WindowSliceTransition.metal in Sources */,
 				845A9909258B33BA005B81D0 /* ThumbnailSlider.swift in Sources */,
 				849F582C2592FEAE004477AD /* MetalSaturationFilter.metal in Sources */,
 				84F68D6625EE1B600095C7DF /* WindTransition.swift in Sources */,
@@ -943,6 +994,7 @@
 				84E322D025EF375000F37ACA /* DirectionalWarpTransition.swift in Sources */,
 				8464CFEC2594476400798523 /* FilterControlViewController.swift in Sources */,
 				84582A0425F086E700FF9E56 /* PolkaDotsCurtainTransition.swift in Sources */,
+				84582A5725F0B44900FF9E56 /* WaterDropTransition.metal in Sources */,
 				842313C12589C1A7008B3860 /* PlayerToolbar.swift in Sources */,
 				84E322F825EF457F00F37ACA /* DreamyZoomTransition.swift in Sources */,
 				84E3231B25EF4DE600F37ACA /* HeartTransition.metal in Sources */,
@@ -961,6 +1013,7 @@
 				847D0C2325909FC6000689D2 /* Filter+Extensions.swift in Sources */,
 				84582A2A25F094B700FF9E56 /* SquaresWireTransition.swift in Sources */,
 				84582A3625F097CE00FF9E56 /* StereoViewerTransition.swift in Sources */,
+				84582A7525F0B90E00FF9E56 /* WipeRightTransition.metal in Sources */,
 				84FE8AB5258A03C800E7D1C9 /* PlaybackController.swift in Sources */,
 				84FE8AB8258A0AF300E7D1C9 /* PlayerSeeker.swift in Sources */,
 				84F68DA825EE4E7B0095C7DF /* CircleCropTransition.metal in Sources */,
@@ -968,7 +1021,9 @@
 				84F68DBA25EE55030095C7DF /* ColorPhaseTransition.metal in Sources */,
 				84EABE9825EFA1DE008DB4D2 /* KaleidoScopeTransition.swift in Sources */,
 				84EABEA425EFA4E1008DB4D2 /* LumaTransition.swift in Sources */,
+				84582A8425F0BAB700FF9E56 /* ZoomInCirclesTransition.swift in Sources */,
 				84499F872587228100041921 /* SceneDelegate.swift in Sources */,
+				84582A6C25F0B7EA00FF9E56 /* WipeDownTransition.swift in Sources */,
 				84E322E925EF40FC00F37ACA /* DoorwayTransition.metal in Sources */,
 				84F68DC025EE56B10095C7DF /* ColourDistanceTransition.metal in Sources */,
 				84F68D6325EE1ABF0095C7DF /* WindTransition.metal in Sources */,
@@ -983,6 +1038,8 @@
 				84582A1025F08D6200FF9E56 /* RandomSquaresTransition.swift in Sources */,
 				84582A2D25F0955100FF9E56 /* SqueezeTransition.metal in Sources */,
 				84582A4E25F09EE400FF9E56 /* TVStaticTransition.swift in Sources */,
+				84582A5D25F0B58A00FF9E56 /* WindowBlindsTransition.metal in Sources */,
+				84582A7825F0B94C00FF9E56 /* WipeRightTransition.swift in Sources */,
 				84E322F525EF44FF00F37ACA /* DreamyZoomTransition.metal in Sources */,
 				84EABEA125EFA420008DB4D2 /* LumaTransition.metal in Sources */,
 				84F68DD825EE5C660095C7DF /* CrossZoomTransition.metal in Sources */,
@@ -1002,7 +1059,9 @@
 				84E3231725EF4D3300F37ACA /* GlitchMemoriesTransition.swift in Sources */,
 				84E322E325EF3F1000F37ACA /* DoomScreenTransition.metal in Sources */,
 				1062D234258E534500CCF343 /* FilterOptionsView.swift in Sources */,
+				84582A6625F0B6D700FF9E56 /* WindowSliceTransition.swift in Sources */,
 				84F68D9C25EE4A1D0095C7DF /* ButterflyWaveScrawlerTransition.metal in Sources */,
+				84582A6F25F0B86A00FF9E56 /* WipeLeftTransition.metal in Sources */,
 				845829FE25F085E900FF9E56 /* PolarFunctionTransition.swift in Sources */,
 				84E322D625EF388600F37ACA /* DirectionalWipeTransition.swift in Sources */,
 				84E322D325EF381100F37ACA /* DirectionalWipeTransition.metal in Sources */,
@@ -1040,6 +1099,7 @@
 				84F68DB125EE51DF0095C7DF /* CircleOpenTransition.swift in Sources */,
 				84F68D9625EE47E50095C7DF /* BurnTransition.metal in Sources */,
 				84E322EF25EF432500F37ACA /* DreamyTransition.metal in Sources */,
+				84582A8125F0BA4100FF9E56 /* ZoomInCirclesTransition.metal in Sources */,
 				84BE888E25889EDE00F05BBE /* FilterOption.swift in Sources */,
 				849F583825930335004477AD /* MetalThresholdFilter.swift in Sources */,
 				84EABE8F25EF9F17008DB4D2 /* InvertedPageCurlTransition.metal in Sources */,
@@ -1051,11 +1111,14 @@
 				84EABEB625EFAA11008DB4D2 /* MosaicTransition.swift in Sources */,
 				8413DA6925C9130D00FCE1D8 /* VideoTransition+Result.swift in Sources */,
 				84582A5125F09F8F00FF9E56 /* UndulatingBurnOutTransition.metal in Sources */,
+				84582A7B25F0B99800FF9E56 /* WipeUpTransition.metal in Sources */,
 				84582A2725F0944A00FF9E56 /* SquaresWireTransition.metal in Sources */,
 				84582A1525F08FA100FF9E56 /* RippleTransition.metal in Sources */,
 				849F5834259300FF004477AD /* MetalThresholdFilter.metal in Sources */,
 				84582A3C25F0994D00FF9E56 /* SwapTransition.swift in Sources */,
+				84582A6025F0B5E300FF9E56 /* WindowBlindsTransition.swift in Sources */,
 				84F68D8525EE33650095C7DF /* BounceTransition.swift in Sources */,
+				84582A6925F0B78B00FF9E56 /* WipeDownTransition.metal in Sources */,
 				84E322E025EF3B9900F37ACA /* DisplacementTransition.swift in Sources */,
 				84F68DB725EE533A0095C7DF /* CircleTransition.swift in Sources */,
 				84EABE9225EFA0B5008DB4D2 /* InvertedPageCurlTransition.swift in Sources */,
@@ -1069,6 +1132,7 @@
 				84EABEAA25EFA76A008DB4D2 /* LuminanceMeltTransition.swift in Sources */,
 				84F68DB425EE52910095C7DF /* CircleTransition.metal in Sources */,
 				100272A425EA913E001347CE /* VideoTransition+Renderer.swift in Sources */,
+				84582A5A25F0B4EA00FF9E56 /* WaterDropTransition.swift in Sources */,
 				84582A1B25F090D600FF9E56 /* RotateScaleFadeTransition.metal in Sources */,
 				84F68D8225EE325E0095C7DF /* BounceTransition.metal in Sources */,
 				8413DA8425C9564A00FCE1D8 /* VideoTransition+CompositionInstruction.swift in Sources */,

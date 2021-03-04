@@ -37,7 +37,6 @@ float getWave(float2 p, float2 center, float progress){
   return x + deg_wave_pos;
 }
 
-
 kernel void UndulatingBurnOutTransition(texture2d<float, access::write> outputTexture [[ texture(0) ]],
                                         texture2d<float, access::sample> fromTexture [[ texture(1) ]],
                                         texture2d<float, access::sample> toTexture [[ texture(2) ]],
