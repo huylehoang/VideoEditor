@@ -38,8 +38,8 @@ private extension TransitionPickerViewController {
     vStackView.addArrangedSubview(makeButtonsStackView())
     view.addSubview(vStackView)
     let constraints = [
-      vStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
-      vStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
+      vStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 4),
+      vStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -4),
       vStackView.topAnchor.constraint(equalTo: view.topAnchor, constant: 12),
       vStackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -12),
     ]
@@ -117,14 +117,10 @@ extension TransitionPickerViewController: UIPickerViewDelegate, UIPickerViewData
     forComponent component: Int,
     reusing view: UIView?
   ) -> UIView {
-    let label = view as? UILabel ?? UILabel()
-    label.text = transitions[row].description
-    label.textColor = .darkText
-    label.font = .systemFont(ofSize: 14, weight: .semibold)
-    label.textAlignment = component == 0 ? .left : .right
-    label.adjustsFontSizeToFitWidth = true
-    label.minimumScaleFactor = 0.5
-    return label
+    let itemView = view as? ItemView ?? ItemView()
+    itemView.setTitle(transitions[row].description)
+    itemView.textAlignment = component == 0 ? .left : .right
+    return itemView
   }
 
   func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
@@ -134,4 +130,49 @@ extension TransitionPickerViewController: UIPickerViewDelegate, UIPickerViewData
       secondTransitionIndex = row
     }
   }
+}
+
+private extension TransitionPickerViewController {
+    class ItemView: UIView {
+        private lazy var titleLabel: UILabel = {
+            let label = UILabel()
+            label.translatesAutoresizingMaskIntoConstraints = false
+            label.textColor = .darkText
+            label.font = .systemFont(ofSize: 14, weight: .semibold)
+            label.adjustsFontSizeToFitWidth = true
+            label.minimumScaleFactor = 0.5
+            return label
+        }()
+
+        var textAlignment: NSTextAlignment = .right {
+            didSet {
+                titleLabel.textAlignment = textAlignment
+            }
+        }
+
+        override init(frame: CGRect) {
+            super.init(frame: frame)
+            setupView()
+        }
+
+        required init?(coder: NSCoder) {
+            super.init(coder: coder)
+            setupView()
+        }
+
+        func setTitle(_ title: String) {
+            titleLabel.text = title
+        }
+
+        private func setupView() {
+            textAlignment = .right
+            addSubview(titleLabel)
+            let constraints = [
+                titleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+                titleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+                titleLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12),
+            ]
+            NSLayoutConstraint.activate(constraints)
+        }
+    }
 }

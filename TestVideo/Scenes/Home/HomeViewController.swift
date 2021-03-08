@@ -14,6 +14,9 @@ final class HomeViewController: UIViewController {
 
 private extension HomeViewController {
   func setupView() {
+    navigationController?.navigationBar.barTintColor = .black
+    navigationController?.navigationBar.isTranslucent = false
+
     let loadVideoButton = UIButton()
     loadVideoButton.translatesAutoresizingMaskIntoConstraints = false
     loadVideoButton.setTitle("LOAD VIDEO", for: .normal)
