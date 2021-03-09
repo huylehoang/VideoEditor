@@ -52,12 +52,12 @@ extension VideoTransition {
     /// Standard kernel transition function with always needed arguments
     ///
     /// kernel void Transition(texture2d<float, access::write> outputTexture [[ texture(0) ]],
-    ///                 texture2d<float, access::sample> fromTexture [[ texture(1) ]],
-    ///                 texture2d<float, access::sample> toTexture [[ texture(2) ]],
-    ///                 constant float & ratio [[ buffer(0) ]],
-    ///                 constant float & progress [[ buffer(1) ]],
-    ///                 uint2 gid [[ thread_position_in_grid ]],
-    ///                 uint2 tpg [[ threads_per_grid ]])
+    ///                        texture2d<float, access::sample> fromTexture [[ texture(1) ]],
+    ///                        texture2d<float, access::sample> toTexture [[ texture(2) ]],
+    ///                        constant float & ratio [[ buffer(0) ]],
+    ///                        constant float & progress [[ buffer(1) ]],
+    ///                        uint2 gid [[ thread_position_in_grid ]],
+    ///                        uint2 tpg [[ threads_per_grid ]])
     ///
     /// ***
     // Set new constant argument from index 2...
