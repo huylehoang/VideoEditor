@@ -260,7 +260,7 @@
 		8413DA7025C9345C00FCE1D8 /* cut3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cut3.mp4; sourceTree = "<group>"; };
 		8413DA7125C9345C00FCE1D8 /* cut2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cut2.mp4; sourceTree = "<group>"; };
 		8413DA7225C9345C00FCE1D8 /* cut1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = cut1.mp4; sourceTree = "<group>"; };
-		8413DA8325C9564A00FCE1D8 /* VideoTransition+CompositionInstruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoTransition+CompositionInstruction.swift"; sourceTree = "<group>"; };
+		8413DA8325C9564A00FCE1D8 /* VideoTransition+CompositionInstruction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VideoTransition+CompositionInstruction.swift"; sourceTree = "<group>"; tabWidth = 4; wrapsLines = 1; };
 		8413DA8625C957F300FCE1D8 /* VIdeoTransition+Compositor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VIdeoTransition+Compositor.swift"; sourceTree = "<group>"; };
 		841DBDFB259592B8005A3171 /* FilterSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterSlider.swift; sourceTree = "<group>"; };
 		842313BD2589BFB3008B3860 /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
