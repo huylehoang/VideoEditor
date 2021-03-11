@@ -96,7 +96,6 @@ extension VideoTransition {
     }
 
     func newRenderedPixelBufferForRequest(_ request: AVAsynchronousVideoCompositionRequest) -> CVPixelBuffer? {
-      // Source pixel buffers are used as inputs while rendering the transition.
       guard
         let currentInstruction = request.videoCompositionInstruction as? CompositionInstruction,
         // Source pixel buffers are used as inputs while rendering the transition.
@@ -115,7 +114,9 @@ extension VideoTransition {
        between 0.0 and 1.0. 0.0 indicates the time at first frame in that videoComposition timeRange. 1.0 indicates
        the time at last frame in that videoComposition timeRange.
        */
-      let tweenFactor = factorForTimeInRange(request.compositionTime, range: request.videoCompositionInstruction.timeRange)
+      let tweenFactor = factorForTimeInRange(
+        request.compositionTime,
+        range: request.videoCompositionInstruction.timeRange)
 
       renderer.renderPixelBuffer(
         dstPixels,

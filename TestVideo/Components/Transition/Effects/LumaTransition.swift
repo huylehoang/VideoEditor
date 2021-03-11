@@ -37,9 +37,9 @@ extension VideoTransition {
   }
 
   final class LumaRandomSpiralTransition: LumaTransition {
-    init(level: Int = Int.random(in: 1...3)) {
+    override init() {
       super.init()
-      luma = UIImage(named: "spiral-\(level)")
+      luma = UIImage(named: "spiral-\(Int.random(in: 1...3))")
     }
 
     override var description: String { return "LumaRandomSpiralTransition" }
