@@ -152,12 +152,7 @@ extension VideoTransition {
     }
 
     var description: String {
-      return transition
-        .description
-        .replacingOccurrences(
-          of: "Transition",
-          with: "",
-          options: [.caseInsensitive, .regularExpression])
+        return transition.description
     }
   }
 }

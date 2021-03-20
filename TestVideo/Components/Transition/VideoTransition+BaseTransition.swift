@@ -5,7 +5,12 @@ extension VideoTransition {
   class BaseTransition: CustomStringConvertible {
     var functionName: String { return "" }
 
-    var description: String { return functionName }
+    var description: String {
+      return functionName.replacingOccurrences(
+        of: "Transition",
+        with: "",
+        options: [.caseInsensitive, .regularExpression])
+    }
 
     var fromImage: CIImage?
 
@@ -22,9 +27,7 @@ extension VideoTransition {
         let outputTexture = makeOutputTexture(withFromTexture: fromTexture),
         let commandBuffer = MetalDevice.sharedCommandQueue.makeCommandBuffer(),
         let encoder = commandBuffer.makeComputeCommandEncoder()
-      else {
-        return self.fromImage
-      }
+      else { return self.fromImage }
       
       let threadgroupSize = makeThreadgroupSize(from: kernel)
       let threadgroupCount = makeThreadgroupCount(fromSize: threadgroupSize, andFromTexture: fromTexture)
@@ -46,23 +49,23 @@ extension VideoTransition {
       return outputTexture.ciImage
     }
 
-    // Override this function in subclasses if kernel function need more arguments than the standard
-    /// ***
-    ///
-    /// Standard kernel transition function with always needed arguments
-    ///
-    /// kernel void Transition(texture2d<float, access::write> outputTexture [[ texture(0) ]],
-    ///                        texture2d<float, access::sample> fromTexture [[ texture(1) ]],
-    ///                        texture2d<float, access::sample> toTexture [[ texture(2) ]],
-    ///                        constant float & ratio [[ buffer(0) ]],
-    ///                        constant float & progress [[ buffer(1) ]],
-    ///                        uint2 gid [[ thread_position_in_grid ]],
-    ///                        uint2 tpg [[ threads_per_grid ]])
-    ///
-    /// ***
-    // Set new constant argument from index 2...
-    // Set new texture argument from index 3...
-    // VideoTranition+Extension: extension MTLComputeCommandEncoder {} for common methods
+    /*
+    Override this function in subclasses if kernel function need more arguments than the standard
+
+    *** Standard kernel transition function with always needed arguments ***
+
+    kernel void Transition(texture2d<float, access::write> outputTexture [[ texture(0) ]],
+                           texture2d<float, access::sample> fromTexture [[ texture(1) ]],
+                           texture2d<float, access::sample> toTexture [[ texture(2) ]],
+                           constant float & ratio [[ buffer(0) ]],
+                           constant float & progress [[ buffer(1) ]],
+                           uint2 gid [[ thread_position_in_grid ]],
+                           uint2 tpg [[ threads_per_grid ]])
+
+    Set new constant argument from index 2...
+    Set new texture argument from index 3...
+    VideoTranition+Extension: extension MTLComputeCommandEncoder {} for common methods
+    */
     func updateParameters(forComputeCommandEncoder encoder: MTLComputeCommandEncoder) {}
   }
 }
@@ -73,9 +76,7 @@ private extension VideoTransition.BaseTransition {
       let library = try? MetalDevice.sharedDevice.makeDefaultLibrary(bundle: Bundle(for: Self.self)),
       let kernelFunction = library.makeFunction(name: functionName),
       let computePipeline = try? MetalDevice.sharedDevice.makeComputePipelineState(function: kernelFunction)
-    else {
-      return nil
-    }
+    else { return nil }
     return computePipeline
   }
 
