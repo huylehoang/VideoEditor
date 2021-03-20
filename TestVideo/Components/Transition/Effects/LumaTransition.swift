@@ -33,7 +33,7 @@ extension VideoTransition {
       luma = UIImage(named: name)
     }
 
-    override var description: String { return "LumaRandomTransition" }
+    override var description: String { return "LumaRandom" }
   }
 
   final class LumaRandomSpiralTransition: LumaTransition {
@@ -42,6 +42,6 @@ extension VideoTransition {
       luma = UIImage(named: "spiral-\(Int.random(in: 1...3))")
     }
 
-    override var description: String { return "LumaRandomSpiralTransition" }
+    override var description: String { return "LumaRandomSpiral" }
   }
 }
