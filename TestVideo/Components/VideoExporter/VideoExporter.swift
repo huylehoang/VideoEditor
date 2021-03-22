@@ -1,7 +1,7 @@
 import AVFoundation
 import Photos
 
-class VideoExporter {
+final class VideoExporter {
   private var exportingSession: AVAssetExportSession?
 
   func exportAndSaveToAlbum(

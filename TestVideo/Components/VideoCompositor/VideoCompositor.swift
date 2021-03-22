@@ -1,7 +1,7 @@
 import UIKit
 import AVFoundation
 
-class VideoCompositor {
+final class VideoCompositor {
   private(set) var blur = Filter(kind: .blur())
   private(set) var brightness = Filter(kind: .brightness())
   private(set) var saturation = Filter(kind: .saturation())

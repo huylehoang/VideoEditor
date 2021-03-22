@@ -2,8 +2,6 @@ import UIKit
 
 /// Referene MTTransitions github: https://github.com/alexiscn/MTTransitions
 extension VideoTransition {
-  private static let context = CIContext(mtlDevice: MTLCreateSystemDefaultDevice()!)
-
   final class Renderer {
     let effect: Effect
     private let transition: BaseTransition
@@ -27,7 +25,7 @@ extension VideoTransition {
       transition.progress = tween
 
       guard let output = transition.outputImage else { return }
-      context.render(output, to: destinationPixelBuffer)
+      MetalDevice.sharedContext.render(output, to: destinationPixelBuffer)
     }
   }
 }
